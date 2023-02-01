@@ -1,0 +1,24 @@
+.header {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  &__brand {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+  }
+  &__logo {
+    width: 60px;
+    height: 60px;
+  }
+  &__title {
+    font-size: 36px;
+  }
+  &__info {
+    display: flex;
+    gap: 1.5em;
+    align-items: center;
+  }
+}
