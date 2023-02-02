@@ -2,14 +2,14 @@ import { ComponentConfig } from '../../framework/tools/interfaces';
 import { DMComponent } from '../../framework/index';
 
 
-export class BoxShadowComponent extends DMComponent {
+export class CssComponentLayoutComponent extends DMComponent {
   constructor(config: ComponentConfig) {
     super(config);
   }
 }
 
-export const boxShadowComponent = new BoxShadowComponent({
-  selector: 'app-box-shadow',
-  template: 'boxShadowComponent',
+export const cssComponentLayoutComponent = new CssComponentLayoutComponent({
+  selector: 'app-css-component-layout',
+  template: 'Css Component Layout',
   childComponents: [],
 });

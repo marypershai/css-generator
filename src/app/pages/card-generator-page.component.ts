@@ -1,14 +1,14 @@
 import { DMComponent } from '../../framework/index';
 import { ComponentConfig } from '../../framework/tools/interfaces';
 
-class HomePageComponent extends DMComponent {
+class CardGeneratorPageComponent extends DMComponent {
   constructor(config: ComponentConfig) {
     super(config);
   }
 }
 
-export const homePageComponent = new HomePageComponent({
-  selector: 'app-home-page',
-  template: 'Home page content',
+export const cardGeneratorPageComponent = new CardGeneratorPageComponent({
+  selector: 'app-card-generator-page',
+  template: 'Card-generator content',
   childComponents: [],
 });

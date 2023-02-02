@@ -1,4 +1,4 @@
-import { BoxShadowComponent } from '../../app/components/box-shadow.component';
+import { BoxShadowComponent } from '../../app/components/css-components/box-shadow.component';
 import { AppComponent } from '../../app/app.component';
 
 export type Components = BoxShadowComponent | AppComponent;
