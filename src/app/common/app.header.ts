@@ -20,12 +20,11 @@ export const appHeader = new AppHeader({
             <h1 class="header__title">StyleIt</h1>
           </div>
           
-            <div class="menu">
-              <a href="#css-generator" class="menu-item">Css-generator</a>
-              <a href="#card-generator" class="menu-item">Card-generator</a>
-              <a href="#game" class="menu-item">Game</a>
-              <a href="#about" class="menu-item">About</a>
-            </div>
+          <div class="menu">
+            <a href="#css-generator" class="menu-item">Css-generator</a>
+            <a href="#card-generator" class="menu-item">Card-generator</a>
+            <a href="#game" class="menu-item">Game</a>
+            <a href="#about" class="menu-item">About</a>
           </div>
 
         </header>
