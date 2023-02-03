@@ -18,6 +18,7 @@
 button,
 select {
   text-transform: none;
+  background-color: transparent;
 }
 
 button::-moz-focus-inner,
@@ -35,7 +36,3 @@ button:-moz-focusring,
   outline: 1px dotted ButtonText;
 }
 
-button,
-select { 
-  text-transform: none;
-}
