@@ -1,6 +1,7 @@
 import { DMComponent } from '../framework/index';
 import { ComponentConfig } from '../framework/tools/interfaces';
 import { appHeader } from './common/app.header';
+import { appFooter } from './common/app.footer';
 
 export class AppComponent extends DMComponent {
   constructor(config: ComponentConfig) {
@@ -13,9 +14,9 @@ export const appComponent = new AppComponent({
   template: `
         <app-header></app-header>
         <main>
-        <router-outlet></router-outlet>
+            <router-outlet></router-outlet>
         </main>
         <app-footer></app-footer>
     `,
-  childComponents: [appHeader],
+  childComponents: [appHeader, appFooter],
 });
