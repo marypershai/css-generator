@@ -37,7 +37,7 @@
   font-style: italic;
   position: absolute;
   top: 25%;
-  right: -18px;
+  left: 74px;
   color: $subtitle;
   font-weight: 600;
 }
@@ -90,15 +90,12 @@
 }
 
 
-
-
 .header__buttons {
   display: grid;
   grid-template-columns: 1fr min-content;
   column-gap: 1em;
   justify-items: flex-start;
 }
-
 
 
 .language-switcher {
