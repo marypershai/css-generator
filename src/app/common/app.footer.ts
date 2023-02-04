@@ -26,7 +26,7 @@ export const appFooter = new AppFooter({
                 <a class="link" href="https://github.com/bartoshevich">Dmitry Bartoshevich</a>
               </div>
               <a class="link" href="https://rs.school/js/" target="_blank" rel="noopener noreferrer">
-                <img loading="lazy" decoding="async" src="./rs_school_js.svg" alt="RSSchool logo" width="200" height="70">
+                <img class="rss-logo" loading="lazy" decoding="async" src="./rs_school_js.svg" alt="RSSchool logo" width="200" height="70">
               </a>
             </div>
 
