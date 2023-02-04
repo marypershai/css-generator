@@ -27,6 +27,7 @@ export class BorderComponentSettings extends DMComponent {
   private changeBorderColor(event: Event): void {
     const target = event.currentTarget as HTMLInputElement;
     borderService.color = target.value;
+    (document.querySelector('.input--border-color-value') as HTMLInputElement).value = target.value;
     this.renderLayout();
   }
 
@@ -50,7 +51,8 @@ export const borderComponentSettings = new BorderComponentSettings({
     <p><b>Settings</b></p>
     <br>
     <p>Color</p>
-    <input class="input--border-color" type="color" value="#000">
+    <input class="input--border-color" type="color" value="#000000">
+    <input class="input--border-color-value" type="text" value="#000000" disabled>
     <br>
     <br>
     <p>Style</p>

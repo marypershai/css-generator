@@ -21,6 +21,6 @@ export class BorderComponentCode extends DMComponent {
 
 export const borderComponentCode = new BorderComponentCode({
   selector: 'app-border-code',
-  template: 'Тут code',
+  template: '',
   childComponents: [],
 });
