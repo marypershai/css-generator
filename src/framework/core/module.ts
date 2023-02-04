@@ -39,13 +39,9 @@ export class Module {
         route = this.routes.find((currentRoute) => currentRoute.path === '**');
       }
       if (route) {
-        if (route.path.startsWith('css-component-')) {
-          (document.querySelector('app-css-component-layout') as HTMLElement).innerHTML = `<${route.component.selector}></${route.component.selector}>`;
-          this.renderComponent(route.component);
-        } else {
-          (document.querySelector('router-outlet') as HTMLElement).innerHTML = `<${route.component.selector}></${route.component.selector}>`;
-          this.renderComponent(route.component);
-        }
+        (document.querySelector('router-outlet') as HTMLElement).innerHTML = `<${route.component.selector}></${route.component.selector}>`;
+        this.renderComponent(route.component);
+        
       }
     }
   }
