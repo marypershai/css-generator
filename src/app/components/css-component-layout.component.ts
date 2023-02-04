@@ -10,6 +10,6 @@ export class CssComponentLayoutComponent extends DMComponent {
 
 export const cssComponentLayoutComponent = new CssComponentLayoutComponent({
   selector: 'app-css-component-layout',
-  template: 'Css Component Layout',
+  template: 'Select Css Component Layout',
   childComponents: [],
 });

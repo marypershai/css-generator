@@ -1,0 +1,83 @@
+
+
+.css_generator_body {
+  display: flex;
+}
+
+.css_generator_menu {
+  border: 1px solid gray;
+}
+
+.css_generator_layoyt {
+  width: 100%;
+}
+
+.component-content {
+  display: flex;
+}
+
+.css_generator_settings {
+  border: 1px solid gray;
+  padding: 10px;
+  width: 50%;
+}
+
+.css_generator_result {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.css_generator_preview {
+  border: 1px solid gray;
+  padding: 10px;
+}
+
+.css_generator_code {
+  border: 1px solid gray;
+  padding: 10px;
+}
+
+
+
+.list_subheading {
+  font-weight: 700;
+}
+
+
+.code_CSS, .code_HTML {
+  position: relative;
+  margin: 40px 0;
+}
+
+.preview-code {
+  width: 90%;
+  padding: 10px;
+  background-color: rgb(114, 136, 133, 0.3);
+  border: 1px solid rgb(184, 184, 184, 0.3);
+}
+
+.label_css, .label_html {
+  position: absolute;
+  text-align: center;
+  left: 0;
+  top: -26px;
+  width: 70px;
+  height: 20px;
+  border-radius: 10px 10px 0 0;
+  background-color: rgb(146, 146, 204, 0.3);
+  padding: 3px;
+}
+
+.label_css {
+  background-color: rgb(236, 205, 147, 0.3);
+}
+
+.copy_css, .copy_html {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid rgba(240, 240, 240, 0.3);
+  background-color: rgba(240, 240, 240, 0.3);
+  text-align: center;
+  font-size: smaller;
+}

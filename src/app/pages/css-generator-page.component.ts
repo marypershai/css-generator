@@ -14,8 +14,10 @@ class CSSGeneratorPageComponent extends DMComponent {
 export const cssGeneratorPageComponent = new CSSGeneratorPageComponent({
   selector: 'app-css-generator-page',
   template: `
-    <app-css-component-menu></app-css-component-menu>
-    <app-css-component-layout></app-css-component-layout>
+    <div class="css_generator_body">
+      <app-css-component-menu class="css_generator_menu"></app-css-component-menu>
+      <app-css-component-layout class="css_generator_layoyt"></app-css-component-layout>
+    </div>
   `,
   childComponents: [cssComponentMenuComponent, cssComponentLayoutComponent],
 });
