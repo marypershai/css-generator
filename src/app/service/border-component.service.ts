@@ -1,7 +1,10 @@
 export const borderService = {
-  randomNumber : 0,
-  generateRandomNumber() {
-    this.randomNumber = Math.random();
-    return this.randomNumber;
+  borderWidth : 1,
+  color: '#000',
+  borderType: 'solid',
+  style: '1px solid #000',
+  createStyle() {
+    this.style = '';
+    return this.style = `border: ${this.borderWidth}px ${this.color} ${this.borderType}`;
   },
 };
