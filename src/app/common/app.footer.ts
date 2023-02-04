@@ -21,9 +21,9 @@ export const appFooter = new AppFooter({
 
             <div class="footer__general">
               <div class="footer__students">
-                <a class="link" href="https://github.com/marypershai">Maryia Piarshai</a>
-                <a class="link" href="https://github.com/bartoshevich">Dmitry Bartoshevich</a>
+                <a class="link" href="https://github.com/marypershai">Maryia Piarshai</a>                
                 <a class="link" href="https://github.com/4Quark">Maria Samoilova</a>
+                <a class="link" href="https://github.com/bartoshevich">Dmitry Bartoshevich</a>
               </div>
               <a class="link" href="https://rs.school/js/" target="_blank" rel="noopener noreferrer">
                 <img loading="lazy" decoding="async" src="./rs_school_js.svg" alt="RSSchool logo" width="200" height="70">

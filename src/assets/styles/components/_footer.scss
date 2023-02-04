@@ -3,24 +3,60 @@
   padding: 3em 0 1em 0;
   font-size: 16px;
   font-weight: 700;
-  &__content {
-    display: flex;
+}
+
+.footer__content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5em;
+
+  @media (min-width: $mobile) {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
   }
-  &__copyright,
-  &__general {
-    display: flex;
-    gap: 1.2em;
+}
+
+
+.footer__copyright {
+  @media (max-width: $mobile) {
+    margin-left: 23px;
   }
-  &__students {
+}
+
+.footer__copyright,
+.footer__general {
+  display: flex;
+  gap: 1.2em;
+}
+
+
+.footer__general {
+  @media(max-width: 450px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3em;
+  }
+}
+
+
+.footer__students {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .8em;
+
+  @media(min-width: 450px) {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     justify-content: flex-end;
     gap: .4em;
     position: relative;
+
     &::after {
       content: "|";
       display: block;
@@ -32,17 +68,19 @@
       font-weight: 400;
     }
   }
-  &__year {
-    position: relative;
-    &::after {
-      content: "|";
-      display: block;
-      height: 20px;
-      right: -11px;
-      position: absolute;
-      top: 3px;
-      font-size: 12px;
-      font-weight: 700;
-    }
+}
+
+.footer__year {
+  position: relative;
+
+  &::after {
+    content: "|";
+    display: block;
+    height: 20px;
+    right: -11px;
+    position: absolute;
+    top: 3px;
+    font-size: 12px;
+    font-weight: 700;
   }
 }
