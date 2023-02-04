@@ -1,11 +1,13 @@
 import { ComponentConfig } from '../../framework/tools/interfaces';
 import { DMComponent } from '../../framework/index';
 import { closeMenu, toggleMenu } from '../service/controlMenu';
+import { switchingOnLoad, switchThemeOnClick } from '../service/switchThemes';
 
 
 export class AppHeader extends DMComponent {
   constructor(config: ComponentConfig) {
     super(config);
+    switchingOnLoad();
   }
 
   public isMenuOpen = false;
@@ -22,6 +24,8 @@ export class AppHeader extends DMComponent {
       toggleMenu();
     } else if (target.classList.contains('menu-item')) {
       closeMenu();
+    } else if (target.closest('.theme-switcher')) {
+      switchThemeOnClick();
     }
   }
 
@@ -62,7 +66,7 @@ export const appHeader = new AppHeader({
                   <li><button class="language-switcher-item" tabindex="0" aria-label="english">Eng</button></li>
                   <li><button class="language-switcher-item language-switcher-item--active" tabindex="0" aria-label="russian">Rus</button></li>               
                 </ul>     
-                <button class="theme-switcher button" aria-label="theme switcher">
+                <button class="theme-switcher" aria-label="theme switcher" aria-live="polite">
                   <img src="./light.svg" alt="" width="30" height="30">                
                 </button>
               </div>

@@ -1,22 +1,91 @@
-$footer-bgcolor: #ededed;
-$text-colour: #1d1d1f;	
-$text-secondary-colour: #e7edee;
+html {
+  block-size: 100%;
+  color-scheme: light;
+  --background-color: #fafafa;
+  --selected-bg-color:#e7e7e8; 
+  --text-colour: #1d1d1f;
+  --secondary-text-colour: #515154;
+  --logo-color: #ed7d31;
+  --gray:#eaeaea; 
+  --footer-bgcolor: #ededed;
+  --link:  #1d1d1f;
+  --link-hover:  #1d1d1f;
+  --link-active: #1d1d1f;
+  --link-bg:  #beff5c; 
+  --radio-focus: #1d1d1f;
+  --button-hover: #ffd24d;
+  --button-active: #ffb900;
+  --table-bg-color: #fbfbfd;
+  --table-border-top: #b5b5b5;
+  --table-border-td: #86868b;
+  --table-bg-th: #f2f2f2; 
+  --video-border: #eaeaea;
+  --theme-button: #fafafa;
+}
 
-$subtitle: #ed7d31;
+html[data-theme=dark] {
+  color-scheme: dark;
+  --background-color: #252525;
+  --selected-bg-color: rgb(63, 63, 63);
+  --text-colour: #fefefe;
+  --secondary-text-colour: #aeaeab;
+  --logo-color: #de425b;
+  --gray:#464646; 
+  --link:  rgb(250, 250, 250);
+  --link-hover:  rgb(250, 250, 250);
+  --link-active: rgb(250, 250, 250);
+  --link-bg:  #0a50c2; 
+  --radio-focus: #0a50c2;
+  --icon-filter_hover: invert(60%);
+  --icon-filter: invert(100%);
+  --icon-filter_hover: invert(40%);
+  --image-filter: grayscale(40%); //brightness(.8) contrast(1.2); 
+  --table-bg-color: #292929;
+  --table-border-top: #4a4a4a;
+  --table-border-td: #797974;
+  --table-bg-th: #2f2f2f;
+  --video-border: #252525;
+  --theme-button: #aeaeab;
+}
+
+[data-theme=dark] img {
+  filter: var(--image-filter);
+}
+
+[data-theme=dark] .svg {
+  filter: var(--icon-filter);
+}
+
+@supports not (color-scheme: dark) {
+  html[data-theme=dark] {
+      background: #232323;
+  }
+}
+
+
+
+
+
+$footer-bgcolor: var(--gray);
+$text-colour: var(--text-colour);	
+$text-secondary-colour: var(--secondary-text-colour);
+
+$subtitle: var(--logo-color);
 
 
 /* Links */
-$link: #1d1d1f;	
-$link-hover: #1d1d1f;	
-$link-active: #1d1d1f;	
-$link-bg: #beff5c; 
-$link-focus: #1d1d1f;	
+$link: var(--link);	
+$link-hover: var(--link-hover);	
+$link-active: var(--link-active);	
+$link-bg: var(--link-bg); 
+$link-focus: var(--radio-focus);	
 $breadcrumb: rgba($color: $text-colour, $alpha: .6); 
 
 
 $mobile: 930px;
 
 
-$button--hover: #ffd24d;
-$button--active: #ffb900;
-$lang-button-bg: #fff;
+$button--hover: var(--button-hover);
+$button--active: var(--button-active);
+$lang-button-bg: var(--background-color);
+$theme-button: var(--theme-button);
