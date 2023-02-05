@@ -1,11 +1,17 @@
 
+.css_subheader {
+  font-size: larger;
+  white-space: nowrap;
+  margin: 10px 0;
+}
 
 .css_generator_body {
   display: flex;
 }
 
 .css_generator_menu {
-  border: 1px solid gray;
+  padding: 10px;
+  border: 1px solid rgb(184, 184, 184, 0.3);
 }
 
 .css_generator_layoyt {
@@ -17,7 +23,7 @@
 }
 
 .css_generator_settings {
-  border: 1px solid gray;
+  border: 1px solid rgb(184, 184, 184, 0.3);
   padding: 10px;
   width: 50%;
 }
@@ -29,21 +35,26 @@
 }
 
 .css_generator_preview {
-  border: 1px solid gray;
+  border: 1px solid rgb(184, 184, 184, 0.3);
   padding: 10px;
 }
 
 .css_generator_code {
-  border: 1px solid gray;
+  border: 1px solid rgb(184, 184, 184, 0.3);
   padding: 10px;
 }
 
-
-
 .list_subheading {
+  white-space: nowrap;
   font-weight: 700;
+  padding: 5px 0;
 }
 
+.css_component {
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 4px 0;
+}
 
 .code_CSS, .code_HTML {
   position: relative;
