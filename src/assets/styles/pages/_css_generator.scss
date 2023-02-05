@@ -1,47 +1,53 @@
-
-.css_subheader {
-  font-size: larger;
-  white-space: nowrap;
-  margin: 10px 0;
-}
-
 .css_generator_body {
   display: flex;
-}
-
-.css_generator_menu {
-  padding: 10px;
   border: 1px solid rgb(184, 184, 184, 0.3);
-}
-
-.css_generator_layoyt {
-  width: 100%;
 }
 
 .component-content {
   display: flex;
 }
 
+.css_generator_menu {
+  padding: 10px;
+  height: 80vh;
+  min-width: 170px;
+  overflow: scroll;
+}
+
+.css_generator_layoyt {
+  width: 100%;
+}
+
 .css_generator_settings {
-  border: 1px solid rgb(184, 184, 184, 0.3);
   padding: 10px;
   width: 50%;
+  height: 80vh;
+  overflow: scroll;
+  border-left: 1px solid rgb(184, 184, 184, 0.3);
+  border-right: 1px solid rgb(184, 184, 184, 0.3);
 }
 
 .css_generator_result {
   display: flex;
   flex-direction: column;
   width: 50%;
+  height: 80vh;
+  overflow: scroll;
 }
 
 .css_generator_preview {
-  border: 1px solid rgb(184, 184, 184, 0.3);
   padding: 10px;
+  border-bottom: 1px solid rgb(184, 184, 184, 0.3);
 }
 
 .css_generator_code {
-  border: 1px solid rgb(184, 184, 184, 0.3);
   padding: 10px;
+}
+
+.css_subheader {
+  font-size: larger;
+  white-space: nowrap;
+  margin: 10px 0;
 }
 
 .list_subheading {
@@ -92,3 +98,9 @@
   text-align: center;
   font-size: smaller;
 }
+
+input[type=range] {
+  width: 200px;
+}
+
+
