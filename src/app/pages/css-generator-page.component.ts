@@ -7,8 +7,6 @@ class CSSGeneratorPageComponent extends DMComponent {
   constructor(config: ComponentConfig) {
     super(config);
   }
-
-
 }
 
 export const cssGeneratorPageComponent = new CSSGeneratorPageComponent({

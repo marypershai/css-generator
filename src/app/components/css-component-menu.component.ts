@@ -35,7 +35,6 @@ export class CssComponentMenuComponent extends DMComponent {
           cssComponentLayoutComponent.render();
         }
       }
-
     }
   }
 }

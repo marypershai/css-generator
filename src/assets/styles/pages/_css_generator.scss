@@ -2,6 +2,9 @@
   display: flex;
   border-top: 1px solid rgb(184, 184, 184, 0.3);
   border-bottom: 1px solid rgb(184, 184, 184, 0.3);
+  @media (max-width: $mobile) {
+    flex-direction: column;
+  }
 }
 
 .component-content {
@@ -17,7 +20,16 @@
   min-width: 170px;
   overflow: scroll;
   @media (max-width: $mobile) {
-    display: none;
+    height: 100%;
+  }
+}
+
+.css_components_list {
+  @media (max-width: $mobile) {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 30px;
   }
 }
 
