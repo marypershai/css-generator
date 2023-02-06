@@ -36,6 +36,7 @@ export class AppHeader extends DMComponent {
               <span></span>
               <span></span>
             </button>
+
             <div class="header__menu">
               
               <nav role="navigation" aria-label="Main navigation">
@@ -56,8 +57,53 @@ export class AppHeader extends DMComponent {
                   <img src="./light.svg" alt="" width="30" height="30">                
                 </button>
               </div>
+
             </div>      
+
           </header>
+    `;
+  }
+
+  private events(): Record<string, string> {
+    return {
+      'click .header': 'handleControlClicks',
+      'click .language-switcher': 'changeLang',
+    };
+  }
+
+  private handleControlClicks(event: Event): void {
+    const target = event.target as HTMLElement;
+    if (target.closest('.menu__button')) {
+      toggleMenu();
+    } else if (target.classList.contains('menu-item')) {
+      closeMenu();
+    } else if (target.closest('.theme-switcher')) {
+      switchThemeOnClick();
+    }
+  }
+
+  private changeLang(event: Event): void {
+    const target = event.target as HTMLElement;
+    const langSwitcherText = target.getAttribute('aria-label');
+    if (langSwitcherText === 'english') {
+      localStorage.setItem('lang', 'en');
+    } else {
+      localStorage.setItem('lang', 'ru');
+    }
+    this.createContent();
+    this.render();
+    if (router.getUrl() === 'css-generator') {
+      cssComponentMenuComponent.createContent();
+      cssComponentMenuComponent.render();
+    }
+
+  }
+
+}
+
+export const appHeader = new AppHeader({
+  selector: 'app-header',
+  template: '',
     `;
   }
 
