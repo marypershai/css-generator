@@ -6,16 +6,23 @@ import { cssComponentLayoutComponent } from '../components/css-component-layout.
 class CSSGeneratorPageComponent extends DMComponent {
   constructor(config: ComponentConfig) {
     super(config);
+    this.createContent();
+  }
+
+  createContent(): void {
+    this.template = `
+    <div class="css_generator_body">
+      <app-css-component-menu class="css_generator_menu"></app-css-component-menu>
+      <app-css-component-layout class="css_generator_layout"></app-css-component-layout>
+    </div>
+    `;
   }
 }
 
 export const cssGeneratorPageComponent = new CSSGeneratorPageComponent({
   selector: 'app-css-generator-page',
   template: `
-    <div class="css_generator_body">
-      <app-css-component-menu class="css_generator_menu"></app-css-component-menu>
-      <app-css-component-layout class="css_generator_layoyt"></app-css-component-layout>
-    </div>
+    
   `,
   childComponents: [cssComponentMenuComponent, cssComponentLayoutComponent],
 });

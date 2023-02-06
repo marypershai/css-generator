@@ -50,7 +50,6 @@ export function switchingOnLoad(): void {
   window.addEventListener('DOMContentLoaded', () => {
     const theme = getColorPreference();
     reflectPreference(theme);
-    console.log('loding');
   });
 
 }
