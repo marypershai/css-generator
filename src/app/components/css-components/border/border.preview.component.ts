@@ -13,7 +13,7 @@ export class BorderComponentPreview extends DMComponent {
     borderService.createStyle();
     this.template = `
     <h2 class="css_subheader"> Preview </h2>
-    <div class="preview-rectangle" style="width: 90%; height: 30vh; margin: 10px; background-color: white; ${borderService.style}"></div>
+    <div class="preview-rectangle" style="width: 90%; height: 30vh; margin: 10px; background-color: #e0dbd3; ${borderService.style}"></div>
     `;
   }
 }
