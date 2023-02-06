@@ -48,7 +48,7 @@ export class BorderComponentSettings extends DMComponent {
 export const borderComponentSettings = new BorderComponentSettings({
   selector: 'app-border-settings',
   template: `
-    <p><b>Settings</b></p>
+    <h2 class="css_subheader"> Customizing </h2>
     <br>
     <p>Color</p>
     <input class="input--border-color" type="color" value="#000000">
