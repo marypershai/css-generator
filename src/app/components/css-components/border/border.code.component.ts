@@ -1,6 +1,8 @@
 import { ComponentConfig } from '../../../../framework/tools/interfaces';
 import { DMComponent } from '../../../../framework/index';
 import { borderService } from '../../../service/border-component.service';
+import { copyTextToClipboard } from '../../../service/copy.service';
+import { changeTooltipStatus } from '../../../service/copy.service';
 
 
 export class BorderComponentCode extends DMComponent {
@@ -18,7 +20,12 @@ export class BorderComponentCode extends DMComponent {
       <div class="preview-code preview_css">
         ${borderService.style};
       </div>
-      <div class="copy_css">Copy</div>
+      <div class="tooltip">
+        <button class="copy_css">
+            <span class="tooltiptext">Copy to clipboard</span>
+        Copy
+        </button>
+      </div>
     </div>
     <div class="code_HTML">
       <div class="label_html">HTML</div>
@@ -28,6 +35,21 @@ export class BorderComponentCode extends DMComponent {
       <div class="copy_html">Copy</div>
     </div>
     `;
+  }
+
+  public events(): Record<string, string> {
+    return {
+      'click .copy_css': 'copyCssCode',
+      'mouseover .tooltip': 'changeTooltip',
+    };
+  }
+
+  private copyCssCode(): void {
+    copyTextToClipboard(borderService.style);
+  }
+
+  private changeTooltip(): void {
+    changeTooltipStatus();
   }
 }
 
