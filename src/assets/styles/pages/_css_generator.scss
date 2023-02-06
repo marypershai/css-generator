@@ -1,49 +1,95 @@
-
-
 .css_generator_body {
   display: flex;
+  border-top: 1px solid rgb(184, 184, 184, 0.3);
+  border-bottom: 1px solid rgb(184, 184, 184, 0.3);
+  @media (max-width: $mobile) {
+    flex-direction: column;
+  }
+}
+
+.component-content {
+  display: flex;
+  @media (max-width: $mobile) {
+    flex-direction: column;
+  }
 }
 
 .css_generator_menu {
-  border: 1px solid gray;
+  padding: 10px;
+  height: 80vh;
+  min-width: 170px;
+  overflow: scroll;
+  @media (max-width: $mobile) {
+    height: 100%;
+  }
+}
+
+.css_components_list {
+  @media (max-width: $mobile) {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 30px;
+  }
 }
 
 .css_generator_layoyt {
   width: 100%;
 }
 
-.component-content {
-  display: flex;
-}
-
 .css_generator_settings {
-  border: 1px solid gray;
   padding: 10px;
   width: 50%;
+  height: 80vh;
+  overflow: scroll;
+  border-left: 1px solid rgb(184, 184, 184, 0.3);
+  border-right: 1px solid rgb(184, 184, 184, 0.3);
+  @media (max-width: $mobile) {
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid rgb(184, 184, 184, 0.3);
+    border-left: none;
+    border-right: none;
+  }
 }
 
 .css_generator_result {
   display: flex;
   flex-direction: column;
   width: 50%;
+  height: 80vh;
+  overflow: scroll;
+  @media (max-width: $mobile) {
+    width: 100%;
+  }
 }
 
 .css_generator_preview {
-  border: 1px solid gray;
   padding: 10px;
+  border-bottom: 1px solid rgb(184, 184, 184, 0.3);
 }
 
 .css_generator_code {
-  border: 1px solid gray;
   padding: 10px;
 }
 
-
-
-.list_subheading {
-  font-weight: 700;
+.css_subheader {
+  font-size: larger;
+  white-space: nowrap;
+  margin: 10px 0;
 }
 
+.list_subheading {
+  white-space: nowrap;
+  font-weight: 700;
+  padding: 5px 0;
+}
+
+.css_component {
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 4px 0;
+}
 
 .code_CSS, .code_HTML {
   position: relative;
@@ -81,3 +127,9 @@
   text-align: center;
   font-size: smaller;
 }
+
+input[type=range] {
+  width: 200px;
+}
+
+

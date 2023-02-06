@@ -11,7 +11,7 @@ export class BorderComponentCode extends DMComponent {
 
   createBorderComponentCode() {
     this.template = `
-    <h4>Code</h4>
+    <h2 class="css_subheader"> Code </h2>
     <p>Paste to your file(s)</p>
     <div class="code_CSS">
       <div class="label_css">CSS</div>
