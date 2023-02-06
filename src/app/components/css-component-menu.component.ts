@@ -3,6 +3,7 @@ import { DMComponent } from '../../framework/index';
 import { cssComponentLayoutComponent } from './css-component-layout.component';
 import { allCssComponents } from '../../framework/tools/components';
 import { checkLang } from '../service/lang.service';
+import { renderingService } from '../service/rendering.service';
 
 
 export class CssComponentMenuComponent extends DMComponent {
@@ -60,21 +61,33 @@ export class CssComponentMenuComponent extends DMComponent {
   private chooseComponent(event: Event) {
     const targetEl = event.target as HTMLElement;
     if (targetEl.classList.contains('css_component')) {
+      renderingService.reset();
       const menuItem: string | null = targetEl.getAttribute('data-component');
       if (menuItem) {
         cssComponentLayoutComponent.template = `
         <app-${menuItem}></app-${menuItem}>
         `;
-        const componentName = allCssComponents.find((component) => {
+        const compntName = allCssComponents.find((component) => {
           if (component.name === menuItem) {
             return component;
           }
         });
-        if (componentName) {
+        if (compntName) {
           cssComponentLayoutComponent.childComponents = [];
-          cssComponentLayoutComponent.childComponents.push(componentName.component);
+          cssComponentLayoutComponent.childComponents.push(compntName.component);
           cssComponentLayoutComponent.render();
-          localStorage.setItem('component', componentName.name);
+          compntName.component.createContent();
+          compntName.component.render();
+          if (compntName.component.childComponents.length > 0) {
+            compntName.component.childComponents.forEach((component) => {
+              component.createContent();
+              component.render();
+            });
+          }
+
+          renderingService.componentName = compntName.name;
+          console.log(renderingService);
+          localStorage.setItem('component', compntName.name);
         }
       }
     }

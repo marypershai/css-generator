@@ -4,6 +4,8 @@ import { closeMenu, toggleMenu } from '../service/controlMenu';
 import { switchingOnLoad, switchThemeOnClick } from '../service/switchThemes';
 import { checkLang } from '../service/lang.service';
 import { cssComponentMenuComponent } from '../components/css-component-menu.component';
+import { allCssComponents } from '../../framework/tools/components';
+import { renderingService } from '../service/rendering.service';
 
 
 export class AppHeader extends DMComponent {
@@ -90,8 +92,24 @@ export class AppHeader extends DMComponent {
     if (router.getUrl() === 'css-generator') {
       cssComponentMenuComponent.createContent();
       cssComponentMenuComponent.render();
+      const savedComponentName = localStorage.getItem('component');
+      const componentName = allCssComponents.find((component) => {
+        if (component.name === savedComponentName) {
+          return component;
+        }
+      });
+      if (componentName) {
+        componentName.component.createContent();
+        componentName.component.render();
+        if (componentName.component.childComponents.length > 0) {
+          componentName.component.childComponents.forEach((component) => {
+            component.createContent();
+            component.render();
+          });
+        }
+      }
+      renderingService.reset();
     }
-
   }
 
 }

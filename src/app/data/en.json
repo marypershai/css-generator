@@ -4,5 +4,9 @@
   "game": "Game",
   "aboutPage": "About",
   "properties" : "Properties",
-  "preview": "Preview"
+  "preview": "Preview",
+  "configuration": "Customizing",
+  "code": "Code",
+  "copy": "Copy",
+  "helpText": "Paste to your file(s)"
 }

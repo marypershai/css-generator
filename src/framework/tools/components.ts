@@ -1,5 +1,5 @@
-import { boxShadowComponent } from '../../app/components/css-components/box-shadow/box-shadow.component';
-import { borderComponent } from '../../app/components/css-components/border/border.component';
+import { boxShadowComponent } from '../../app/components/css-components/box-shadow.component';
+import { borderComponent } from '../../app/components/css-components/border.component';
 
 export const allCssComponents  = [
   {
