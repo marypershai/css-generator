@@ -20,3 +20,4 @@ export const gamePageComponent = new GamePageComponent({
             `,
   childComponents: [gameComponentMenuComponent, gameComponentFieldComponent],
 });
+

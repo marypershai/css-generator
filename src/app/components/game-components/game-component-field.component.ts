@@ -10,12 +10,17 @@ export class GameComponentFieldComponent extends DMComponent {
 export const gameComponentFieldComponent = new GameComponentFieldComponent({
   selector: 'app-game-field',
   template: `
-            <div class="game_field">
+            <div class="field_deadline">
               <div class="fire">
-              FIRE
-                <div class="fire_yellow">
+                <div class="fire_yellow"></div>
+                <div class="fire_yellow"></div>
+                <div class="fire_yellow"></div>
               </div>
-              <div class="sloths"></div>
+              <div class="sloths">
+                <div class="sloth_yellow"></div>
+                <div class="sloth_yellow"></div>
+                <div class="sloth_yellow"></div>
+              </div>
             </div>
             `,
   childComponents: [],
