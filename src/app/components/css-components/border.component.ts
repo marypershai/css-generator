@@ -20,28 +20,39 @@ export class BorderComponent extends DMComponent {
         <div class="css_generator_settings">
             <h2 class="css_subheader">${lang.configuration}</h2>
             <br>
-            <p>Color</p>
-            <input class="input--border-color" type="color" value="${borderService.color}">
-            <input class="input--border-color-value" type="text" value="${borderService.color}" disabled>
-            <br>
-            <br>
-            <p>Style</p>
-            <select class="select--border-style">
-              <option value="solid">Solid</option>
-              <option value="dotted">Dotted</option>
-              <option value="dashed">Dashed</option>
-              <option value="double">Double</option>
-              <option value="groove">Groove</option>
-              <option value="ridge">Ridge</option>
-              <option value="inset">Inset</option>
-              <option value="outset">Outset</option>
-            </select>
-            <br>
-            <br>
-            <p>Width </p>
-            <input class="input-component--range input--border-width" type="range" min="0" max="20" step="1" value="${borderService.borderWidth}">
-            <br>
-            <br>
+            <div class="setting-container">
+                <p class="setting-title">Color</p>
+                <div class="input--color-block">
+                  <div class="input--color-block-left">
+                      <input id="border-color" class="input-color" type="color" value="${borderService.color}">
+                  </div>
+                  <div class="input--color-block-right">
+                      <input class="input-color input-color-value" type="text" value="${borderService.color}" disabled>
+                  </div>
+                </div>
+            </div>
+            
+            <div class="setting-container">
+                <p class="setting-title">Style</p>
+                <select class="select--border-style custom-select">
+                  <option value="solid">Solid</option>
+                  <option value="dotted">Dotted</option>
+                  <option value="dashed">Dashed</option>
+                  <option value="double">Double</option>
+                  <option value="groove">Groove</option>
+                  <option value="ridge">Ridge</option>
+                  <option value="inset">Inset</option>
+                  <option value="outset">Outset</option>
+                </select>
+            </div>
+            <div class="setting-container">
+                <p class="setting-title">Width</p>
+                <input id="border-width" type="range" min="0" max="20" step="1" value="${borderService.borderWidth}">
+                <div class="range__info">
+                    <div class="range__info-min">0</div>
+                    <div class="range__info-max">20</div> 
+                </div>
+            </div>
         </div>
     `;
 
@@ -63,8 +74,8 @@ export class BorderComponent extends DMComponent {
 
   public events(): Record<string, string> {
     return {
-      'change .input--border-width': 'changeBorderWidth',
-      'change .input--border-color': 'changeBorderColor',
+      'change #border-width': 'changeBorderWidth',
+      'change #border-color': 'changeBorderColor',
       'change .select--border-style': 'changeBorderStyle',
     };
   }
@@ -78,7 +89,7 @@ export class BorderComponent extends DMComponent {
   private changeBorderColor(event: Event): void {
     const target = event.currentTarget as HTMLInputElement;
     borderService.color = target.value;
-    (document.querySelector('.input--border-color-value') as HTMLInputElement).value = target.value;
+    (document.querySelector('.input-color-value') as HTMLInputElement).value = target.value;
     this.renderLayout();
   }
 
