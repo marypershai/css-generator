@@ -28,7 +28,7 @@ export class Component {
   }
 
   public createContent(): void {
-    console.log('createContenyt');
+    console.log('createContent');
   }
 
   private initEvents(): void {

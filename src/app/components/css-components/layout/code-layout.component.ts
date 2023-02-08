@@ -55,7 +55,6 @@ export class CodeLayoutComponent extends DMComponent {
   }
 
   private copyCssCode(): void {
-    console.log(renderingService.codeCSS);
     if (renderingService.codeCSS) {
       copyTextToClipboard(renderingService.codeCSS);
     }

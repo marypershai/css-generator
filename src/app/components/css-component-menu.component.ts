@@ -1,4 +1,4 @@
-import { ComponentConfig } from '../../framework/tools/interfaces';
+import { ComponentConfig, Components } from '../../framework/tools/interfaces';
 import { DMComponent } from '../../framework/index';
 import { cssComponentLayoutComponent } from './css-component-layout.component';
 import { allCssComponents } from '../../framework/tools/components';
@@ -67,27 +67,27 @@ export class CssComponentMenuComponent extends DMComponent {
         cssComponentLayoutComponent.template = `
         <app-${menuItem}></app-${menuItem}>
         `;
-        const compntName = allCssComponents.find((component) => {
+        const componetName = allCssComponents.find((component) => {
           if (component.name === menuItem) {
             return component;
           }
         });
-        if (compntName) {
+        if (componetName) {
           cssComponentLayoutComponent.childComponents = [];
-          cssComponentLayoutComponent.childComponents.push(compntName.component);
+          cssComponentLayoutComponent.childComponents.push(componetName.component);
           cssComponentLayoutComponent.render();
-          compntName.component.createContent();
-          compntName.component.render();
-          if (compntName.component.childComponents.length > 0) {
-            compntName.component.childComponents.forEach((component) => {
+          componetName.component.createContent();
+          componetName.component.render();
+          if (componetName.component.childComponents.length > 0) {
+            componetName.component.childComponents.forEach((component: Components) => {
               component.createContent();
               component.render();
             });
           }
 
-          renderingService.componentName = compntName.name;
-          console.log(renderingService);
-          localStorage.setItem('component', compntName.name);
+          renderingService.componentName = componetName.name;
+
+          localStorage.setItem('component', componetName.name);
         }
       }
     }
