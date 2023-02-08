@@ -6,6 +6,7 @@ import { checkLang } from '../service/lang.service';
 import { cssComponentMenuComponent } from '../components/css-component-menu.component';
 import { allCssComponents } from '../../framework/tools/components';
 import { renderingService } from '../service/rendering.service';
+import { gameComponentMenuComponent } from '../components/game-components/game-component-menu.component';
 
 
 export class AppHeader extends DMComponent {
@@ -112,6 +113,10 @@ export class AppHeader extends DMComponent {
         }
       }
       renderingService.reset();
+    }
+    if (router.getUrl() === 'game') {
+      gameComponentMenuComponent.createContent();
+      gameComponentMenuComponent.render();
     }
   }
 

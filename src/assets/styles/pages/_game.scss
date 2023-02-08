@@ -127,3 +127,11 @@
   margin: 30px;
   border-radius: 50%;
 }
+
+.game_disclaimer {
+  font-size: small;
+  a {
+    color: $text-colour;
+    text-decoration: none;
+  }
+}
