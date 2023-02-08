@@ -92,6 +92,8 @@ export class BorderComponent extends DMComponent {
     borderService.createStyle();
     renderingService.codeCSS = borderService.style;
     renderingService.preview = `<div class="preview-rectangle" style="${borderService.style}"></div>`;
+    console.log('render');
+    console.log(renderingService);
     previewLayoutComponent.createContent();
     previewLayoutComponent.render();
     codeLayoutComponent.createContent();
