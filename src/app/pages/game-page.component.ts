@@ -8,6 +8,7 @@ class GamePageComponent extends DMComponent {
   constructor(config: ComponentConfig) {
     super(config);
   }
+  
 }
 
 export const gamePageComponent = new GamePageComponent({

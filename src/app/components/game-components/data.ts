@@ -28,6 +28,14 @@ export const levels = [
                 Например, <code> justify-content: flex-end;</code> сдвинет ленивца вправо.  
               </div>`,
     },
+    field: `<div class="field_deadline">
+              <div class="fire" style="justify-content: flex-end;">
+                <div class="fire_yellow"></div>
+              </div>
+              <div class="sloths">
+                <div class="sloth_yellow"></div>
+              </div>
+            </div>`,
   },
 
   {
@@ -56,6 +64,16 @@ export const levels = [
                 </ul>
               </div>`,
     },
+    field: `<div class="field_deadline">
+              <div class="fire" style="justify-content: center;">
+                <div class="fire_yellow"></div>
+                <div class="fire_blue"></div>
+              </div>
+              <div class="sloths">
+                <div class="sloth_yellow"></div>
+                <div class="sloth_blue"></div>
+              </div>
+            </div>`,
   },
   
   {
@@ -70,6 +88,18 @@ export const levels = [
               <div class="game_info"> Помоги всем трём ленивцам, используя <code>justify-content</code>. В этот раз у лилий много пространства вокруг. Если ты чувствуешь, что забыл возможные значения свойства, ты можешь навести курсор на название свойства, чтобы посмотреть их. Попробуй навести курсор на <code>justify-content</code>.
               </div>`,
     },
+    field: `<div class="field_deadline">
+              <div class="fire" style="justify-content: space-around;">
+                <div class="fire_yellow"></div>
+                <div class="fire_red"></div>
+                <div class="fire_blue"></div>
+              </div>
+              <div class="sloths">
+                <div class="sloth_yellow"></div>
+                <div class="sloth_red"></div>
+                <div class="sloth_blue"></div>
+              </div>
+            </div>`,
   },
   
   {
@@ -84,6 +114,18 @@ export const levels = [
               <div class="game_info"> В этот раз у пламени одинаковое расстояние между ними. Используй <code>justify-content</code>. 
               </div>`,
     },
+    field: `<div class="field_deadline">
+              <div class="fire" style="justify-content: space-between;">
+                <div class="fire_yellow"></div>
+                <div class="fire_red"></div>
+                <div class="fire_blue"></div>
+              </div>
+              <div class="sloths">
+                <div class="sloth_yellow"></div>
+                <div class="sloth_red"></div>
+                <div class="sloth_blue"></div>
+              </div>
+            </div>`,
   },
   
   {
@@ -112,6 +154,18 @@ export const levels = [
                 </ul>
               </div>`,
     },
+    field: `<div class="field_deadline">
+              <div class="fire" style="align-items: flex-end;">
+                <div class="fire_yellow"></div>
+                <div class="fire_red"></div>
+                <div class="fire_blue"></div>
+              </div>
+              <div class="sloths">
+                <div class="sloth_yellow"></div>
+                <div class="sloth_red"></div>
+                <div class="sloth_blue"></div>
+              </div>
+            </div>`,
   },
   
   {
@@ -126,6 +180,14 @@ export const levels = [
               <div class="game_info"> Направь ленивца в центр поля, используя свойства <code>justify-content</code> и <code>align-items</code> вместе.
               </div>`,
     },
+    field: `<div class="field_deadline">
+              <div class="fire" style="justify-content: center; align-items: center;">
+                <div class="fire_yellow"></div>
+              </div>
+              <div class="sloths">
+                <div class="sloth_yellow"></div>
+              </div>
+            </div>`,
   },
   
   {
@@ -140,12 +202,24 @@ export const levels = [
               <div class="game_info"> Ленивцам нужно пересечь поле. Используй комбинацию <code>justify-content</code> и <code>align-items</code>.
               </div>`,
     },
+    field: `<div class="field_deadline">
+              <div class="fire" style="justify-content:space-around; align-items: flex-end;">
+                <div class="fire_yellow"></div>
+                <div class="fire_red"></div>
+                <div class="fire_blue"></div>
+              </div>
+              <div class="sloths">
+                <div class="sloth_yellow"></div>
+                <div class="sloth_red"></div>
+                <div class="sloth_blue"></div>
+              </div>
+            </div>`,
   },
   
   {
     level: 8,
-    prop: 'align-items',
-    value: 'flex-end',
+    prop: 'flex-direction',
+    value: 'row-reverse',
     description: {
       en: `
               <div class="game_info"> Now use <code>align-items</code> to help the sloths meet the burning deadline. This CSS property aligns items vertically and accepts the following values:
@@ -167,6 +241,18 @@ export const levels = [
                 </ul>
               </div>`,
     },
+    field: `<div class="field_deadline">
+              <div class="fire" style="flex-direction: row-reverse;">
+                <div class="fire_yellow"></div>
+                <div class="fire_red"></div>
+                <div class="fire_blue"></div>
+              </div>
+              <div class="sloths">
+                <div class="sloth_yellow"></div>
+                <div class="sloth_red"></div>
+                <div class="sloth_blue"></div>
+              </div>
+            </div>`,
   },
 
 

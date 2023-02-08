@@ -72,8 +72,17 @@
   letter-spacing: 1px;
 }
 
+.game_btn {
+  font-size: large;
+  padding: 6px;
+}
+
+.game_btn:disabled {
+  color: rgba(184, 184, 184, 0.37);
+}
+
 .game_next_btn {
-  width: 60px;
+  width: 80px;
   height: 30px;
   position: absolute;
   right: 5px;
@@ -99,13 +108,33 @@
   }
 }
 
+.field_deadline {
+  height: 100%;
+}
+
 .fire {
   display: flex;
-  justify-content: space-between;
+  height: 100%;
 }
 
 .fire_yellow {
   background-color: yellow;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 20px;
+}
+
+.fire_red {
+  background-color: rgb(255, 72, 0);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 20px;
+}
+
+.fire_blue {
+  background-color: rgb(0, 162, 255);
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -122,6 +151,22 @@
 
 .sloth_yellow {
   background-color: rgb(230, 120, 31);
+  width: 60px;
+  height: 60px;
+  margin: 30px;
+  border-radius: 50%;
+}
+
+.sloth_red {
+  background-color: rgb(230, 89, 84);
+  width: 60px;
+  height: 60px;
+  margin: 30px;
+  border-radius: 50%;
+}
+
+.sloth_blue {
+  background-color: rgb(31, 117, 230);
   width: 60px;
   height: 60px;
   margin: 30px;

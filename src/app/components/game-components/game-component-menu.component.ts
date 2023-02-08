@@ -8,13 +8,15 @@ export class GameComponentMenuComponent extends DMComponent {
 
   constructor(config: ComponentConfig) {
     super(config);
-    this.level = 1;
+    this.level = this.checkLevel();
     this.createContent();
   }
 
   public events(): Record<string, string> {
     return {
       'input .game_code_input': 'codeInput',
+      'click .prev_lvl': 'prevLevel',
+      'click .next_lvl': 'nextLevel',
     };
   }
 
@@ -32,10 +34,16 @@ export class GameComponentMenuComponent extends DMComponent {
     const disclaimerLang = (savedLang === 'ru') ? disclaimer.ru : disclaimer.en;
     const levelLang = (savedLang === 'ru') ? 'Уровень' : 'Level';
     const nextLang = (savedLang === 'ru') ? 'Следующий' : 'Next';
+    const prevDisabling = (this.level === 1) ? 'disabled' : '';
+    const nextDisabling = (this.level === levels.length) ? 'disabled' : '';
     this.template = `
     <div class="game_header">
       <h2 class="game_subheader"> FLEXBOX SLOTHS </h2>
-      <div class="game_level"> ${levelLang} ${this.level} </div>
+      <div class="game_level"> 
+        <button class="game_btn prev_lvl" ${prevDisabling}> ᐊ </button>
+        ${levelLang} ${this.level} 
+        <button class="game_btn next_lvl" ${nextDisabling}> ᐅ </button>
+      </div>
     </div>
     ${desctiptionLang}
     <div class="game_code-field">
@@ -54,6 +62,29 @@ export class GameComponentMenuComponent extends DMComponent {
     </div>
     <div class="game_disclaimer">${disclaimerLang}</div>
     `;
+  }
+
+  checkLevel() {
+    const savedLevel = localStorage.getItem('gameLevel');
+    let level;
+    if (savedLevel) {
+      level = +savedLevel;
+    } else level = 1;
+    return +level;
+  }
+
+  prevLevel() {
+    this.level -= 1;
+    this.createContent();
+    this.render();
+    localStorage.setItem('gameLevel', this.level.toString());
+  }
+
+  nextLevel() {
+    this.level += 1;
+    this.createContent();
+    this.render();
+    localStorage.setItem('gameLevel', this.level.toString());
   }
 
 }
