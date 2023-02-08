@@ -1,48 +1,21 @@
-import { ComponentConfig } from '../../framework/tools/interfaces';
+import { ComponentConfig, Components } from '../../framework/tools/interfaces';
 import { DMComponent } from '../../framework/index';
 import { cssComponentLayoutComponent } from './css-component-layout.component';
 import { allCssComponents } from '../../framework/tools/components';
+import { checkLang } from '../service/lang.service';
+import { renderingService } from '../service/rendering.service';
 
 
 export class CssComponentMenuComponent extends DMComponent {
   constructor(config: ComponentConfig) {
     super(config);
+    this.createContent();
   }
 
-  public events(): Record<string, string> {
-    return {
-      'click .css_components_list': 'chooseComponent',
-    };
-  }
-
-  private chooseComponent(event: Event) {
-    const targetEl = event.target as HTMLElement;
-    console.log(targetEl);
-    if (targetEl.classList.contains('css_component')) {
-      const menuItem: string | null = targetEl.getAttribute('data-component');
-      if (menuItem) {
-        cssComponentLayoutComponent.template = `
-        <app-${menuItem}></app-${menuItem}>
-        `;
-        const componentName = allCssComponents.find((component) => {
-          if (component.name === menuItem) {
-            return component;
-          }
-        });
-        if (componentName) {
-          cssComponentLayoutComponent.childComponents = [];
-          cssComponentLayoutComponent.childComponents.push(componentName.component);
-          cssComponentLayoutComponent.render();
-        }
-      }
-    }
-  }
-}
-
-export const cssComponentMenuComponent = new CssComponentMenuComponent({
-  selector: 'app-css-component-menu',
-  template: `
-        <h2 class="css_subheader"> Properties </h2>
+  createContent(): void {
+    const { lang } = checkLang();
+    this.template = `
+    <h2 class="css_subheader">${lang.properties}</h2>
         <ul class="css_components_list">
           <ul class="list_subheading">Layout</ul>
             <li class="css_component" data-component="">Flexbox Items</li>
@@ -76,7 +49,53 @@ export const cssComponentMenuComponent = new CssComponentMenuComponent({
           <ul class="list_subheading">Text</ul>
             <li class="css_component" data-component="">Text</li>
             <li class="css_component" data-component="">Text Shadow</li>
-        </ul>   
-  `,
+        </ul>`;
+  }
+
+  public events(): Record<string, string> {
+    return {
+      'click .css_components_list': 'chooseComponent',
+    };
+  }
+
+  private chooseComponent(event: Event) {
+    const targetEl = event.target as HTMLElement;
+    if (targetEl.classList.contains('css_component')) {
+      renderingService.reset();
+      const menuItem: string | null = targetEl.getAttribute('data-component');
+      if (menuItem) {
+        cssComponentLayoutComponent.template = `
+        <app-${menuItem}></app-${menuItem}>
+        `;
+        const componetName = allCssComponents.find((component) => {
+          if (component.name === menuItem) {
+            return component;
+          }
+        });
+        if (componetName) {
+          cssComponentLayoutComponent.childComponents = [];
+          cssComponentLayoutComponent.childComponents.push(componetName.component);
+          cssComponentLayoutComponent.render();
+          componetName.component.createContent();
+          componetName.component.render();
+          if (componetName.component.childComponents.length > 0) {
+            componetName.component.childComponents.forEach((component: Components) => {
+              component.createContent();
+              component.render();
+            });
+          }
+
+          renderingService.componentName = componetName.name;
+
+          localStorage.setItem('component', componetName.name);
+        }
+      }
+    }
+  }
+}
+
+export const cssComponentMenuComponent = new CssComponentMenuComponent({
+  selector: 'app-css-component-menu',
+  template: '',
   childComponents: [],
 });

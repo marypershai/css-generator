@@ -1,0 +1,12 @@
+{
+  "cssGenerator": "Css генератор",
+  "cardGenerator": "Генератор карточки",
+  "game": "Игра",
+  "aboutPage": "О нас",
+  "properties" : "Свойства",
+  "preview": "Предпросмотр",
+  "configuration": "Конфигурация",
+  "code": "Код",
+  "copy": "Копировать",
+  "helpText": "Вставьте этот код в свои файлы"
+}

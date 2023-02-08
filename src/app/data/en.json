@@ -1,0 +1,12 @@
+{
+  "cssGenerator": "Css Generator",
+  "cardGenerator": "Card Generator",
+  "game": "Game",
+  "aboutPage": "About",
+  "properties" : "Properties",
+  "preview": "Preview",
+  "configuration": "Customizing",
+  "code": "Code",
+  "copy": "Copy",
+  "helpText": "Paste to your file(s)"
+}
