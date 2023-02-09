@@ -1,7 +1,7 @@
 import { DMComponent } from '../../framework/index';
 import { ComponentConfig } from '../../framework/tools/interfaces';
-import { cssComponentMenuComponent } from '../components/css-component-menu.component';
-import { cssComponentLayoutComponent } from '../components/css-component-layout.component';
+import { cssComponentMenuComponent } from '../components/css-components/css-component-menu.component';
+import { cssComponentLayoutComponent } from '../components/css-components/css-component-layout.component';
 
 class CSSGeneratorPageComponent extends DMComponent {
   constructor(config: ComponentConfig) {

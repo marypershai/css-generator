@@ -19,7 +19,6 @@ export class BoxShadowComponent extends DMComponent {
     <div class="component-content">
         <div class="css_generator_settings">
             <h2 class="css_subheader">${lang.configuration}</h2>
-            
             <div class="setting-container">
                 <p class="setting-title">X (pixels)</p>
                 <input id="x-pixels" type="range" value="${boxShadowService.xpixels}" step="1" min="-10" max="10">

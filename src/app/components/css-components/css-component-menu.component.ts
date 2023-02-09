@@ -1,9 +1,9 @@
-import { ComponentConfig, Components } from '../../framework/tools/interfaces';
-import { DMComponent } from '../../framework/index';
+import { ComponentConfig, Components } from '../../../framework/tools/interfaces';
+import { DMComponent } from '../../../framework/index';
 import { cssComponentLayoutComponent } from './css-component-layout.component';
-import { allCssComponents } from '../../framework/tools/components';
-import { checkLang } from '../service/lang.service';
-import { renderingService } from '../service/rendering.service';
+import { allCssComponents } from '../../../framework/tools/components';
+import { checkLang } from '../../service/lang.service';
+import { renderingService } from '../../service/rendering.service';
 
 
 export class CssComponentMenuComponent extends DMComponent {
@@ -38,14 +38,7 @@ export class CssComponentMenuComponent extends DMComponent {
             <li class="css_component" data-component="">Scale</li>
             <li class="css_component" data-component="">Skew</li>
           <ul class="list_subheading">Filter</ul>
-            <li class="css_component" data-component="">Blur</li>
-            <li class="css_component" data-component="">Brightness</li>
-            <li class="css_component" data-component="">Contrast</li>
-            <li class="css_component" data-component="">Grayscale</li>
-            <li class="css_component" data-component="">Hue-Rotate</li>
-            <li class="css_component" data-component="">Invert</li>
-            <li class="css_component" data-component="">Saturate</li>
-            <li class="css_component" data-component="">Sepia</li>
+            <li class="css_component" data-component="filter">Image filter</li>
           <ul class="list_subheading">Text</ul>
             <li class="css_component" data-component="">Text</li>
             <li class="css_component" data-component="">Text Shadow</li>
@@ -64,30 +57,28 @@ export class CssComponentMenuComponent extends DMComponent {
       renderingService.reset();
       const menuItem: string | null = targetEl.getAttribute('data-component');
       if (menuItem) {
-        cssComponentLayoutComponent.template = `
-        <app-${menuItem}></app-${menuItem}>
-        `;
-        const componetName = allCssComponents.find((component) => {
+        cssComponentLayoutComponent.template = `<app-${menuItem}></app-${menuItem}>`;
+        const componentName = allCssComponents.find((component) => {
           if (component.name === menuItem) {
             return component;
           }
         });
-        if (componetName) {
+        if (componentName) {
           cssComponentLayoutComponent.childComponents = [];
-          cssComponentLayoutComponent.childComponents.push(componetName.component);
+          cssComponentLayoutComponent.childComponents.push(componentName.component);
           cssComponentLayoutComponent.render();
-          componetName.component.createContent();
-          componetName.component.render();
-          if (componetName.component.childComponents.length > 0) {
-            componetName.component.childComponents.forEach((component: Components) => {
+          componentName.component.createContent();
+          componentName.component.render();
+          if (componentName.component.childComponents.length > 0) {
+            componentName.component.childComponents.forEach((component: Components) => {
               component.createContent();
               component.render();
             });
           }
 
-          renderingService.componentName = componetName.name;
+          renderingService.componentName = componentName.name;
 
-          localStorage.setItem('component', componetName.name);
+          localStorage.setItem('component', componentName.name);
         }
       }
     }
