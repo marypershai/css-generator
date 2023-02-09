@@ -25,7 +25,7 @@ export class AppHeader extends DMComponent {
       <header class="page__container header">
             <div class="header__brand">
               <h1 class="header__title">
-                <a class="header__link" href="/#">
+                <a class="header__link" href="#">
                   style<span class="header__subtitle">It</span>
                 </a>
               </h1>
