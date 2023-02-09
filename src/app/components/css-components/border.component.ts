@@ -19,7 +19,6 @@ export class BorderComponent extends DMComponent {
     <div class="component-content">
         <div class="css_generator_settings">
             <h2 class="css_subheader">${lang.configuration}</h2>
-            <br>
             <div class="setting-container">
                 <p class="setting-title">Color</p>
                 <div class="input--color-block">

@@ -3,7 +3,7 @@ import { DMComponent, router } from '../../framework/index';
 import { closeMenu, toggleMenu } from '../service/controlMenu';
 import { switchingOnLoad, switchThemeOnClick } from '../service/switchThemes';
 import { checkLang } from '../service/lang.service';
-import { cssComponentMenuComponent } from '../components/css-component-menu.component';
+import { cssComponentMenuComponent } from '../components/css-components/css-component-menu.component';
 import { allCssComponents } from '../../framework/tools/components';
 import { renderingService } from '../service/rendering.service';
 import { gamePageComponent } from '../pages/game-page.component';
