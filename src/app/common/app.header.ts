@@ -3,7 +3,7 @@ import { DMComponent, router } from '../../framework/index';
 import { closeMenu, toggleMenu } from '../service/controlMenu';
 import { switchingOnLoad, switchThemeOnClick } from '../service/switchThemes';
 import { checkLang } from '../service/lang.service';
-import { cssComponentMenuComponent } from '../components/css-component-menu.component';
+import { cssComponentMenuComponent } from '../components/css-components/css-component-menu.component';
 import { allCssComponents } from '../../framework/tools/components';
 import { renderingService } from '../service/rendering.service';
 import { gamePageComponent } from '../pages/game-page.component';
@@ -26,7 +26,7 @@ export class AppHeader extends DMComponent {
       <header class="page__container header">
             <div class="header__brand">
               <h1 class="header__title">
-                <a class="header__link" href="/#">
+                <a class="header__link" href="#">
                   style<span class="header__subtitle">It</span>
                 </a>
               </h1>

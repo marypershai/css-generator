@@ -27,22 +27,21 @@ class GamePageComponent extends DMComponent {
 
   private  codeInput(): void {
     const { savedLang } = checkLang();
-    const input: HTMLElement | null = document.querySelector('.game_code_input');
-    if (input instanceof HTMLInputElement) {
-      const sloths: HTMLElement | null = document.querySelector('.sloths');
-      if (sloths instanceof HTMLDivElement) sloths.setAttribute('style', input.value);
-      if (this.answer.every((el) => (input.value.split(' ').join('').includes(el)))) {
-        const nextBtn = document.querySelector('.game_next_btn');
-        if (nextBtn instanceof HTMLButtonElement) nextBtn.disabled = false;
-        const message = document.createElement('div');
-        message.classList.add('game_win_message');
-        message.innerText = `${(savedLang === 'ru') ? 'Правильно!' : 'Correct!'}`;
-        if (sloths) {
-          sloths.append(message);
-          setTimeout(() => message.remove(), 1000);
-        }
-        this.solved(this.level);
+    const input = document.querySelector('.game_code_input') as HTMLInputElement;
+    const sloths = document.querySelector('.sloths') as HTMLDivElement;
+    sloths.setAttribute('style', input.value);
+    const isCorrect = this.answer.every((el) => (input.value.split(' ').join('').includes(el)));
+    if (isCorrect) {
+      const nextBtn = document.getElementById('gameNext') as HTMLButtonElement;
+      nextBtn.disabled = false;
+      const message = document.createElement('div');
+      message.classList.add('game_win_message');
+      message.innerText = `${(savedLang === 'ru') ? 'Правильно!' : 'Correct!'}`;
+      if (sloths) {
+        sloths.append(message);
+        setTimeout(() => message.remove(), 1000);
       }
+      this.solved(this.level);
     }
   }
 
@@ -71,7 +70,7 @@ class GamePageComponent extends DMComponent {
                     <br>
                     <span>}</span>
                     <br>
-                    <button class="game_next_btn" disabled> ${(savedLang === 'ru') ? 'Следующий' : 'Next'} </button>
+                    <button class="game_next_btn" id="gameNext" disabled> ${(savedLang === 'ru') ? 'Следующий' : 'Next'} </button>
                   </div>
                 </div>
                 <div class="game_disclaimer">${(savedLang === 'ru') ? disclaimer.ru : disclaimer.en}</div>

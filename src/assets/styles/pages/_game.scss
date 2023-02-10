@@ -1,5 +1,6 @@
 .game_body {
   display: flex;
+  justify-content: space-around;
   line-height: 1.5;
   @media (max-width: $mobile) {
     flex-direction: column-reverse;
@@ -14,6 +15,10 @@
 
 .game_menu {
   padding: 30px;
+  width: 45vw;
+  @media (max-width: $mobile) {
+    width: 95vw;
+  }
 }
 
 .game_header {
@@ -107,12 +112,15 @@
 .game_field {
   position: relative;
   margin: 20px;
-  width: 100%;
+  width: 45vw;
+  max-width: 800px;
+  height: 35vw;
+  max-height: 800px;
   background-color: rgba(192, 192, 192, 0.377);
   border: 0.5px solid rgba(102, 110, 109, 0.3);
   border-radius: 5px;
   @media (max-width: $mobile) {
-    width: 90%;
+    width: 95vw;
     height: 50vh;
     margin: 0 auto;
   }

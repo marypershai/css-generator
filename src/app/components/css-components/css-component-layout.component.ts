@@ -1,5 +1,5 @@
-import { ComponentConfig } from '../../framework/tools/interfaces';
-import { DMComponent } from '../../framework/index';
+import { ComponentConfig } from '../../../framework/tools/interfaces';
+import { DMComponent } from '../../../framework/index';
 
 
 export class CssComponentLayoutComponent extends DMComponent {

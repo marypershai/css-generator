@@ -7,13 +7,22 @@
 .preview-block{
     min-height: 35vh;
 }
-.setting-container{
+.setting-container, .setting-subcontainer{
     position: relative;
     margin-bottom: 2em;
 }
 .setting-title{
     padding-bottom: 1.5em;
     font-weight: bold;
+}
+
+.setting-subcontainer{
+    margin-top: 2em;
+    margin-left: 1em;
+    .setting-title{
+        font-weight: normal;
+        padding-bottom: 1em;
+    }
 }
 
 .input-color{
