@@ -19,38 +19,46 @@ export const aboutPageComponent = new AboutPageComponent({
                 <section class="team">
                   <h2 class="about_team_subheader">Team</h2>
                   <div class="developers">
-                    <div class="developer">  
-                      <div class="developer_img"></div>
-                      <div class="developer_name">Maryia Piarshai</div>
-                      <div class="developer_tasks"></div>
-                    </div>
-                    <div class="developer">  
-                      <div class="developer_img"></div>
-                      <div class="developer_name">Dmitry Bartoshevich</div>
-                      <div class="developer_tasks"></div>
-                    </div>
-                    <div class="developer">  
-                      <div class="developer_img"></div>
-                      <div class="developer_name">Maria Samoilova</div>
-                      <div class="developer_tasks"></div>
-                    </div>
+                    <a href="https://github.com/marypershai">
+                      <div class="developer">  
+                        <div class="developer_img"></div>
+                        <div class="developer_name">Maryia Piarshai</div>
+                        <div class="developer_tasks">CSS-generator</div>
+                      </div>
+                    </a>
+                    <a href="https://github.com/bartoshevich">
+                      <div class="developer">  
+                        <div class="developer_img"></div>
+                        <div class="developer_name">Dmitry Bartoshevich</div>
+                        <div class="developer_tasks">Card Generator</div>
+                      </div>
+                    </a>
+                    <a href="https://github.com/4Quark">
+                      <div class="developer">  
+                        <div class="developer_img"></div>
+                        <div class="developer_name">Maria Samoilova</div>
+                        <div class="developer_tasks">Flex Sloth, About</div>
+                      </div>
+                    </a>
                   </div>
                 </section>
                 
                 <section class="acknowledgements">
                   <h2>Inspiration</h2>
                   <ul class=thanks_list>
-                    <li class="inspiration"> <a href="https://css-generator.netlify.app"> CSS-generator</a> </li>
-                    <li class="inspiration"> <a href="https://card-generator-lab.vercel.app"> Card Generator</a> </li>
-                    <li class="inspiration"> <a href="https://flexboxfroggy.com"> Flexbox Froggy</a> </li>
-                    <li class="inspiration"> <a href="https://sloths.rs.school"> Sloths</a> </li>
+                    <a href="https://css-generator.netlify.app"> <li class="inspiration">  CSS-generator </li></a>
+                    <a href="https://card-generator-lab.vercel.app"> <li class="inspiration">  Card Generator  </li></a>
+                    <a href="https://flexboxfroggy.com"> <li class="inspiration">  Flexbox Froggy  </li></a>
+                    <a href="https://sloths.rs.school">  <li class="inspiration"> Sloths  </li></a>
                   </ul>
                 </section>
 
-                <section class="scope">
-                  <div class="about_git">More info about features and working process you can find in our <b><a href="https://github.com/marypershai/css-generator">GitHub</a></b> repository</div>
-                  <div class="about_git_img"></div>
-                </section>
+                <a href="https://github.com/marypershai/css-generator">
+                  <section class="scope">
+                    <div class="about_git">More info about features and working process you can find in our <b>GitHub</b> repository</div>
+                    <div class="about_git_img"></div>
+                  </section>
+                </a>
 
               <div>`,
   childComponents: [],
