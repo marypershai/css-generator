@@ -104,7 +104,6 @@ class GamePageComponent extends DMComponent {
     const solved = Array.from(new Set(localStorage.getItem('gameSolved')?.split(', ')));
     if (solved) {
       if (!solved.includes(level.toString())) solved.push(level.toString());
-      console.log(solved);
       localStorage.setItem('gameSolved', solved.join(', '));
     } else localStorage.setItem('gameSolved', level.toString());
   }
