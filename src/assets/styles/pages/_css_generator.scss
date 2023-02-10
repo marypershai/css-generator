@@ -25,6 +25,7 @@
 }
 
 .css_components_list {
+  list-style-type: none;
   @media (max-width: $mobile) {
     width: 100%;
     display: flex;
@@ -45,7 +46,7 @@
   border-left: 1px solid rgb(184, 184, 184, 0.3);
   border-right: 1px solid rgb(184, 184, 184, 0.3);
   @media (max-width: $mobile) {
-    width: 100%;
+    width: calc(100% - 20px);
     height: 100%;
     border-bottom: 1px solid rgb(184, 184, 184, 0.3);
     border-left: none;
