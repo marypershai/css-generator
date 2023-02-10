@@ -48,8 +48,8 @@ export class BorderComponent extends DMComponent {
                 <p class="setting-title">Width</p>
                 <input id="border-width" type="range" min="0" max="20" step="1" value="${borderService.borderWidth}">
                 <div class="range__info">
-                    <div class="range__info-min">0</div>
-                    <div class="range__info-max">20</div> 
+                    <div class="range__info-min">0px</div>
+                    <div class="range__info-max">20px</div> 
                 </div>
             </div>
         </div>

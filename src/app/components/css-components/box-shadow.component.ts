@@ -23,8 +23,8 @@ export class BoxShadowComponent extends DMComponent {
                 <p class="setting-title">X (pixels)</p>
                 <input id="x-pixels" type="range" value="${boxShadowService.xpixels}" step="1" min="-10" max="10">
                 <div class="range__info">
-                    <div class="range__info-min">-10</div>
-                    <div class="range__info-max">10</div> 
+                    <div class="range__info-min">-10px</div>
+                    <div class="range__info-max">10px</div> 
                 </div>
             </div>
             
@@ -32,8 +32,8 @@ export class BoxShadowComponent extends DMComponent {
                 <p class="setting-title">Y (pixels)</p>
                 <input id="y-pixels" type="range" value="${boxShadowService.ypixels}" step="1" min="-10" max="10">
                 <div class="range__info">
-                    <div class="range__info-min">-10</div>
-                    <div class="range__info-max">10</div> 
+                    <div class="range__info-min">-10px</div>
+                    <div class="range__info-max">10px</div> 
                 </div>
             </div>
             
@@ -41,8 +41,8 @@ export class BoxShadowComponent extends DMComponent {
                 <p class="setting-title">Blur (pixels)</p>
                 <input id="blur-pixels" type="range" value="${boxShadowService.blurPixels}" step="1" min="0" max="20">
                 <div class="range__info">
-                    <div class="range__info-min">0</div>
-                    <div class="range__info-max">20</div> 
+                    <div class="range__info-min">0px</div>
+                    <div class="range__info-max">20px</div> 
                 </div>
             </div>
             
@@ -50,8 +50,8 @@ export class BoxShadowComponent extends DMComponent {
                 <p class="setting-title">Spread (pixels)</p>
                 <input id="spread-pixels" type="range" value="${boxShadowService.spreadPixels}" step="1" min="0" max="20">
                 <div class="range__info">
-                    <div class="range__info-min">0</div>
-                    <div class="range__info-max">20</div> 
+                    <div class="range__info-min">0px</div>
+                    <div class="range__info-max">20px</div> 
                 </div>
             </div>
             

@@ -8,5 +8,10 @@
   "configuration": "Customizing",
   "code": "Code",
   "copy": "Copy",
-  "helpText": "Paste to your file(s)"
+  "helpText": "Paste to your file(s)",
+  "horizontalShadow": "Horizontal Shadow Length",
+  "verticalShadow": "Vertical Shadow Length",
+  "blurRadius": "Blur Radius",
+  "shadowColor": "Shadow Color",
+  "shadowOpacity": "Shadow Color Opacity"
 }
