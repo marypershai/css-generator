@@ -21,7 +21,7 @@ export class CodeLayoutComponent extends DMComponent {
       <div class="code_CSS">
         <div class="label_css">CSS</div>
         <div class="preview-code preview_css">
-          ${renderingService.codeCSS}
+          <code>${renderingService.codeCSS}</code>
         </div>
         <div>
           <button class="copy_css tooltip" data-tooltip="${lang.copyTooltipText}">
@@ -36,7 +36,7 @@ export class CodeLayoutComponent extends DMComponent {
       this.template += `
         <div class="label_html">HTML</div>
         <div class="preview-code preview_html">
-          ${renderingService.codeHTML};
+          <code>${renderingService.codeHTML};</code>
         </div>
         <div>
         <button class="copy_html tooltip" data-tooltip="${lang.copyTooltipText}">
