@@ -39,9 +39,9 @@ export class CssComponentMenuComponent extends DMComponent {
 <!--            <li class="css_component" data-component="">Skew</li>-->
           <ul class="list_subheading">Filter</ul>
             <li class="css_component" data-component="filter">Image filter</li>
-<!--          <ul class="list_subheading">Text</ul>-->
+          <ul class="list_subheading">Text</ul>
 <!--            <li class="css_component" data-component="">Text</li>-->
-<!--            <li class="css_component" data-component="">Text Shadow</li>-->
+            <li class="css_component" data-component="text-shadow">Text Shadow</li>
         </ul>`;
   }
 
