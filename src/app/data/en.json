@@ -22,5 +22,11 @@
   "textAlign": "Text align",
   "lineHeight": "Line height",
   "textDecoration" : "Text decoration",
-  "textTransform": "Text transform"
+  "textTransform": "Text transform",
+  "columnCounts": "Column Counts",
+  "columnGaps": "Column Gaps",
+  "columnRule": "Column Rule",
+  "columnRuleStyle": "Column Rule Style",
+  "columnRuleWidth": "Column Rule Width",
+  "columnRuleColor": "Column Rule Color"
 }

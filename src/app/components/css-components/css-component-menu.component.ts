@@ -42,6 +42,7 @@ export class CssComponentMenuComponent extends DMComponent {
           <ul class="list_subheading">Text</ul>
             <li class="css_component" data-component="text">Text</li>
             <li class="css_component" data-component="text-shadow">Text Shadow</li>
+            <li class="css_component" data-component="text-column">Multiple Columns</li>
         </ul>`;
   }
 

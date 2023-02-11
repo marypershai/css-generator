@@ -22,5 +22,12 @@
   "textAlign": "Выравнивание текста",
   "lineHeight": "Высота строки",
   "textDecoration" :"Текстовое оформление",
-  "textTransform": "Преобразование текста"
+  "textTransform": "Преобразование текста",
+  "textTransform": "Text transform",
+  "columnCounts": "Количество колонок",
+  "columnGaps": "Расстояние между колонками",
+  "columnRule": "Разделитель колонок",
+  "columnRuleStyle": "Стиль разделителя колонок",
+  "columnRuleWidth": "Ширина разделителя колонок",
+  "columnRuleColor": "Цвет разделителя колонок"
 }
