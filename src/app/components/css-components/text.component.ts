@@ -70,27 +70,52 @@ export class TextComponent extends DMComponent {
             
             <div class="setting-container">
                 <p class="setting-title">${lang.textAlign}</p>
-                <select id="text-align" class="custom-select">
-                  <option value="left">Left</option>
-                  <option value="center">Center</option>
-                  <option value="right">Right</option>
-                  <option value="justify">Justify</option>
-                </select>
-            </div>
-        </div>
+                <select id="text-align" class="custom-select">                
     `;
 
+    textService.textAlignOptions.forEach((option) => {
+      const selected = textService.textAlign === option ? 'selected' : '';
+      this.template += `<option value="${option}" ${selected}>${option[0].toUpperCase() + option.slice(1)}</option>`;
+    });
+
+    this.template += `
+                </select>
+            </div>
+             <div class="setting-container">
+                <p class="setting-title">${lang.textDecoration}</p>
+                <select id="text-decoration" class="custom-select">
+    `;
+
+    textService.textDecorationOptions.forEach((option) => {
+      const selected = textService.textDecoration === option ? 'selected' : '';
+      this.template += `<option value="${option}" ${selected}>${option[0].toUpperCase() + option.slice(1)}</option>`;
+    });
+
+    this.template += `
+                </select>
+            </div>
+             <div class="setting-container">
+                <p class="setting-title">${lang.textTransform}</p>
+                <select id="text-transform" class="custom-select">
+    `;
+
+    textService.textTransformOptions.forEach((option) => {
+      const selected = textService.textTransform === option ? 'selected' : '';
+      this.template += `<option value="${option}" ${selected}>${option[0].toUpperCase() + option.slice(1)}</option>`;
+    });
+
+    this.template += '</select></div></div>';
     renderingService.componentName = 'text-shadow';
-    renderingService.codeCSS = textService.style;
+    renderingService.codeCSS = textService.createFormatStyle();
     renderingService.codeHTML = '';
     renderingService.preview = `<div class="preview-paragraph-text" style="${textService.style}"><p>${this.paragraph}</p></div>`;
     codeLayoutComponent.createContent();
     previewLayoutComponent.createContent();
 
     this.template += `
-      <div class="css_generator_result">
-          <app-preview-layout class="css_generator_preview"></app-preview-layout>
-          <app-code-layout class="css_generator_code"></app-code-layout>
+        <div class="css_generator_result">
+            <app-preview-layout class="css_generator_preview"></app-preview-layout>
+            <app-code-layout class="css_generator_code"></app-code-layout>
         </div>
     </div>
     `;
@@ -103,6 +128,8 @@ export class TextComponent extends DMComponent {
       'change #text-letter-spacing': 'changeTextLetterSpacing',
       'change #text-word-spacing': 'changeTextWordSpacing',
       'change #text-align': 'changeTexAlign',
+      'change #text-decoration': 'changeTexDecoration',
+      'change #text-transform': 'changeTexTransform',
     };
   }
 
@@ -134,6 +161,18 @@ export class TextComponent extends DMComponent {
   private changeTexAlign(event: Event): void {
     const target = event.currentTarget as HTMLInputElement;
     textService.textAlign = target.value;
+    this.renderLayout();
+  }
+
+  private changeTexDecoration(event: Event): void {
+    const target = event.currentTarget as HTMLInputElement;
+    textService.textDecoration = target.value;
+    this.renderLayout();
+  }
+
+  private changeTexTransform(event: Event): void {
+    const target = event.currentTarget as HTMLInputElement;
+    textService.textTransform = target.value;
     this.renderLayout();
   }
 

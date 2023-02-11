@@ -20,5 +20,7 @@
   "letterSpacing": "Letter spacing",
   "wordSpacing": "Word spacing",
   "textAlign": "Text align",
-  "lineHeight": "Line height"
+  "lineHeight": "Line height",
+  "textDecoration" : "Text decoration",
+  "textTransform": "Text transform"
 }

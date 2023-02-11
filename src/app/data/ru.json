@@ -20,5 +20,7 @@
   "letterSpacing": "Расстояние между буквами",
   "wordSpacing": "Расстояние между словами",
   "textAlign": "Выравнивание текста",
-  "lineHeight": "Высота строки"
+  "lineHeight": "Высота строки",
+  "textDecoration" :"Текстовое оформление",
+  "textTransform": "Преобразование текста"
 }

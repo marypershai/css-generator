@@ -4,8 +4,11 @@ export const textService = {
   letterSpacing : 0,
   wordSpacing: 0,
   textAlign: 'left',
+  textAlignOptions: ['left', 'center', 'right', 'justify'],
   textDecoration: 'none',
+  textDecorationOptions: ['none', 'underline', 'overline', 'line-through'],
   textTransform: 'none',
+  textTransformOptions: ['none', 'capitalize', 'uppercase', 'lowercase'],
   style: 'color: #000000;',
   createStyle() {
     this.style = '';
