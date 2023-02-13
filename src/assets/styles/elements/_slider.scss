@@ -50,5 +50,12 @@
         background: $button--active;
       }
     }
+    &:disabled + label {
+      left: 54px;
+      cursor: auto;
+      &:after {
+        background: linear-gradient(to bottom, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+      }
+    }
   }
 }

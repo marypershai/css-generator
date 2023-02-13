@@ -21,36 +21,38 @@ export class CodeLayoutComponent extends DMComponent {
       <div class="code_CSS">
         <div class="label_css">CSS</div>
         <div class="preview-code preview_css">
-          ${renderingService.codeCSS}
+          <code>${renderingService.codeCSS}</code>
         </div>
         <div>
-          <button class="copy_css">
+          <button class="copy_css tooltip" data-tooltip="${lang.copyTooltipText}">
           ${lang.copy}
           </button>
         </div>
       </div>
-    `;
-    if (renderingService.codeHTML) {
-      this.template = `
       <div class="code_HTML">
+    `;
+
+    if (renderingService.codeHTML) {
+      this.template += `
         <div class="label_html">HTML</div>
         <div class="preview-code preview_html">
-          ${renderingService.codeHTML};
+          <code>${renderingService.codeHTML};</code>
         </div>
         <div>
-        <button class="copy_html">
-        ${lang.copy}
-        </button>
-      </div>
-      </div>
+        <button class="copy_html tooltip" data-tooltip="${lang.copyTooltipText}">
+          ${lang.copy}
+          </button>
       `;
     }
+
+    this.template += '</div></div>';
   }
 
   public events(): Record<string, string> {
     return {
       'click .copy_css': 'copyCssCode',
-      // 'click .copy_html': 'copyHTMLCode',
+      'mouseout .tooltip': 'changeTooltip',
+      'click .code_HTML': 'copyHTMLCode',
     };
   }
 
@@ -60,8 +62,9 @@ export class CodeLayoutComponent extends DMComponent {
     }
   }
 
-  private copyHTMLCode(): void {
-    if (renderingService.codeHTML) {
+  private copyHTMLCode(event: Event): void {
+    const target = event.target as HTMLElement;
+    if (target.classList.contains('copy_html') && renderingService.codeHTML) {
       copyTextToClipboard(renderingService.codeHTML);
     }
   }

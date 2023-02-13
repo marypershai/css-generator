@@ -107,10 +107,7 @@ export class BorderRadiusComponent extends DMComponent {
 
   private  changeBorderRadiusTL(event: Event): void {
     const target = event.currentTarget as HTMLInputElement;
-    console.log('here');
     borderRadiusService.borderTopLeft = +target.value;
-    console.log(borderRadiusService.borderTopLeft);
-    console.log(borderRadiusService.style);
     this.renderLayout();
   }
 

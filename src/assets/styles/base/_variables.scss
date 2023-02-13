@@ -21,6 +21,7 @@ html {
   --table-bg-th: #f2f2f2; 
   --video-border: #eaeaea;
   --theme-button: #fafafa;
+  --card-active: #6d7bf8;
 }
 
 html[data-theme=dark] {
@@ -46,6 +47,7 @@ html[data-theme=dark] {
   --table-bg-th: #2f2f2f;
   --video-border: #252525;
   --theme-button: #aeaeab;
+  --card-active: #de425b;
 }
 
 [data-theme=dark] img {
@@ -61,8 +63,6 @@ html[data-theme=dark] {
       background: #232323;
   }
 }
-
-
 
 
 

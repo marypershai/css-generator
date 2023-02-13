@@ -5,7 +5,6 @@ import { switchingOnLoad, switchThemeOnClick } from '../service/switchThemes';
 import { checkLang } from '../service/lang.service';
 import { cssComponentMenuComponent } from '../components/css-components/css-component-menu.component';
 import { allCssComponents } from '../../framework/tools/components';
-import { renderingService } from '../service/rendering.service';
 import { gamePageComponent } from '../pages/game-page.component';
 import { aboutPageComponent } from '../pages/about-page.component';
 
@@ -113,7 +112,7 @@ export class AppHeader extends DMComponent {
           });
         }
       }
-      renderingService.reset();
+      // renderingService.reset();
     }
     if (router.getUrl() === 'game') {
       gamePageComponent.createContent();
