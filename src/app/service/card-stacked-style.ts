@@ -259,8 +259,9 @@ export const cardStacked = `
     background-color: transparent;
     cursor: pointer;
   }
-    </pre>
+    
         </code>
+        </pre>
         <button class="code-copy">Copy</button>
         </div>
 

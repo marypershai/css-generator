@@ -5,6 +5,7 @@ import { highlightCode } from '../service/highlight';
 import { switchCardToOverlayStyle } from '../service/switchCardToOverlayStyle';
 import { switchCardToStackedStyle } from '../service/switchCardToStackedStyle';
 import { controlContent } from '../service/card/overlay/controlCardContent';
+import { controlAspectRatio } from '../service/card/overlay/controlAspectRatio';
 
 
 class CardGeneratorPageComponent extends DMComponent {
@@ -22,7 +23,8 @@ class CardGeneratorPageComponent extends DMComponent {
   private events(): Record<string, string> {
     return {
       'click #cardStyles': 'handleStyleClicks', 
-      'click #cardContent': 'handleContentClicks',  
+      'click #cardContent': 'handleContentClicks',
+      'click #aspectRatio': 'handleAspectRatioClicks',  
     };
   }
 
@@ -39,7 +41,10 @@ class CardGeneratorPageComponent extends DMComponent {
     controlContent(event);
   }
 
-
+  private handleAspectRatioClicks(event: Event): void {
+    controlAspectRatio(event);
+  }
+ 
 }
 
 export const cardGeneratorPageComponent = new CardGeneratorPageComponent({

@@ -59,10 +59,10 @@ export const cardOverlay = `
         </div>
         <div class="sub-section">
             <h4 class="sub-section__title">Aspect Ratio</h4>
-            <div class="buttons-group">
-              <button class="setting__button ">4/3</button>
-              <button class="setting__button focus">1/1</button>
-              <button class="setting__button">1/2</button>
+            <div class="buttons-group" id="aspectRatio">
+              <button class="setting__button" id="aspectRatio_4_3">4/3</button>
+              <button class="setting__button focus" id="aspectRatio_1_1">1/1</button>
+              <button class="setting__button" id="aspectRatio_1_2">1/2</button>
             </div>
         </div>        
       </div>
@@ -146,25 +146,26 @@ export const cardOverlay = `
         <div>
         <h3>HTML</h3>
         <pre class="code__section"><code language-html">
-        &lt;article class="card overlay"&gt;
-          &lt;div class="image-wrap"&gt;
-            &lt;div class="gradient"&gt;&lt;/div&gt;
-            &lt;img class="card-image" src="./im-fine.svg" alt="image preview"&gt;
+      &lt;article class="card overlay"&gt;
+        &lt;div class="image-wrap"&gt;
+          &lt;div class="gradient"&gt;&lt;/div&gt;
+          &lt;img class="card-image" src="./im-fine.svg" alt="image preview"&gt;
+        &lt;/div&gt;
+        &lt;div class="card-content"&gt;
+          &lt;div class="card-side"&gt;
+            &lt;h2 class="card-title"&gt;Amazing article&lt;/h2&gt;
+            &lt;cite class="card-subtitle"&gt;By great author&lt;/cite&gt;
           &lt;/div&gt;
-          &lt;div class="card-content"&gt;
-            &lt;div class="card-side"&gt;
-              &lt;h2&nbsp;class="card-title"&gt;Amazing article&lt;/h2&gt;
-              &lt;cite class="card-subtitle"&gt;By great author&lt;/cite&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/article&gt;        
+        &lt;/div&gt;
+      &lt;/article&gt;        
         </code></pre>
         <button class="code-copy">Copy</button>
         </div>
         
         <div>
         <h3>CSS</h3>
-        <pre class="code__section"><code class="language-css" id="cssCodeBlock">
+        <pre class="code__section">
+          <code class="language-css" id="cssCodeBlock">
     :root {
       --border-radius-card: 8px;
       --padding-card: 10px;
@@ -253,8 +254,9 @@ export const cardOverlay = `
       height: 100%;
       aspect-ratio: var(--aspect-ratio-image);
     } 
-      </pre>
+      
         </code>
+        </pre>
         <button class="code-copy">Copy</button>
         </div>
 
@@ -267,9 +269,7 @@ export function setCssOverlayCodeBlock() {
 
   const cssCodeBlock = document.getElementById('cssCodeBlock') as HTMLElement;
   cssCodeBlock.textContent = `
-  :root { 
-  ${getCardRootOverlayStyles()}
-  }
+  :root {${getCardRootOverlayStyles()}}
   
   .card {
     position: relative;
