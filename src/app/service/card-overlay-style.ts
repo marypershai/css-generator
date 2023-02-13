@@ -98,10 +98,10 @@ export const cardOverlay = `
     <section>
       <h3 class="card-section__title">Text Shadow</h3>
       <div class="settings__section">
-      <div class="buttons-group">
-          <button class="setting__button focus">Basic</button>
-          <button class="setting__button">Heavy</button>
-          <button class="setting__button">None</button>
+        <div class="buttons-group" id="textShadow">
+          <button class="setting__button focus" id="basicButton">Basic</button>
+          <button class="setting__button" id="heavyButton">Heavy</button>
+          <button class="setting__button" id="noneButton">None</button>
         </div>
       </div>
     </section>
@@ -110,19 +110,19 @@ export const cardOverlay = `
 
     <section>
       <h3 class="visibility-hidden">Border & Padding</h3>
-      <div class="settings__section">
+      <div class="settings__section" id="inputRange">
         <div class="slider-section">
           <h4 class="sub-section__title">Border Radius</h4>        
               
           <div >
-          <input class="card__slider" name="border" type="range" min="1" max="100" value="10">
+          <input class="card__slider" name="border" type="range" min="1" max="100" value="8" id="borderRadius">
           </div>
         </div>
 
         <div class="slider-section">
           <h4 class="sub-section__title">Padding</h4>
           <div>
-              <input class="card__slider" name="padding" type="range" min="1" max="63" value="10">
+              <input class="card__slider" name="padding" type="range" min="1" max="63" value="10" id="padding">
           </div>
         </div>
       </div>
@@ -134,7 +134,7 @@ export const cardOverlay = `
   <div class="preview">
     <section class="preview__image">
       <h2 class="visibility-hidden">Image Preview</h2>
-      <article class="card overlay">
+      <article class="card overlay" id="imagePreview">
           <div class="image-wrap">
             <div class="gradient"></div>
             <img class="card-image" src="./im-fine.svg" alt="image preview">

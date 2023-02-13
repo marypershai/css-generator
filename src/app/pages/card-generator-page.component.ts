@@ -7,6 +7,8 @@ import { switchCardToStackedStyle } from '../service/switchCardToStackedStyle';
 import { controlContent } from '../service/card/overlay/controlCardContent';
 import { controlAspectRatio } from '../service/card/overlay/controlAspectRatio';
 import { controlCardOverlay } from '../service/card/overlay/controlCardOverlay';
+import { controlTextShadow } from '../service/card/overlay/controlTextShadow';
+import { setBorderRadius, setPadding } from '../service/card/overlay/controlInputs';
 
 
 class CardGeneratorPageComponent extends DMComponent {
@@ -27,6 +29,9 @@ class CardGeneratorPageComponent extends DMComponent {
       'click #cardContent': 'handleContentClicks',
       'click #aspectRatio': 'handleAspectRatioClicks', 
       'click #cardOverlay': 'handleCardOverlayClicks', 
+      'click #textShadow':  'handleCardTextShadowClicks',
+      'input #borderRadius': 'handleBorderRadiusInput',
+      'input #padding': 'handlePaddingInput',
     };
   }
 
@@ -50,7 +55,19 @@ class CardGeneratorPageComponent extends DMComponent {
   private handleCardOverlayClicks(event: Event): void {
     controlCardOverlay(event);
   }
- 
+
+  private handleCardTextShadowClicks(event: Event): void {
+    controlTextShadow(event);
+  }
+
+  private handleBorderRadiusInput(): void {
+    setBorderRadius();
+  }
+
+  private handlePaddingInput(): void {
+    setPadding();
+  }
+   
 }
 
 export const cardGeneratorPageComponent = new CardGeneratorPageComponent({
