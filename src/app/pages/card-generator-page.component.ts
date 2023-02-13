@@ -10,6 +10,7 @@ import { controlCardOverlay } from '../service/card/overlay/controlCardOverlay';
 import { controlTextShadow } from '../service/card/overlay/controlTextShadow';
 import { setBorderRadius, setPadding } from '../service/card/overlay/controlInputs';
 import { controlStackedContent } from '../service/card/stacked/controlCardContent';
+import { copyCSSCode, copyHTMLCode } from '../service/card/copyCode';
 
 
 class CardGeneratorPageComponent extends DMComponent {
@@ -31,6 +32,7 @@ class CardGeneratorPageComponent extends DMComponent {
       'click .card-generator-page': 'handleClicks',
       'input #borderRadius': 'handleBorderRadiusInput',
       'input #padding': 'handlePaddingInput',
+
     };
   }
 
@@ -50,6 +52,10 @@ class CardGeneratorPageComponent extends DMComponent {
       controlTextShadow(event);
     } else if (target.closest('#cardsStacked')) {
       controlStackedContent(event);
+    } else if (target.closest('#copyHTMLButton')) {
+      copyHTMLCode();
+    } else if (target.closest('#copyCSSButton')) {
+      copyCSSCode();
     }
   }
 

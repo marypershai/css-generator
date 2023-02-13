@@ -153,7 +153,7 @@ export const cardOverlay = `
       <h2 class="visibility-hidden">Code</h2>
         <div>
         <h3>HTML</h3>
-        <pre class="code__section"><code language-html">
+        <pre class="code__section"><code language-html" id="htmlCode">
     &lt;article class="card overlay"&gt;
       &lt;div class="image-wrap"&gt;
         &lt;div class="gradient"&gt;&lt;/div&gt;
@@ -167,7 +167,7 @@ export const cardOverlay = `
       &lt;/div&gt;
     &lt;/article&gt;        
         </code></pre>
-        <button class="code-copy">Copy</button>
+        <button class="code-copy" id="copyHTMLButton">Copy</button>
         </div>
         
         <div>
@@ -261,7 +261,7 @@ export const cardOverlay = `
       
         </code>
         </pre>
-        <button class="code-copy">Copy</button>
+        <button class="code-copy" id="copyCSSButton">Copy</button>
         </div>
 
     </section>      

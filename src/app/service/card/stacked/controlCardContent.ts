@@ -1,5 +1,6 @@
 
 import { addFocus } from '../addFocus';
+import { resetCopy } from '../copyCode';
 
 
 const codeSimpleCard = `
@@ -54,17 +55,19 @@ export function controlStackedContent(event: Event): void {
     htmlCode.textContent = `
     <article class="card stacked"> ${codeSimpleCard}    </article> `;
     addFocus('#cardsStacked', '#simpleCard', 'button');
+    resetCopy();
   } else if (target.closest('#standartCard')) {
     cardStackedPreview.innerHTML = codeStandartCard;
     htmlCode.textContent =  `
     <article class="card stacked"> ${codeStandartCard}    </article> `;
     addFocus('#cardsStacked', '#standartCard', 'button');
+    resetCopy();
   } else if (target.closest('#columnCard')) {
     cardStackedPreview.innerHTML = codeColumnCard;
     htmlCode.textContent = `
     <article class="card stacked"> ${codeColumnCard}    </article> `;
     addFocus('#cardsStacked', '#columnCard', 'button');
-
+    resetCopy();
   }
 
 }

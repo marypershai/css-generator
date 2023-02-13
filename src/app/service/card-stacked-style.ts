@@ -125,7 +125,7 @@ export const cardStacked = `
       &lt;/div&gt;
     &lt;/article&gt;             
         </code></pre>
-        <button class="code-copy">Copy</button>
+        <button class="code-copy" id="copyHTMLButton">Copy</button>
         </div>
         
         <div>
@@ -272,7 +272,7 @@ export const cardStacked = `
     
         </code>
         </pre>
-        <button class="code-copy">Copy</button>
+        <button class="code-copy" id="copyCSSButton">Copy</button>
         </div>
 
     </section>      

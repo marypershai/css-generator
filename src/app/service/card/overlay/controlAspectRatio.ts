@@ -5,6 +5,7 @@ import { addFocus } from '../addFocus';
 import { setCssOverlayCodeBlock } from '../../card-overlay-style';
 import { cardGeneratorPageComponent } from '../../../pages/card-generator-page.component';
 import { setCssStackedCodeBlock } from '../../card-stacked-style';
+import { resetCopy } from '../copyCode';
 
 
 
@@ -20,6 +21,7 @@ export function controlAspectRatio(event: Event): void {
       customOverlayProperties.aspectRatioCard = '4/3';
       customOverlayProperties.aspectRatioImage = '4/3';
       setCssOverlayCodeBlock();
+      resetCopy();
       // highlightCode();
       addFocus('#aspectRatio', '#aspectRatio_4_3');
     } else if (target.closest('#aspectRatio_1_1')) {
@@ -28,6 +30,7 @@ export function controlAspectRatio(event: Event): void {
       customOverlayProperties.aspectRatioCard = '1/1';
       customOverlayProperties.aspectRatioImage = '4/3';
       setCssOverlayCodeBlock();
+      resetCopy();
       // highlightCode();
       addFocus('#aspectRatio', '#aspectRatio_1_1');
     } else if (target.closest('#aspectRatio_1_2')) {
@@ -36,6 +39,7 @@ export function controlAspectRatio(event: Event): void {
       customOverlayProperties.aspectRatioCard = '1/2';
       customOverlayProperties.aspectRatioImage = '4/3';
       setCssOverlayCodeBlock();
+      resetCopy();
       // highlightCode();
       addFocus('#aspectRatio', '#aspectRatio_1_2');
     }
@@ -46,6 +50,7 @@ export function controlAspectRatio(event: Event): void {
       customOverlayProperties.aspectRatioCard = '1/1';
       customStackedProperties.aspectRatioImage = '4/3';
       setCssStackedCodeBlock();
+      resetCopy();
       // highlightCode();
       addFocus('#aspectRatio', '#aspectRatio_4_3');
     } else if (target.closest('#aspectRatio_1_1')) {
@@ -54,6 +59,7 @@ export function controlAspectRatio(event: Event): void {
       customOverlayProperties.aspectRatioCard = '1/1';
       customStackedProperties.aspectRatioImage = '1/1';
       setCssStackedCodeBlock();
+      resetCopy();
       // highlightCode();
       addFocus('#aspectRatio', '#aspectRatio_1_1');
     } else if (target.closest('#aspectRatio_1_2')) {
@@ -64,6 +70,7 @@ export function controlAspectRatio(event: Event): void {
       setCssStackedCodeBlock();
       // highlightCode();
       addFocus('#aspectRatio', '#aspectRatio_1_2');
+      resetCopy();
     }
   }
 
