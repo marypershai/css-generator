@@ -76,32 +76,49 @@ export class BackgroundGradientComponent extends DMComponent {
             </div>
 
             <div class="spacer"></div>
-            <div class="gradient-colors">
+            
+            <div class="stop-colors">`;
+
+    backgroundGradientService.middleColors.forEach((colorItem: { color: string, spread: number }, i: number) =>{
+      const colorTitle = i === 0 ? lang.startColor : lang.stopColor;
+      const deleteVisability = i > 0 ? '' : 'visibility-hidden';
+      this.template += `
+            <div class="gradient-colors" data-color="${i}">
               <div class="setting-container">
-                  <p class="setting-title">${lang.startColor}</p>
+                  <div class="setting-title">${colorTitle}
+                    <div class="delete ${deleteVisability}">
+                          <svg style="color: red" xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-x" viewBox="0 2 16 16"> <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" fill="red"></path> </svg>
+                    </div>
+                  </div>
+                  
                   <div class="input--color-block">
                     <div class="input--color-block-left">
-                        <input id="bg-startColor" class="input-color" type="color" value="${backgroundGradientService.startColor}">
+                        <input class="input-color" type="color" value="${colorItem.color}">
                     </div>
                     <div class="input--color-block-right">
-                        <input id="bg-startColor-value" class="input-color input-color-value" type="text" value="${backgroundGradientService.startColor}" disabled>
+                        <input class="input-color input-color-value" type="text" value="${colorItem.color}" disabled>
                     </div>
                     
                   </div>
               </div>
               <div class="setting-container">
                       <p class="setting-title">${lang.spread}</p>
-                      <input id="bg-startSpread" type="range" value="${backgroundGradientService.spreadStartColor}" step="1" min="0" max="100">
+                      <input type="range" value="${colorItem.spread}" step="1" min="0" max="100" class="input-spread-range">
                       <div class="range__info">
                           <div class="range__info-min">0%</div>
                           <div class="range__info-max">100%</div> 
                       </div>
-                    </div>
+              </div>
+            </div>
+      `;
+    });
+
+    this.template += ` 
             </div>
                         
             <div class="gradient-colors">
               <div class="setting-container">
-                  <p class="setting-title">${lang.startColor}</p>
+                  <p class="setting-title">${lang.endColor}</p>
                   <div class="input--color-block">
                     <div class="input--color-block-left">
                         <input id="bg-endColor" class="input-color" type="color" value="${backgroundGradientService.endColor}">
@@ -121,6 +138,8 @@ export class BackgroundGradientComponent extends DMComponent {
                       </div>
                     </div>
             </div>
+            
+            <button id="bg-add-color" class="add-color">${lang.addStopColor}</button>
         </div>
     `;
 
@@ -146,10 +165,11 @@ export class BackgroundGradientComponent extends DMComponent {
       'change #bg-size': 'changeBGSize',
       'change #bg-position': 'changeBGPosition',
       'change #bg-degree': 'changeBGDegree',
-      'change #bg-startColor': 'changeBGStartColor',
       'change #bg-endColor': 'changeBGEndColor',
-      'change #bg-startSpread': 'changeBGStartSpread',
       'change #bg-endSpread': 'changeBGEndSpread',
+      'click #bg-add-color' : 'addStopColor',
+      'change .stop-colors' : 'changeMiddleColor',
+      'click .stop-colors' : 'deleteMiddleColor',
     };
   }
 
@@ -179,13 +199,6 @@ export class BackgroundGradientComponent extends DMComponent {
     this.renderLayout();
   }
 
-  private changeBGStartColor(event: Event): void {
-    const target = event.currentTarget as HTMLInputElement;
-    backgroundGradientService.startColor = target.value;
-    (document.querySelector('#bg-startColor-value') as HTMLInputElement).value = target.value;
-    this.renderLayout();
-  }
-
   private changeBGEndColor(event: Event): void {
     const target = event.currentTarget as HTMLInputElement;
     backgroundGradientService.endColor = target.value;
@@ -193,17 +206,65 @@ export class BackgroundGradientComponent extends DMComponent {
     this.renderLayout();
   }
 
-  private changeBGStartSpread(event: Event): void {
+  private changeBGEndSpread(event: Event): void {
     const target = event.currentTarget as HTMLInputElement;
-    backgroundGradientService.spreadStartColor = +target.value;
+    backgroundGradientService.spreadEndColor = +target.value;
     this.renderLayout();
   }
 
-  private changeBGEndSpread(event: Event): void {
-    const target = event.currentTarget as HTMLInputElement;
-    console.log('sdsd');
-    backgroundGradientService.spreadEndColor = +target.value;
+  private addStopColor(): void {
+    backgroundGradientService.middleColors.push({
+      color: '#1e00ff',
+      spread: 10,
+    });
+    this.createContent();
+    this.render();
     this.renderLayout();
+  }
+
+  private changeMiddleColor(event:Event): void {
+    const target = event.target as HTMLInputElement;
+    const colorBlock = target.closest('[data-color]') as HTMLElement;
+    const id: string | null = colorBlock.getAttribute('data-color');
+    const colorPicker = colorBlock.querySelector('.input-color') as HTMLInputElement;
+    const colorSpread = colorBlock.querySelector('.input-spread-range') as HTMLInputElement;
+    if (id) {
+      if (target === colorPicker) {
+        const color: string = colorPicker.value;
+        (colorBlock.querySelector('.input-color-value') as HTMLInputElement).value = color;
+        backgroundGradientService.middleColors[+id].color = color;
+      }
+      if (target === colorSpread) {
+        const spread: string = (colorBlock.querySelector('.input-spread-range') as HTMLInputElement).value;
+        backgroundGradientService.middleColors[+id].spread = +spread;
+      }
+      console.log(id);
+      if (+id !== 0) {
+        console.log('here');
+        const deleteButton = colorBlock.querySelector('delete') as HTMLElement;
+        if (target === deleteButton) {
+          backgroundGradientService.deleteStopColor(+id);
+          this.createContent();
+          this.render();
+        }
+      }
+    }
+    this.renderLayout();
+  }
+
+  private deleteMiddleColor(event:Event): void {
+    const target = event.target as HTMLInputElement;
+    if (target.closest('.delete')) {
+      const colorBlock = target.closest('[data-color]') as HTMLElement;
+      const id: string | null = colorBlock.getAttribute('data-color');
+      if (id) {
+        backgroundGradientService.deleteStopColor(+id);
+        this.createContent();
+        this.render();
+      }
+      this.renderLayout();
+    }
+
   }
 
   private renderLayout(): void {
