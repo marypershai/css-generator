@@ -6,6 +6,7 @@ import { checkLang } from '../service/lang.service';
 import { cssComponentMenuComponent } from '../components/css-components/css-component-menu.component';
 import { allCssComponents } from '../../framework/tools/components';
 import { gamePageComponent } from '../pages/game-page.component';
+import { aboutPageComponent } from '../pages/about-page.component';
 
 
 export class AppHeader extends DMComponent {
@@ -116,6 +117,10 @@ export class AppHeader extends DMComponent {
     if (router.getUrl() === 'game') {
       gamePageComponent.createContent();
       gamePageComponent.render();
+    }
+    if (router.getUrl() === 'about') {
+      aboutPageComponent.createContent();
+      aboutPageComponent.render();
     }
   }
 
