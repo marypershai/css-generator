@@ -41,7 +41,7 @@ html[card-style=stacked] {
   --margin-inline-value: ;
   --card-side-margin: 16px;
   --card-image-position: ;
-  --card-image-object-fit: contain;
+  --card-image-object-fit: cover;
   --card-title-color: #111;
   --card-subtitle-color: #333;
 }
@@ -70,15 +70,11 @@ html[card-style=stacked] {
 }
 
 
-
 .image-wrap {
   position: absolute;
   inset: 0;
 }
 
-.card-content-wrapper .card-button {
-  margin-inline: var(--margin-inline-value);
-}
 
 .card-title {
   font-weight: 700;
@@ -118,6 +114,8 @@ html[card-style=stacked] {
 
 
 .stacked {
+  background-color: var(--theme-button);
+  padding: 0;
 
   & > .card-content {
     text-shadow: revert !important;
@@ -146,7 +144,12 @@ html[card-style=stacked] {
   & > .card-side {
     margin-top: var(--card-side-margin);
   }
+}
 
+
+.card-content-wrapper {
+  display: block !important;
+  text-align: center;
 }
 
 
@@ -159,6 +162,7 @@ html[card-style=stacked] {
   padding: 8px 16px;
   border-radius: var(--radius-button);
   cursor: pointer;
+  margin-top: 2em;
 }
 
 
@@ -166,4 +170,16 @@ html[card-style=stacked] {
   border: none;
   background-color: transparent;
   cursor: pointer;
+}
+
+.tag {
+  position: absolute;
+  top: 24px;
+  background: var(--button-active);
+  padding: 8px 16px;
+}
+
+.topLeft {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }

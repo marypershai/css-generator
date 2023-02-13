@@ -28,17 +28,17 @@ export const cardStacked = `
 
     <section>
       <h3 class="card-section__title">Card Content</h3>
-      <div class="settings__section">      
-        <button class="card__image focus">
-        <img class="image" src="https://res.cloudinary.com/bartoshevich/image/upload/f_auto,q_auto/v1676108124/rs-school/css/cardContentSimple.jpg" alt="simple card layout" width="530" height="108">
+      <div class="settings__section" id="cardsStacked">      
+        <button class="button card__image focus" id="simpleCard">
+        <img class="image" src="https://res.cloudinary.com/bartoshevich/image/upload/f_auto,q_auto/v1676108124/rs-school/css/cardContentSimple.jpg" alt="simple card layout" width="530" height="108" >
         </button>
 
-        <button class="card__image">
-        <img class="image" src="https://res.cloudinary.com/bartoshevich/image/upload/f_auto,q_auto/v1676108124/rs-school/css/cardContentStandart.jpg" alt="stantard card layout" width="530" height="112">
+        <button class="button card__image" id="standartCard">
+        <img class="image" src="https://res.cloudinary.com/bartoshevich/image/upload/f_auto,q_auto/v1676108124/rs-school/css/cardContentStandart.jpg" alt="stantard card layout" width="530" height="112" >
         </button>
 
-        <button class="card__image">
-        <img class="image" src="https://res.cloudinary.com/bartoshevich/image/upload/v1676108124/rs-school/css/cardContentColumn.jpg" alt="column card layout" width="530" height="165">
+        <button class="button card__image" id="columnCard">
+        <img class="image" src="https://res.cloudinary.com/bartoshevich/image/upload/v1676108124/rs-school/css/cardContentColumn.jpg" alt="column card layout" width="530" height="165" >
         </button>
 
 
@@ -55,10 +55,10 @@ export const cardStacked = `
         </div>
         <div class="sub-section">
             <h4 class="sub-section__title">Aspect Ratio</h4>
-            <div class="buttons-group">
-              <button class="setting__button ">4/3</button>
-              <button class="setting__button focus">1/1</button>
-              <button class="setting__button">1/2</button>
+            <div class="buttons-group" id="aspectRatio">
+              <button class="setting__button" id="aspectRatio_4_3">4/3</button>
+              <button class="setting__button focus" id="aspectRatio_1_1">1/1</button>
+              <button class="setting__button" id="aspectRatio_1_2">1/2</button>
             </div>
         </div>        
       </div>
@@ -75,14 +75,14 @@ export const cardStacked = `
           <h4 class="sub-section__title">Border Radius</h4>        
               
           <div >
-          <input class="card__slider" name="border" type="range" min="1" max="100" value="10">
+          <input class="card__slider" name="border" type="range" min="1" max="100" value="8" id="borderRadius">
           </div>
         </div>
 
         <div class="slider-section">
           <h4 class="sub-section__title">Padding</h4>
           <div>
-              <input class="card__slider" name="padding" type="range" min="1" max="63" value="10">
+              <input class="card__slider" name="padding" type="range" min="1" max="63" value="10" id="padding">
           </div>
         </div>
       </div>
@@ -94,9 +94,9 @@ export const cardStacked = `
   <div class="preview">
     <section class="preview__image">
       <h2 class="visibility-hidden">Image Preview</h2>
-      <article class="card stacked">
+      <article class="card stacked" id="cardPreview">
           <div class="image-wrap">
-            <img class="card-image" src="./im-fine.svg" alt="image preview">
+            <img class="card-image" src="./im-fine.svg" alt="image preview" id="imagePreview">
           </div>
           <div class="card-content">
             <div class="card-side">
@@ -112,19 +112,18 @@ export const cardStacked = `
       <h2 class="visibility-hidden">Code</h2>
         <div>
         <h3>HTML</h3>
-        <pre class="code__section"><code class="language-html">
-        &lt;article class="card stacked"&gt;
-          &lt;div class="image-wrap"&gt;
-            &lt;img class="card-image" src="./im-fine.svg" alt="image preview"&gt;
-          &lt;/div&gt;
-          &lt;div class="card-content"&gt;
-            &lt;div class="card-side"&gt;
-              &lt;h2&nbsp;class="card-title"&gt;Amazing article&lt;/h2&gt;
-              &lt;cite class="card-subtitle"&gt;By great author&lt;/cite&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/article&gt; 
-            
+        <pre class="code__section"><code class="language-html" id="htmlCode">
+    &lt;article class="card stacked"&gt;
+      &lt;div class="image-wrap"&gt;
+        &lt;img class="card-image" src="./im-fine.svg" alt="image preview"&gt;
+      &lt;/div&gt;
+      &lt;div class="card-content"&gt;
+        &lt;div class="card-side"&gt;
+          &lt;h2&nbsp;class="card-title"&gt;Amazing article&lt;/h2&gt;
+          &lt;cite class="card-subtitle"&gt;By great author&lt;/cite&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/article&gt;             
         </code></pre>
         <button class="code-copy">Copy</button>
         </div>
@@ -177,14 +176,10 @@ export const cardStacked = `
   }
           
   .image-wrap {
-    position: absolute;
+    position: var(--image-wrap-position);
     inset: 0;
   }
-  
-  .card-content-wrapper .card-button {
-    margin-inline: var(--margin-inline-value);
-  }
-  
+   
   .card-title {
     font-weight: 700;
     font-size: 20px;
@@ -241,8 +236,8 @@ export const cardStacked = `
       margin-top: var(--card-side-margin);
     }
   
-  }
-                  
+  }               
+  
   .card-button {
     display: block;
     margin-inline: auto;
@@ -252,13 +247,28 @@ export const cardStacked = `
     padding: 8px 16px;
     border-radius: var(--radius-button);
     cursor: pointer;
+    margin-top: 2em;
   }
-          
+  
+  
   .dropdown-button {
     border: none;
     background-color: transparent;
     cursor: pointer;
   }
+  
+  .tag {
+    position: absolute;
+    top: 24px;
+    background: var(--button-active);
+    padding: 8px 16px;
+  }
+  
+  .topLeft {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  
     
         </code>
         </pre>
@@ -296,21 +306,6 @@ export function setCssStackedCodeBlock() {
     text-align: var(--text-align-value);
   }
   
-  .card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: var(--justify-content-value);
-    align-items: var(--align-items-value);
-    min-height: 254px;
-    width: 340px;
-    border-radius: var(--border-radius-card);
-    overflow: hidden;
-    box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.09);
-    aspect-ratio: var(--aspect-ratio-card);
-    text-align: var(--text-align-value);
-  }
-  
   .card-content {
     z-index: 1;
     text-shadow: var(--card-text-shadow);
@@ -321,11 +316,7 @@ export function setCssStackedCodeBlock() {
     position: absolute;
     inset: 0;
   }
-  
-  .card-content-wrapper .card-button {
-    margin-inline: var(--margin-inline-value);
-  }
-  
+   
   .card-title {
     font-weight: 700;
     font-size: 20px;
@@ -393,12 +384,26 @@ export function setCssStackedCodeBlock() {
     padding: 8px 16px;
     border-radius: var(--radius-button);
     cursor: pointer;
+    margin-top: 2em;
   }
-          
+  
+  
   .dropdown-button {
     border: none;
     background-color: transparent;
     cursor: pointer;
+  }
+  
+  .tag {
+    position: absolute;
+    top: 24px;
+    background: var(--button-active);
+    padding: 8px 16px;
+  }
+  
+  .topLeft {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
   }
   `;
 

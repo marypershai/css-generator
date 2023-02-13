@@ -1,7 +1,7 @@
 import { cardOverlay } from '../service/card-overlay-style';
 import { DMComponent } from '../../framework/index';
 import { ComponentConfig } from '../../framework/tools/interfaces';
-import { highlightCode } from '../service/highlight';
+// import { highlightCode } from '../service/highlight';
 import { switchCardToOverlayStyle } from '../service/switchCardToOverlayStyle';
 import { switchCardToStackedStyle } from '../service/switchCardToStackedStyle';
 import { controlContent } from '../service/card/overlay/controlCardContent';
@@ -9,14 +9,17 @@ import { controlAspectRatio } from '../service/card/overlay/controlAspectRatio';
 import { controlCardOverlay } from '../service/card/overlay/controlCardOverlay';
 import { controlTextShadow } from '../service/card/overlay/controlTextShadow';
 import { setBorderRadius, setPadding } from '../service/card/overlay/controlInputs';
+import { controlStackedContent } from '../service/card/stacked/controlCardContent';
 
 
 class CardGeneratorPageComponent extends DMComponent {
   constructor(config: ComponentConfig) {
     super(config);
     this.createCardPage();
-    highlightCode();
+    // highlightCode();
   }
+
+  public isOverlay = true;
 
   public createCardPage(): string {
     this.template = cardOverlay;
@@ -25,40 +28,31 @@ class CardGeneratorPageComponent extends DMComponent {
 
   private events(): Record<string, string> {
     return {
-      'click #cardStyles': 'handleStyleClicks', 
-      'click #cardContent': 'handleContentClicks',
-      'click #aspectRatio': 'handleAspectRatioClicks', 
-      'click #cardOverlay': 'handleCardOverlayClicks', 
-      'click #textShadow':  'handleCardTextShadowClicks',
+      'click .card-generator-page': 'handleClicks',
       'input #borderRadius': 'handleBorderRadiusInput',
       'input #padding': 'handlePaddingInput',
     };
   }
 
-  private handleStyleClicks(event: Event): void {
+  private handleClicks(event: Event) {
     const target = event.target as HTMLElement;
     if (target.closest('#overlayStyle')) {
       switchCardToOverlayStyle();
     } else if (target.closest('#stackedStyle')) {
       switchCardToStackedStyle();
+    } else if (target.closest('#cardContent')) {
+      controlContent(event);
+    } else if (target.closest('#aspectRatio')) {
+      controlAspectRatio(event);
+    } else if (target.closest('#cardOverlay')) {
+      controlCardOverlay(event);
+    } else if (target.closest('#textShadow')) {
+      controlTextShadow(event);
+    } else if (target.closest('#cardsStacked')) {
+      controlStackedContent(event);
     }
   }
 
-  private handleContentClicks(event: Event): void {
-    controlContent(event);
-  }
-
-  private handleAspectRatioClicks(event: Event): void {
-    controlAspectRatio(event);
-  }
-
-  private handleCardOverlayClicks(event: Event): void {
-    controlCardOverlay(event);
-  }
-
-  private handleCardTextShadowClicks(event: Event): void {
-    controlTextShadow(event);
-  }
 
   private handleBorderRadiusInput(): void {
     setBorderRadius();

@@ -2,7 +2,7 @@
 import { customOverlayProperties } from '../../card-root-styles';
 import { addFocus } from '../addFocus';
 import { setCssOverlayCodeBlock } from '../../card-overlay-style';
-import { highlightCode } from '../../highlight';
+// import { highlightCode } from '../../highlight';
 
 
 export function controlContent(event: Event): void {
@@ -14,7 +14,7 @@ export function controlContent(event: Event): void {
     customOverlayProperties.alignItemsValue = 'flex-start';
     customOverlayProperties.textAlignValue = 'start';
     setCssOverlayCodeBlock();
-    highlightCode();
+    // highlightCode();
     addFocus('#horizontal-card-content', '#horizontal-left-button');
   } else if (target.closest('#horizontal-center-button')) {
     html.style.setProperty('--align-items-value', 'center');
@@ -22,7 +22,7 @@ export function controlContent(event: Event): void {
     customOverlayProperties.alignItemsValue = 'center';
     customOverlayProperties.textAlignValue = 'center';
     setCssOverlayCodeBlock();
-    highlightCode();
+    // highlightCode();
     addFocus('#horizontal-card-content', '#horizontal-center-button');
   } else if (target.closest('#horizontal-right-button')) {
     html.style.setProperty('--align-items-value', 'flex-end');
@@ -30,25 +30,25 @@ export function controlContent(event: Event): void {
     customOverlayProperties.alignItemsValue = 'flex-end';
     customOverlayProperties.textAlignValue = 'start';
     setCssOverlayCodeBlock();
-    highlightCode();
+    // highlightCode();
     addFocus('#horizontal-card-content', '#horizontal-right-button');
   } else if (target.closest('#vertical-top-button')) {
     html.style.setProperty('--justify-content-value', 'flex-start');
     customOverlayProperties.justifyContentValue = 'flex-start';
     setCssOverlayCodeBlock();
-    highlightCode();
+    // highlightCode();
     addFocus('#vertical-card-content', '#vertical-top-button');
   } else if (target.closest('#vertical-center-button')) {
     html.style.setProperty('--justify-content-value', 'center');
     customOverlayProperties.justifyContentValue = 'center';
     setCssOverlayCodeBlock();
-    highlightCode();
+    // highlightCode();
     addFocus('#vertical-card-content', '#vertical-center-button');
   } else if (target.closest('#vertical-bottom-button')) {
     html.style.setProperty('--justify-content-value', 'flex-end');
     customOverlayProperties.justifyContentValue = 'flex-end';
     setCssOverlayCodeBlock();
-    highlightCode();
+    // highlightCode();
     addFocus('#vertical-card-content', '#vertical-bottom-button');
   }
 } 

@@ -19,6 +19,7 @@ export const customOverlayProperties = {
   cardImageObjectFit: 'cover',
   cardTitleColor: '#fff',
   cardSubtitleColor: '#fff',
+  imageWrapPosition: 'absolute',
 };
 
 export function getCardRootOverlayStyles(): string {
@@ -43,6 +44,7 @@ export function getCardRootOverlayStyles(): string {
   --card-image-object-fit: ${customOverlayProperties.cardImageObjectFit};
   --card-title-color: ${customOverlayProperties.cardTitleColor};
   --card-subtitle-color: ${customOverlayProperties.cardSubtitleColor};
+  --image-wrap-position: ${customOverlayProperties.imageWrapPosition};
   `;
   
   return rootProperties;
@@ -50,7 +52,7 @@ export function getCardRootOverlayStyles(): string {
 
 
 
-const customStackedProperties = {
+export const customStackedProperties = {
   borderRadiusCard: '8px',
   paddingCard: '10px',
   aspectRatioCard: '1/1',
@@ -68,9 +70,10 @@ const customStackedProperties = {
   marginInlineValue: '',
   cardSideMargin: '16px',
   cardImagePosition: '',
-  cardImageObjectFit: 'contain',
+  cardImageObjectFit: 'cover',
   cardTitleColor: '#111',
   cardSubtitleColor: '#333',
+  imageWrapPosition: 'revert',
 };
 
 
@@ -96,6 +99,7 @@ export function getCardRootStackedStyles(): string {
   --card-image-object-fit: ${customStackedProperties.cardImageObjectFit};
   --card-title-color: ${customStackedProperties.cardTitleColor};
   --card-subtitle-color: ${customStackedProperties.cardSubtitleColor};
+  --image-wrap-position: ${customStackedProperties.imageWrapPosition};
   `;
   
   return rootProperties;

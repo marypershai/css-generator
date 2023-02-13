@@ -134,10 +134,10 @@ export const cardOverlay = `
   <div class="preview">
     <section class="preview__image">
       <h2 class="visibility-hidden">Image Preview</h2>
-      <article class="card overlay" id="imagePreview">
+      <article class="card overlay" id="cardPreview">
           <div class="image-wrap">
             <div class="gradient"></div>
-            <img class="card-image" src="./im-fine.svg" alt="image preview">
+            <img class="card-image" src="./im-fine.svg" alt="image preview" id="imagePreview">
           </div>
           <div class="card-content">
             <div class="card-side">
@@ -154,18 +154,18 @@ export const cardOverlay = `
         <div>
         <h3>HTML</h3>
         <pre class="code__section"><code language-html">
-      &lt;article class="card overlay"&gt;
-        &lt;div class="image-wrap"&gt;
-          &lt;div class="gradient"&gt;&lt;/div&gt;
-          &lt;img class="card-image" src="./im-fine.svg" alt="image preview"&gt;
+    &lt;article class="card overlay"&gt;
+      &lt;div class="image-wrap"&gt;
+        &lt;div class="gradient"&gt;&lt;/div&gt;
+        &lt;img class="card-image" src="./im-fine.svg" alt="image preview"&gt;
+      &lt;/div&gt;
+      &lt;div class="card-content"&gt;
+        &lt;div class="card-side"&gt;
+          &lt;h2 class="card-title"&gt;Amazing article&lt;/h2&gt;
+          &lt;cite class="card-subtitle"&gt;By great author&lt;/cite&gt;
         &lt;/div&gt;
-        &lt;div class="card-content"&gt;
-          &lt;div class="card-side"&gt;
-            &lt;h2 class="card-title"&gt;Amazing article&lt;/h2&gt;
-            &lt;cite class="card-subtitle"&gt;By great author&lt;/cite&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/article&gt;        
+      &lt;/div&gt;
+    &lt;/article&gt;        
         </code></pre>
         <button class="code-copy">Copy</button>
         </div>
@@ -219,14 +219,10 @@ export const cardOverlay = `
     }
          
     .image-wrap {
-      position: absolute;
+      position: var(--image-wrap-position);
       inset: 0;
     }
-    
-    .card-content-wrapper .card-button {
-      margin-inline: var(--margin-inline-value);
-    }
-    
+   
     .card-title {
       font-weight: 700;
       font-size: 20px;
@@ -303,10 +299,6 @@ export function setCssOverlayCodeBlock() {
   .image-wrap {
     position: absolute;
     inset: 0;
-  }
-  
-  .card-content-wrapper .card-button {
-    margin-inline: var(--margin-inline-value);
   }
   
   .card-title {
