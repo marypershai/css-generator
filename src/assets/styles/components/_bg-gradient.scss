@@ -1,0 +1,13 @@
+.gradient-colors{
+  display: flex;
+  gap:40px;
+  margin:0 0 20px;
+  align-items: center;
+  .setting-container{
+    align-items: center;
+    width: 300px;
+  }
+  @media (max-width: 990px) {
+    flex-direction: column;
+  }
+}
