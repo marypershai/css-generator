@@ -2,8 +2,7 @@ export const levels = [
 
   {
     level: 1,
-    prop: 'justify-content',
-    value: 'flex-end',
+    answer: ['flex-end', 'normal', 'row', 'nowrap'],
     description: {
       en: `
               <div class="game_info"> Welcome to Flexbox Sloths, a game where you help the sloths meet the burning deadline by writing CSS code! Guide this sloth to the fire on the right by using the <code> justify-content</code> property, which aligns items horizontally and accepts the following values:
@@ -40,8 +39,7 @@ export const levels = [
 
   {
     level: 2,
-    prop: 'justify-content',
-    value: 'center',
+    answer: ['center', 'normal', 'row', 'nowrap'],
     description: {
       en: `
               <div class="game_info"> Use <code>justify-content</code> again to help these sloths. Remember that this CSS property aligns items horizontally and accepts the following values:
@@ -78,8 +76,7 @@ export const levels = [
   
   {
     level: 3,
-    prop: 'justify-content',
-    value: 'space-around',
+    answer: ['space-around', 'normal', 'row', 'nowrap'], 
     description: {
       en: '<div class="game_info"> Help all three sloths just by using <code>justify-content</code>. This time, the fire have lots of space all around them. If you find yourself forgetting the possible values for a property, you can click on the property name to view them. Try clicking on <code>justify-content</code>.</div>', 
       ru: '<div class="game_info"> Помоги всем трём ленивцам, используя <code>justify-content</code>. В этот раз у лилий много пространства вокруг. Если ты чувствуешь, что забыл возможные значения свойства, ты можешь навести курсор на название свойства, чтобы посмотреть их. Попробуй навести курсор на <code>justify-content</code>.</div>',
@@ -100,8 +97,7 @@ export const levels = [
   
   {
     level: 4,
-    prop: 'justify-content',
-    value: 'space-between',
+    answer: ['space-between', 'normal', 'row', 'nowrap'],
     description: {
       en: '<div class="game_info"> This time, the fire have equal spacing between them. Use <code>justify-content</code>.</div>', 
       ru: '<div class="game_info"> В этот раз у пламени одинаковое расстояние между ними. Используй <code>justify-content</code>.</div>',
@@ -122,8 +118,7 @@ export const levels = [
   
   {
     level: 5,
-    prop: 'align-items',
-    value: 'flex-end',
+    answer: ['normal', 'flex-end', 'row', 'nowrap'],
     description: {
       en: `
               <div class="game_info"> Now use <code>align-items</code> to help the sloths meet the burning deadline. This CSS property aligns items vertically and accepts the following values:
@@ -162,8 +157,7 @@ export const levels = [
   
   {
     level: 6,
-    prop: 'justify-content, align-items',
-    value: 'center, center',
+    answer: ['center', 'center', 'row', 'nowrap'],
     description: {
       en: '<div class="game_info"> Lead the sloth to the center of the game-area using a combination of <code>justify-content</code> and <code>align-items</code>.</div>', 
       ru: '<div class="game_info"> Направь ленивца в центр поля, используя свойства <code>justify-content</code> и <code>align-items</code> вместе.</div>',
@@ -180,8 +174,7 @@ export const levels = [
   
   {
     level: 7,
-    prop: 'justify-content, align-items',
-    value: 'space-around, flex-end',
+    answer: ['space-around', 'flex-end', 'row', 'nowrap'],
     description: {
       en: '<div class="game_info"> The sloths need to cross the game-field. Use a combination of <code>justify-content</code> and <code>align-items</code>.</div>', 
       ru: '<div class="game_info"> Ленивцам нужно пересечь поле. Используй комбинацию <code>justify-content</code> и <code>align-items</code>.</div>',
@@ -202,8 +195,7 @@ export const levels = [
   
   {
     level: 8,
-    prop: 'flex-direction',
-    value: 'row-reverse',
+    answer: ['normal', 'normal', 'row-reverse', 'nowrap'], 
     description: {
       en: `
               <div class="game_info"> The sloths need to get in the same order as their deadlines using <code>flex-direction</code>. This CSS property defines the direction items are placed in the container, and accepts the following values:
@@ -240,8 +232,7 @@ export const levels = [
 
   {
     level: 9,
-    prop: 'flex-direction',
-    value: 'column',
+    answer: ['normal', 'normal', 'column', 'nowrap'],
     description: {
       en: `
               <div class="game_info"> Help the sloths find their column of deadline using <code>flex-direction</code>. This CSS property defines the direction items are placed in the container, and accepts the following values:
@@ -278,8 +269,7 @@ export const levels = [
 
   {
     level: 10,
-    prop: 'flex-direction, justify-content',
-    value: 'row-reverse, flex-end',
+    answer: ['flex-end', 'normal', 'row-reverse', 'nowrap'], 
     description: {
       en: `
               <div class="game_info"> 
@@ -308,8 +298,7 @@ export const levels = [
 
   {
     level: 11,
-    prop: 'flex-direction, justify-content',
-    value: 'column, flex-end',
+    answer: ['flex-end', 'normal', 'column', 'nowrap'], 
     description: {
       en: `
               <div class="game_info"> 
@@ -338,8 +327,7 @@ export const levels = [
 
   {
     level: 12,
-    prop: 'flex-direction, justify-content',
-    value: 'column-reverse, space-between',
+    answer: ['space-between', 'normal', 'column-reverse', 'nowrap'],
     description: {
       en: '<div class="game_info"> Help the sloths find their deadlines using <code>flex-direction</code> and <code>justify-content</code>.</div>', 
       ru: '<div class="game_info"> Помоги ленивцам добраться до дедлайна с помощью <code>flex-direction</code> и <code>justify-content</code>.</div>',
@@ -360,8 +348,7 @@ export const levels = [
 
   {
     level: 13,
-    prop: 'flex-direction, justify-content, align-items',
-    value: 'row-reverse, center, flex-end',
+    answer: ['center', 'flex-end', 'row-reverse', 'nowrap'], 
     description: {
       en: '<div class="game_info"> Help the sloths find their deadlines using <code>flex-direction</code>, <code>justify-content</code> and <code>align-items</code>.</div>', 
       ru: '<div class="game_info"> Помоги ленивцам добраться до дедлайна с помощью <code>flex-direction</code>, <code>justify-content</code> и <code>align-items</code>.</div>',
@@ -381,9 +368,8 @@ export const levels = [
   },
 
   {
-    level: 18,
-    prop: 'flex-wrap',
-    value: 'wrap',
+    level: 14, // 18
+    answer: ['normal', 'normal', 'row', 'wrap'], 
     description: {
       en: `
               <div class="game_info"> Oh no! The sloths are all squeezed onto a single row. Spread them out using the <code>flex-wrap</code> property, which accepts the following values:
@@ -425,7 +411,6 @@ export const levels = [
               </div>
             </div>`,
   },
-
 ];
 
 export const disclaimer = {
