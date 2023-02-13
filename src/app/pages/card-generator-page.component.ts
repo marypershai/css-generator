@@ -1,16 +1,17 @@
 import { cardOverlay } from '../service/card-overlay-style';
 import { DMComponent } from '../../framework/index';
 import { ComponentConfig } from '../../framework/tools/interfaces';
-import { highlightCodeListener } from '../service/highlight';
+import { highlightCode } from '../service/highlight';
 import { switchCardToOverlayStyle } from '../service/switchCardToOverlayStyle';
 import { switchCardToStackedStyle } from '../service/switchCardToStackedStyle';
+import { controlContent } from '../service/card/overlay/controlCardContent';
 
 
 class CardGeneratorPageComponent extends DMComponent {
   constructor(config: ComponentConfig) {
     super(config);
     this.createCardPage();
-    highlightCodeListener();
+    highlightCode();
   }
 
   public createCardPage(): string {
@@ -20,7 +21,8 @@ class CardGeneratorPageComponent extends DMComponent {
 
   private events(): Record<string, string> {
     return {
-      'click #cardStyles': 'handleStyleClicks',     
+      'click #cardStyles': 'handleStyleClicks', 
+      'click #cardContent': 'handleContentClicks',  
     };
   }
 
@@ -31,6 +33,10 @@ class CardGeneratorPageComponent extends DMComponent {
     } else if (target.closest('#stackedStyle')) {
       switchCardToStackedStyle();
     }
+  }
+
+  private handleContentClicks(event: Event): void {
+    controlContent(event);
   }
 
 

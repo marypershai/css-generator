@@ -20,7 +20,6 @@ export function highlightCodeListener():void {
 }
 
 export function highlightCode():void {
-  
   const codeElements = document.querySelectorAll('pre code');
   for (const el of codeElements) {
     hljs.highlightElement(el as HTMLElement);

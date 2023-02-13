@@ -220,7 +220,6 @@
   }
 
   &:focus {
-    background-color: initial;
     box-shadow: none;
   }
 }
@@ -237,4 +236,9 @@
     background-color: initial;
     box-shadow: none;
   }
+}
+
+.code__section {
+  border: 1px solid $text-colour;
+  overflow-x: auto;
 }

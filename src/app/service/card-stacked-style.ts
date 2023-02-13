@@ -1,3 +1,5 @@
+import { getCardRootStackedStyles } from './card-root-styles';
+
 export const cardStacked = `
 <div class="page__container card-generator-page">
   
@@ -110,7 +112,7 @@ export const cardStacked = `
       <h2 class="visibility-hidden">Code</h2>
         <div>
         <h3>HTML</h3>
-        <pre><code class="language-html">
+        <pre class="code__section"><code class="language-html">
         &lt;article class="card stacked"&gt;
           &lt;div class="image-wrap"&gt;
             &lt;img class="card-image" src="./im-fine.svg" alt="image preview"&gt;
@@ -129,136 +131,135 @@ export const cardStacked = `
         
         <div>
         <h3>CSS</h3>
-        <pre><code class="css">
-        :root {
-          --border-radius-card: 8px;
-          --padding-card: 10px;
-          --aspect-ratio-card: 1/1;
-          --overlay-direction: 0deg;
-          --overlay-color: rgba(0, 0, 0, 0);
-          --card-text-shadow: none;
-          --gap-card: 16px;
-          --radius-button: 10px;
-          --color-button: #6d7bf8;
-          --aspect-ratio-image: 1/1;
-          --justify-content-value: flex-end;
-          --align-items-value: stretch;
-          --text-align-value: start;
-          --margin-top-subtitle: 0;
-          --margin-inline-value: ;
-          --card-side-margin: 16px;
-          --card-image-position: ;
-          --card-image-object-fit: contain;
-          --card-title-color: #111;
-          --card-subtitle-color: #333;
-        }
-        
-        .card {
-          position: relative;
-          display: flex;
-          flex-direction: column;
-          justify-content: var(--justify-content-value);
-          align-items: var(--align-items-value);
-          min-height: 254px;
-          width: 340px;
-          border-radius: var(--border-radius-card);
-          overflow: hidden;
-          box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.09);
-          aspect-ratio: var(--aspect-ratio-card);
-          text-align: var(--text-align-value);
-        }
-        
-        .card-content {
-          z-index: 1;
-          text-shadow: var(--card-text-shadow);
-          padding: var(--padding-card);
-        }
-                
-        .image-wrap {
-          position: absolute;
-          inset: 0;
-        }
-        
-        .card-content-wrapper .card-button {
-          margin-inline: var(--margin-inline-value);
-        }
-        
-        .card-title {
-          font-weight: 700;
-          font-size: 20px;
-          color: var(--card-title-color);
-          margin-bottom: 16px;
-        }
-        
-        .card-subtitle {
-          display: block;
-          font-style: normal;
-          font-weight: 400;
-          font-size: 16px;
-          color: var(--card-subtitle-color);
-        }
-               
-        .card-image {
-          display: block;
-          max-width: 100%;
-          object-fit: var(--card-image-object-fit);
-          position: var(--card-image-position);
-          inset: 0;
-          width: 100%;
-          height: 100%;
-          aspect-ratio: var(--aspect-ratio-image);
-        }
-                
-        .stacked {
-        
-          & > .card-content {
-            text-shadow: revert !important;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-          }
-        
-          & > .image-wrap {
-            position: revert;
-            inset: 0;
-          }
-        
-          & > .card-title {
-            font-weight: 700;
-            font-size: 20px;
-            margin: 0 0 16px 0;
-          }
-        
-          & > .card-subtitle {
-            font-weight: 400;
-            display: block;
-            font-style: normal;
-            margin-top: var(--margin-top-subtitle);
-          }
-
-          & > .card-side {
-            margin-top: var(--card-side-margin);
-          }
-        
-        }
-                        
-        .card-button {
-          display: block;
-          margin-inline: auto;
-          border: none;
-          background: var(--color-button);
-          color: white;
-          padding: 8px 16px;
-          border-radius: var(--radius-button);
-          cursor: pointer;
-        }
-                
-        .dropdown-button {
-          border: none;
-          background-color: transparent;
-          cursor: pointer;
-        }
-        </pre>
+        <pre class="code__section"><code class="css" id="cssCodeBlock">
+  :root {
+    --border-radius-card: 8px;
+    --padding-card: 10px;
+    --aspect-ratio-card: 1/1;
+    --overlay-direction: 0deg;
+    --overlay-color: rgba(0, 0, 0, 0);
+    --card-text-shadow: none;
+    --gap-card: 16px;
+    --radius-button: 10px;
+    --color-button: #6d7bf8;
+    --aspect-ratio-image: 1/1;
+    --justify-content-value: flex-end;
+    --align-items-value: stretch;
+    --text-align-value: start;
+    --margin-top-subtitle: 0;
+    --margin-inline-value: ;
+    --card-side-margin: 16px;
+    --card-image-position: ;
+    --card-image-object-fit: contain;
+    --card-title-color: #111;
+    --card-subtitle-color: #333;
+  }
+  
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: var(--justify-content-value);
+    align-items: var(--align-items-value);
+    min-height: 254px;
+    width: 340px;
+    border-radius: var(--border-radius-card);
+    overflow: hidden;
+    box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.09);
+    aspect-ratio: var(--aspect-ratio-card);
+    text-align: var(--text-align-value);
+  }
+  
+  .card-content {
+    z-index: 1;
+    text-shadow: var(--card-text-shadow);
+    padding: var(--padding-card);
+  }
+          
+  .image-wrap {
+    position: absolute;
+    inset: 0;
+  }
+  
+  .card-content-wrapper .card-button {
+    margin-inline: var(--margin-inline-value);
+  }
+  
+  .card-title {
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--card-title-color);
+    margin-bottom: 16px;
+  }
+  
+  .card-subtitle {
+    display: block;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--card-subtitle-color);
+  }
+         
+  .card-image {
+    display: block;
+    max-width: 100%;
+    object-fit: var(--card-image-object-fit);
+    position: var(--card-image-position);
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: var(--aspect-ratio-image);
+  }
+          
+  .stacked {
+  
+    & > .card-content {
+      text-shadow: revert !important;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    & > .image-wrap {
+      position: revert;
+      inset: 0;
+    }
+  
+    & > .card-title {
+      font-weight: 700;
+      font-size: 20px;
+      margin: 0 0 16px 0;
+    }
+  
+    & > .card-subtitle {
+      font-weight: 400;
+      display: block;
+      font-style: normal;
+      margin-top: var(--margin-top-subtitle);
+  
+    & > .card-side {
+      margin-top: var(--card-side-margin);
+    }
+  
+  }
+                  
+  .card-button {
+    display: block;
+    margin-inline: auto;
+    border: none;
+    background: var(--color-button);
+    color: white;
+    padding: 8px 16px;
+    border-radius: var(--radius-button);
+    cursor: pointer;
+  }
+          
+  .dropdown-button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+    </pre>
         </code>
         <button class="code-copy">Copy</button>
         </div>
@@ -267,3 +268,137 @@ export const cardStacked = `
   </div>
 </div>
 `;
+
+
+
+
+export function setCssStackedCodeBlock() {
+
+  const cssCodeBlock = document.getElementById('cssCodeBlock') as HTMLElement;
+  cssCodeBlock.textContent = `
+  :root { 
+  ${getCardRootStackedStyles()}
+  }
+  
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: var(--justify-content-value);
+    align-items: var(--align-items-value);
+    min-height: 254px;
+    width: 340px;
+    border-radius: var(--border-radius-card);
+    overflow: hidden;
+    box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.09);
+    aspect-ratio: var(--aspect-ratio-card);
+    text-align: var(--text-align-value);
+  }
+  
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: var(--justify-content-value);
+    align-items: var(--align-items-value);
+    min-height: 254px;
+    width: 340px;
+    border-radius: var(--border-radius-card);
+    overflow: hidden;
+    box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.09);
+    aspect-ratio: var(--aspect-ratio-card);
+    text-align: var(--text-align-value);
+  }
+  
+  .card-content {
+    z-index: 1;
+    text-shadow: var(--card-text-shadow);
+    padding: var(--padding-card);
+  }
+          
+  .image-wrap {
+    position: absolute;
+    inset: 0;
+  }
+  
+  .card-content-wrapper .card-button {
+    margin-inline: var(--margin-inline-value);
+  }
+  
+  .card-title {
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--card-title-color);
+    margin-bottom: 16px;
+  }
+  
+  .card-subtitle {
+    display: block;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--card-subtitle-color);
+  }
+         
+  .card-image {
+    display: block;
+    max-width: 100%;
+    object-fit: var(--card-image-object-fit);
+    position: var(--card-image-position);
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: var(--aspect-ratio-image);
+  }
+          
+  .stacked {
+  
+    & > .card-content {
+      text-shadow: revert !important;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    & > .image-wrap {
+      position: revert;
+      inset: 0;
+    }
+  
+    & > .card-title {
+      font-weight: 700;
+      font-size: 20px;
+      margin: 0 0 16px 0;
+    }
+  
+    & > .card-subtitle {
+      font-weight: 400;
+      display: block;
+      font-style: normal;
+      margin-top: var(--margin-top-subtitle);
+  
+    & > .card-side {
+      margin-top: var(--card-side-margin);
+    }
+  
+  }
+                  
+  .card-button {
+    display: block;
+    margin-inline: auto;
+    border: none;
+    background: var(--color-button);
+    color: white;
+    padding: 8px 16px;
+    border-radius: var(--radius-button);
+    cursor: pointer;
+  }
+          
+  .dropdown-button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  `;
+
+}
