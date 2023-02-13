@@ -22,34 +22,36 @@ export class HexRGBPreviewComponent extends DMComponent {
             <div class="preview-color-block" style="background: rgb(${rgb})"></div>
             <div class="preview-color-block" style="background: rgba(${rgba})"><p style="color: rgb(${rgb})">With opacity</p></div>
         </div>
-        <div class="code_RGB_HEX">
-            <div class="label_rgb_hex">RGB</div>
-            <div class="preview-code">
-                <code>RGB(${rgb})</code>
-            </div>
-            <div>
-                <button id="copy-rgb" class="copy_color tooltip" data-tooltip="${lang.copyTooltipText}">${lang.copy}</button>
-            </div>
-        </div>
-        
-        <div class="code_RGB_HEX">
-            <div class="label_rgb_hex">RGBA</div>
-            <div class="preview-code">
-                <code>RGBA(${rgba})</code>
-            </div>
-            <div>
-                <button id="copy-rgba" class="copy_color tooltip" data-tooltip="${lang.copyTooltipText}">${lang.copy}</button>
-            </div>
-        </div>
-        
-        <div class="code_RGB_HEX">
-            <div class="label_rgb_hex">HEX</div>
-            <div class="preview-code">
-                <code>${hexRGBService.hex}</code>
-            </div>
-            <div>
-                <button id="copy-hex" class="copy_color tooltip" data-tooltip="${lang.copyTooltipText}">${lang.copy}</button>
-            </div>
+        <div class="preview-code-block">
+          <div class="code_rgb_hex">
+              <div class="label_rgb_hex">RGB</div>
+              <div class="preview-code">
+                  <code>RGB(${rgb})</code>
+              </div>
+              <div>
+                  <button id="copy-rgb" class="copy_color tooltip" data-tooltip="${lang.copyTooltipText}">${lang.copy}</button>
+              </div>
+          </div>
+          
+          <div class="code_rgb_hex">
+              <div class="label_rgb_hex">RGBA</div>
+              <div class="preview-code">
+                  <code>RGBA(${rgba})</code>
+              </div>
+              <div>
+                  <button id="copy-rgba" class="copy_color tooltip" data-tooltip="${lang.copyTooltipText}">${lang.copy}</button>
+              </div>
+          </div>
+          
+          <div class="code_rgb_hex">
+              <div class="label_rgb_hex">HEX</div>
+              <div class="preview-code">
+                  <code>${hexRGBService.hex}</code>
+              </div>
+              <div>
+                  <button id="copy-hex" class="copy_color tooltip" data-tooltip="${lang.copyTooltipText}">${lang.copy}</button>
+              </div>
+          </div>
         </div>
       </div>
     `;
