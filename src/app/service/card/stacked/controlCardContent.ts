@@ -1,11 +1,12 @@
 
 import { addFocus } from '../addFocus';
+import { getImageUrl } from '../changeImage';
 import { resetCopy } from '../copyCode';
 
 
 const codeSimpleCard = `
     <div class="image-wrap">
-      <img class="card-image" src="./im-fine.svg" alt="image preview" id="imagePreview">
+      <img class="card-image" src="${getImageUrl()}" alt="image preview" id="imagePreview">
     </div>
     <div class="card-content">
       <div class="card-side">
@@ -17,7 +18,7 @@ const codeSimpleCard = `
 
 const codeStandartCard = `
     <div class="image-wrap">
-      <img class="card-image" src="./im-fine.svg" alt="image preview" id="imagePreview">
+      <img class="card-image" src="${getImageUrl()}" alt="image preview" id="imagePreview">
     </div>
     <div class="card-content">
       <div class="card-side">
@@ -34,7 +35,7 @@ const codeStandartCard = `
 
 const codeColumnCard = `
     <div class="image-wrap">
-      <img class="card-image" src="./im-fine.svg" alt="image preview" id="imagePreview">
+      <img class="card-image" src="${getImageUrl()}" alt="image preview" id="imagePreview">
     </div>
     <div class="card-content card-content-wrapper">
       <div class="card-side">

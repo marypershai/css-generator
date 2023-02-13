@@ -1,4 +1,5 @@
 import { getCardRootStackedStyles } from './card-root-styles';
+import { getImageUrl } from './card/changeImage';
 
 export const cardStacked = `
 <div class="page__container card-generator-page">
@@ -51,7 +52,7 @@ export const cardStacked = `
       <h3 class="card-section__title">Card Image</h3>
       <div class="settings__section">
         <div class="file-upload-section">
-          <button class="file-upload">Change Image...</button>
+        <input class="file-upload" type="text" id="imageUrl" placeholder="Enter image URL...">
         </div>
         <div class="sub-section">
             <h4 class="sub-section__title">Aspect Ratio</h4>
@@ -96,7 +97,7 @@ export const cardStacked = `
       <h2 class="visibility-hidden">Image Preview</h2>
       <article class="card stacked" id="cardPreview">
           <div class="image-wrap">
-            <img class="card-image" src="./im-fine.svg" alt="image preview" id="imagePreview">
+            <img class="card-image" src="${getImageUrl()}" alt="image preview" id="imagePreview">
           </div>
           <div class="card-content">
             <div class="card-side">
@@ -115,7 +116,7 @@ export const cardStacked = `
         <pre class="code__section"><code class="language-html" id="htmlCode">
     &lt;article class="card stacked"&gt;
       &lt;div class="image-wrap"&gt;
-        &lt;img class="card-image" src="./im-fine.svg" alt="image preview"&gt;
+        &lt;img class="card-image" src="${getImageUrl()}" alt="image preview"&gt;
       &lt;/div&gt;
       &lt;div class="card-content"&gt;
         &lt;div class="card-side"&gt;

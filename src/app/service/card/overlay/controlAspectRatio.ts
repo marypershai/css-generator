@@ -8,7 +8,6 @@ import { setCssStackedCodeBlock } from '../../card-stacked-style';
 import { resetCopy } from '../copyCode';
 
 
-
 export function controlAspectRatio(event: Event): void {
   const target = event.target as HTMLElement;
   const cardPreview = document.querySelector('#cardPreview') as HTMLElement;

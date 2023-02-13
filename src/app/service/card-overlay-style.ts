@@ -1,4 +1,5 @@
 import { getCardRootOverlayStyles } from './card-root-styles';
+import { getImageUrl } from './card/changeImage';
 
 export const cardOverlay = `
 <div class="page__container card-generator-page">
@@ -55,7 +56,7 @@ export const cardOverlay = `
       <h3 class="card-section__title">Card Image</h3>
       <div class="settings__section">
         <div class="file-upload-section">
-          <button class="file-upload">Change Image...</button>
+          <input class="file-upload" type="text" id="imageUrl" placeholder="Enter image URL...">
         </div>
         <div class="sub-section">
             <h4 class="sub-section__title">Aspect Ratio</h4>
@@ -137,7 +138,7 @@ export const cardOverlay = `
       <article class="card overlay" id="cardPreview">
           <div class="image-wrap">
             <div class="gradient"></div>
-            <img class="card-image" src="./im-fine.svg" alt="image preview" id="imagePreview">
+            <img class="card-image" src="${getImageUrl()}" alt="image preview" id="imagePreview">
           </div>
           <div class="card-content">
             <div class="card-side">
@@ -157,7 +158,7 @@ export const cardOverlay = `
     &lt;article class="card overlay"&gt;
       &lt;div class="image-wrap"&gt;
         &lt;div class="gradient"&gt;&lt;/div&gt;
-        &lt;img class="card-image" src="./im-fine.svg" alt="image preview"&gt;
+        &lt;img class="card-image" src="${getImageUrl()}" alt="image preview"&gt;
       &lt;/div&gt;
       &lt;div class="card-content"&gt;
         &lt;div class="card-side"&gt;
