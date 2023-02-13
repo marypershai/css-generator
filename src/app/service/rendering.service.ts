@@ -9,4 +9,7 @@ export const renderingService = {
     this.codeCSS = '';
     this.codeHTML = '';
   },
+  rgb:'',
+  rgba: '',
+  hex: '',
 };

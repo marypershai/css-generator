@@ -56,16 +56,16 @@ export class CodeLayoutComponent extends DMComponent {
     };
   }
 
-  private copyCssCode(): void {
+  private copyCssCode(event: Event): void {
     if (renderingService.codeCSS) {
-      copyTextToClipboard(renderingService.codeCSS);
+      copyTextToClipboard(renderingService.codeCSS, event);
     }
   }
 
   private copyHTMLCode(event: Event): void {
     const target = event.target as HTMLElement;
     if (target.classList.contains('copy_html') && renderingService.codeHTML) {
-      copyTextToClipboard(renderingService.codeHTML);
+      copyTextToClipboard(renderingService.codeHTML, event);
     }
   }
 

@@ -6,6 +6,8 @@ import { checkLang } from '../service/lang.service';
 import { cssComponentMenuComponent } from '../components/css-components/css-component-menu.component';
 import { allCssComponents } from '../../framework/tools/components';
 import { gamePageComponent } from '../pages/game-page.component';
+import { hexRGBLayoutComponent } from '../components/hex-rgb-component/hex-rgb-layout.component';
+import { hexRGBPreviewComponent } from '../components/hex-rgb-component/hex-rgb-preview.component';
 
 
 export class AppHeader extends DMComponent {
@@ -43,6 +45,7 @@ export class AppHeader extends DMComponent {
                 <ul class="menu__list">
                   <li><a href="#css-generator" class="menu-item link">${lang.cssGenerator}</a></li>
                   <li><a href="#card-generator" class="menu-item link">${lang.cardGenerator}</a></li>
+                  <li><a href="#hex-rgb" class="menu-item link">${lang.hexRGB}</a></li>
                   <li><a href="#game" class="menu-item link">${lang.game}</a></li>
                   <li><a href="#about" class="menu-item link">${lang.aboutPage}</a></li>
                 </ul>
@@ -116,6 +119,12 @@ export class AppHeader extends DMComponent {
     if (router.getUrl() === 'game') {
       gamePageComponent.createContent();
       gamePageComponent.render();
+    }
+    if (router.getUrl() === 'hex-rgb') {
+      hexRGBLayoutComponent.createContent();
+      hexRGBLayoutComponent.render();
+      hexRGBPreviewComponent.createContent();
+      hexRGBPreviewComponent.render();
     }
   }
 

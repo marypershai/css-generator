@@ -1,6 +1,7 @@
 {
   "cssGenerator": "Css Generator",
   "cardGenerator": "Card Generator",
+  "hexRGB": "Hex & RGB Converter",
   "game": "Game",
   "aboutPage": "About",
   "properties" : "Properties",
@@ -28,5 +29,11 @@
   "columnRule": "Column Rule",
   "columnRuleStyle": "Column Rule Style",
   "columnRuleWidth": "Column Rule Width",
-  "columnRuleColor": "Column Rule Color"
+  "columnRuleColor": "Column Rule Color",
+  "red": "Red",
+  "green": "Green",
+  "blue": "Blue",
+  "opacity": "Opacity",
+  "hex": "Hex value",
+  "notValid": "Value isn't valid"
 }

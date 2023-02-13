@@ -1,6 +1,7 @@
 {
   "cssGenerator": "Css генератор",
   "cardGenerator": "Генератор карточки",
+  "hexRGB": "Конвертер цветов",
   "game": "Игра",
   "aboutPage": "О нас",
   "properties" : "Свойства",
@@ -23,11 +24,16 @@
   "lineHeight": "Высота строки",
   "textDecoration" :"Текстовое оформление",
   "textTransform": "Преобразование текста",
-  "textTransform": "Text transform",
   "columnCounts": "Количество колонок",
   "columnGaps": "Расстояние между колонками",
   "columnRule": "Разделитель колонок",
   "columnRuleStyle": "Стиль разделителя колонок",
   "columnRuleWidth": "Ширина разделителя колонок",
-  "columnRuleColor": "Цвет разделителя колонок"
+  "columnRuleColor": "Цвет разделителя колонок",
+  "red": "Красный",
+  "green": "Зеленый",
+  "blue": "Голубой",
+  "opacity": "Прозрачность",
+  "hex": "Hex значение",
+  "notValid": "Неверное значение"
 }
