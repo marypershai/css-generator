@@ -211,7 +211,7 @@
     border: 2px solid var(--card-active);
   }
 
-  & > svg {
+  & > .img-icon {
     border: 2px solid var(--card-active);
   }
 
@@ -241,4 +241,9 @@
 .code__section {
   border: 1px solid $text-colour;
   overflow-x: auto;
+}
+
+.button-icon {
+  width: 17px;
+  height: 17px;
 }

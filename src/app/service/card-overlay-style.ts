@@ -75,11 +75,19 @@ export const cardOverlay = `
       <div class="settings__section">      
         <div class="sub-section">
           <h4 class="sub-section__title">Style/Direction</h4>
-          <div class="buttons-group">
-            <button class="setting__button ">Top</button>
-            <button class="setting__button focus">Bottom</button>
-            <button class="setting__button">Right</button>
-            <button class="setting__button">Left</button>
+          <div class="buttons-group" id="cardOverlay">
+            <button class="setting__button" id="top-button">Top</button>
+            <button class="setting__button focus" id="bottom-button">Bottom</button>
+            <button class="setting__button" id="bottom-right-button">
+              <svg class="button-icon">
+                <use xlink:href="./icons.svg#bottom-right"></use>
+              </svg>
+            </button>
+            <button class="setting__button" id="top-right-button">
+              <svg class="button-icon">
+                <use xlink:href="./icons.svg#top-right"></use>
+              </svg>
+            </button>
           </div>
         </div>
       </div>

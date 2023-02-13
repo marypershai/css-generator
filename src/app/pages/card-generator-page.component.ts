@@ -6,6 +6,7 @@ import { switchCardToOverlayStyle } from '../service/switchCardToOverlayStyle';
 import { switchCardToStackedStyle } from '../service/switchCardToStackedStyle';
 import { controlContent } from '../service/card/overlay/controlCardContent';
 import { controlAspectRatio } from '../service/card/overlay/controlAspectRatio';
+import { controlCardOverlay } from '../service/card/overlay/controlCardOverlay';
 
 
 class CardGeneratorPageComponent extends DMComponent {
@@ -24,7 +25,8 @@ class CardGeneratorPageComponent extends DMComponent {
     return {
       'click #cardStyles': 'handleStyleClicks', 
       'click #cardContent': 'handleContentClicks',
-      'click #aspectRatio': 'handleAspectRatioClicks',  
+      'click #aspectRatio': 'handleAspectRatioClicks', 
+      'click #cardOverlay': 'handleCardOverlayClicks', 
     };
   }
 
@@ -43,6 +45,10 @@ class CardGeneratorPageComponent extends DMComponent {
 
   private handleAspectRatioClicks(event: Event): void {
     controlAspectRatio(event);
+  }
+
+  private handleCardOverlayClicks(event: Event): void {
+    controlCardOverlay(event);
   }
  
 }
