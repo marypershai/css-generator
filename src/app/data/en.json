@@ -9,6 +9,7 @@
   "configuration": "Customizing",
   "code": "Code",
   "copy": "Copy",
+  "helpText": "Paste to your file(s)",
   "copyTooltipText": "Copy to the clipboard",
   "copied": "Copied",
   "helpText": "Paste to your file(s)",
@@ -35,5 +36,17 @@
   "blue": "Blue",
   "opacity": "Opacity",
   "hex": "Hex value",
-  "notValid": "Value isn't valid"
+  "notValid": "Value isn't valid",
+  "about_welcome": "Welcome to ",
+  "about_greeting1": "This application will help you to learn CSS properties and designing your project. You can find CSS-properties generator on page",
+  "about_greeting2": "A tool",
+  "about_greeting3": " helps you to design a card as per the provided option. Practice and improve recall of CSS flexbox properties and values in Flex Sloths game on page",
+  "about_greeting4": "",
+  "about_team": "Team",
+  "about_developer1": "Maryia Piarshai",
+  "about_developer2": "Dmitry Bartoshevich",
+  "about_developer3": "Maria Samoilova",
+  "about_inspiration": "Inspiration",
+  "about_more": "More info about features and working process you can find in our",
+  "about_repo": "repository"
 }

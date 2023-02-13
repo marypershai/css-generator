@@ -7,12 +7,9 @@ import { checkLang } from '../service/lang.service';
 class GamePageComponent extends DMComponent {
   level: number;
 
-  answer: string[];
-
   constructor(config: ComponentConfig) {
     super(config);
     this.level = this.checkLevel();
-    this.answer = this.checkAnswer();
     this.createContent();
   }
 
@@ -29,10 +26,10 @@ class GamePageComponent extends DMComponent {
     const { savedLang } = checkLang();
     const input = document.querySelector('.game_code_input') as HTMLInputElement;
     const sloths = document.querySelector('.sloths') as HTMLDivElement;
+    const nextBtn = document.getElementById('gameNext') as HTMLButtonElement;
     sloths.setAttribute('style', input.value);
-    const isCorrect = this.answer.every((el) => (input.value.split(' ').join('').includes(el)));
+    const isCorrect = this.isCorrect(sloths);
     if (isCorrect) {
-      const nextBtn = document.getElementById('gameNext') as HTMLButtonElement;
       nextBtn.disabled = false;
       const message = document.createElement('div');
       message.classList.add('game_win_message');
@@ -42,7 +39,7 @@ class GamePageComponent extends DMComponent {
         setTimeout(() => message.remove(), 1000);
       }
       this.solved(this.level);
-    }
+    } else nextBtn.disabled = true;
   }
 
   createContent() {
@@ -88,15 +85,14 @@ class GamePageComponent extends DMComponent {
     return +level;
   }
 
-  checkAnswer() {
-    const answer: string[] = [];
-    const props = levels[this.level - 1].prop.split(', ');
-    const values = levels[this.level - 1].value.split(', ');
-    for (let i = 0; i < props.length; i++) {
-      answer.push(`${props[i]}:${values[i]}`);
-    }
-    console.log(answer);
-    return answer;
+  isCorrect(sloths: HTMLElement) { 
+    const answer = [];
+    answer.push(window.getComputedStyle(sloths).getPropertyValue('justify-content'));
+    answer.push(window.getComputedStyle(sloths).getPropertyValue('align-items'));
+    answer.push(window.getComputedStyle(sloths).getPropertyValue('flex-direction'));
+    answer.push(window.getComputedStyle(sloths).getPropertyValue('flex-wrap'));
+    const result = answer.every((el, count) => (el === levels[this.level - 1].answer[count]));    
+    return result;
   }
 
   solved(level: number) {
@@ -109,7 +105,6 @@ class GamePageComponent extends DMComponent {
 
   prevLevel() {
     this.level -= 1;
-    this.answer = this.checkAnswer();
     this.createContent();
     this.render();
     localStorage.setItem('gameLevel', this.level.toString());
@@ -117,7 +112,6 @@ class GamePageComponent extends DMComponent {
 
   nextLevel() {
     this.level += 1;
-    this.answer = this.checkAnswer();
     this.createContent();
     this.render();
     localStorage.setItem('gameLevel', this.level.toString());

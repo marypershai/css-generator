@@ -8,6 +8,7 @@ import { allCssComponents } from '../../framework/tools/components';
 import { gamePageComponent } from '../pages/game-page.component';
 import { hexRGBLayoutComponent } from '../components/hex-rgb-component/hex-rgb-layout.component';
 import { hexRGBPreviewComponent } from '../components/hex-rgb-component/hex-rgb-preview.component';
+import { aboutPageComponent } from '../pages/about-page.component';
 
 
 export class AppHeader extends DMComponent {
@@ -125,6 +126,9 @@ export class AppHeader extends DMComponent {
       hexRGBLayoutComponent.render();
       hexRGBPreviewComponent.createContent();
       hexRGBPreviewComponent.render();
+    if (router.getUrl() === 'about') {
+      aboutPageComponent.createContent();
+      aboutPageComponent.render();
     }
   }
 
