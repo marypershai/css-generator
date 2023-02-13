@@ -126,6 +126,7 @@ export class AppHeader extends DMComponent {
       hexRGBLayoutComponent.render();
       hexRGBPreviewComponent.createContent();
       hexRGBPreviewComponent.render();
+    }
     if (router.getUrl() === 'about') {
       aboutPageComponent.createContent();
       aboutPageComponent.render();
