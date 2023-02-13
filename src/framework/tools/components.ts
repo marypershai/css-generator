@@ -4,6 +4,7 @@ import { filterComponent } from '../../app/components/css-components/filter.comp
 import { borderRadiusComponent } from '../../app/components/css-components/border-radius.component';
 import { textShadowComponent } from '../../app/components/css-components/text-shadow.component';
 import { textComponent } from '../../app/components/css-components/text.component';
+import { textColumnComponent } from '../../app/components/css-components/text-column.component';
 
 export const allCssComponents  = [
   {
@@ -29,5 +30,9 @@ export const allCssComponents  = [
   {
     name: 'text',
     component: textComponent,
+  },
+  {
+    name: 'text-column',
+    component: textColumnComponent,
   },
 ];

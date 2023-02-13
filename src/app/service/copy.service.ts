@@ -1,7 +1,7 @@
 import { checkLang } from './lang.service';
 
 function formatText(text:string):string {
-  return text.replace(/<br>/g, '');
+  return text.replace(/<br>/g, '\n');
 }
 
 export async function copyTextToClipboard(copiedText: string): Promise<void> {
