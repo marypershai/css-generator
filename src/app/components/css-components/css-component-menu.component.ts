@@ -40,7 +40,7 @@ export class CssComponentMenuComponent extends DMComponent {
           <ul class="list_subheading">Filter</ul>
             <li class="css_component" data-component="filter">Image filter</li>
           <ul class="list_subheading">Text</ul>
-<!--            <li class="css_component" data-component="">Text</li>-->
+            <li class="css_component" data-component="text">Text</li>
             <li class="css_component" data-component="text-shadow">Text Shadow</li>
         </ul>`;
   }

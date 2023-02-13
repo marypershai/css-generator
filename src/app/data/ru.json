@@ -15,5 +15,12 @@
   "verticalShadow": "Вертикальная длина тени",
   "blurRadius": "Радиус размытия",
   "shadowColor": "Цвет тени",
-  "shadowOpacity": "Степень прозрачности тени"
+  "shadowOpacity": "Степень прозрачности тени",
+  "color" : "Цвет",
+  "letterSpacing": "Расстояние между буквами",
+  "wordSpacing": "Расстояние между словами",
+  "textAlign": "Выравнивание текста",
+  "lineHeight": "Высота строки",
+  "textDecoration" :"Текстовое оформление",
+  "textTransform": "Преобразование текста"
 }

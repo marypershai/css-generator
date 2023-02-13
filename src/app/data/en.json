@@ -15,5 +15,12 @@
   "verticalShadow": "Vertical Shadow Length",
   "blurRadius": "Blur Radius",
   "shadowColor": "Shadow Color",
-  "shadowOpacity": "Shadow Color Opacity"
+  "shadowOpacity": "Shadow Color Opacity",
+  "color" : "Color",
+  "letterSpacing": "Letter spacing",
+  "wordSpacing": "Word spacing",
+  "textAlign": "Text align",
+  "lineHeight": "Line height",
+  "textDecoration" : "Text decoration",
+  "textTransform": "Text transform"
 }

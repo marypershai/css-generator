@@ -1,6 +1,11 @@
 import { checkLang } from './lang.service';
 
-export async function copyTextToClipboard(text: string): Promise<void> {
+function formatText(text:string):string {
+  return text.replace(/<br>/g, '');
+}
+
+export async function copyTextToClipboard(copiedText: string): Promise<void> {
+  const text: string = formatText(copiedText);
   const { lang } = checkLang();
   try {
     await navigator.clipboard.writeText(text);
