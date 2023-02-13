@@ -1,0 +1,207 @@
+.game_body {
+  display: flex;
+  justify-content: space-around;
+  line-height: 1.5;
+  @media (max-width: $mobile) {
+    flex-direction: column-reverse;
+  }
+
+  code {
+    background-color: rgba(199, 199, 199, 0.205);
+  }
+}
+
+/* -- INFO -- */
+
+.game_menu {
+  padding: 30px;
+  width: 45vw;
+  @media (max-width: $mobile) {
+    width: 95vw;
+  }
+}
+
+.game_header {
+  position: relative;
+}
+
+.game_level {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+}
+
+.game_subheader {
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.game_list {
+  list-style-type: circle;
+  padding-left: 30px;
+}
+
+/* -- CODE -- */
+
+.game_code-field {
+  display: flex;
+  margin: 30px auto;
+  font-family: monospace;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.line-numbers {
+  background-color: rgba(72, 73, 73, 0.3);
+  border: 1px solid rgb(184, 184, 184, 0.3);
+  padding: 5px;
+}
+
+.code-field {
+  position: relative;
+  background-color: rgba(135, 141, 140, 0.3);
+  border: 1px solid rgb(184, 184, 184, 0.3);
+  padding: 5px;
+  width: 80%;
+}
+
+.code_indent {
+  padding-left: 20px;
+}
+
+.game_code_input {
+  width: calc(100% - 20px);
+  height: 24px;
+  font-family: monospace;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.game_btn {
+  font-size: large;
+  padding: 6px;
+}
+
+.game_btn:disabled {
+  color: rgba(184, 184, 184, 0.37);
+}
+
+.game_next_btn {
+  width: 80px;
+  height: 30px;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  background-color: rgb(255, 195, 127, 0.8);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.game_next_btn:hover {
+  background-color: rgba(240, 138, 70, 0.8);
+}
+
+.game_next_btn:disabled {
+  background-color: rgba(255, 232, 206, 0.5);
+  cursor: default;
+}
+
+/* -- FIELD -- */
+
+.game_field {
+  position: relative;
+  margin: 20px;
+  width: 45vw;
+  max-width: 800px;
+  height: 35vw;
+  max-height: 800px;
+  background-color: rgba(192, 192, 192, 0.377);
+  border: 0.5px solid rgba(102, 110, 109, 0.3);
+  border-radius: 5px;
+  @media (max-width: $mobile) {
+    width: 95vw;
+    height: 50vh;
+    margin: 0 auto;
+  }
+}
+
+.field_deadline {
+  height: 100%;
+}
+
+.fire {
+  display: flex;
+  height: 100%;
+}
+
+.fire_yellow {
+  background-image: url("../../../../css-generator/src/assets/image/game/fire_yellow.svg");
+  background-size: 80px 80px;
+  width: 80px;
+  height: 80px;
+  margin: 20px;
+}
+
+.fire_red {
+  background-image: url("../../../../css-generator/src/assets/image/game/fire_red.svg");
+  background-size: 80px 80px;
+  width: 80px;
+  height: 80px;
+  margin: 20px;
+}
+
+.fire_blue {
+  background-image: url("../../../../css-generator/src/assets/image/game/fire_blue.svg");
+  background-size: 80px 80px;
+  width: 80px;
+  height: 80px;
+  margin: 20px;
+}
+
+.sloths {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex; 
+}
+
+.sloth_yellow {
+  background-image: url("../../../../css-generator/src/assets/image/game/sloth_yellow.svg");
+  background-size: 80px 80px;
+  width: 80px;
+  height: 80px;
+  margin: 20px;
+}
+
+.sloth_red {
+  background-image: url("../../../../css-generator/src/assets/image/game/sloth_red.svg");
+  background-size: 80px 80px;
+  width: 80px;
+  height: 80px;
+  margin: 20px;
+}
+
+.sloth_blue {
+  background-image: url("../../../../css-generator/src/assets/image/game/sloth_blue.svg");
+  background-size: 80px 80px;
+  width: 80px;
+  height: 80px;
+  margin: 20px;
+}
+
+.game_disclaimer {
+  font-size: small;
+  a {
+    color: $text-colour;
+    text-decoration: none;
+  }
+}
+
+.game_win_message {
+  position: absolute;
+  left: 40%;
+  top: 50%;
+  font-size: xx-large;
+}

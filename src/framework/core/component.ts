@@ -27,6 +27,10 @@ export class Component {
     this.initEvents();
   }
 
+  public createContent(): void {
+    console.log('createContent');
+  }
+
   private initEvents(): void {
     if (Object.getPrototypeOf(this).events) {
       const events = Object.getPrototypeOf(this).events();

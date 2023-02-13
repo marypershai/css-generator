@@ -1,0 +1,19 @@
+{
+  "cssGenerator": "Css генератор",
+  "cardGenerator": "Генератор карточки",
+  "game": "Игра",
+  "aboutPage": "О нас",
+  "properties" : "Свойства",
+  "preview": "Предпросмотр",
+  "configuration": "Конфигурация",
+  "code": "Код",
+  "copy": "Копировать",
+  "copyTooltipText": "Нажми, чтобы скопировать",
+  "copied": "Скопировано",
+  "helpText": "Вставьте этот код в свои файлы",
+  "horizontalShadow": "Горизонтальная длина тени",
+  "verticalShadow": "Вертикальная длина тени",
+  "blurRadius": "Радиус размытия",
+  "shadowColor": "Цвет тени",
+  "shadowOpacity": "Степень прозрачности тени"
+}

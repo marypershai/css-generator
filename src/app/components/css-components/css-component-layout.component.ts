@@ -1,5 +1,5 @@
-import { ComponentConfig } from '../../framework/tools/interfaces';
-import { DMComponent } from '../../framework/index';
+import { ComponentConfig } from '../../../framework/tools/interfaces';
+import { DMComponent } from '../../../framework/index';
 
 
 export class CssComponentLayoutComponent extends DMComponent {
@@ -10,6 +10,6 @@ export class CssComponentLayoutComponent extends DMComponent {
 
 export const cssComponentLayoutComponent = new CssComponentLayoutComponent({
   selector: 'app-css-component-layout',
-  template: 'Select Css Component Layout',
+  template: 'Choose component',
   childComponents: [],
 });
