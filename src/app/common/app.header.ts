@@ -7,7 +7,7 @@ import { cssComponentMenuComponent } from '../components/css-components/css-comp
 import { allCssComponents } from '../../framework/tools/components';
 import { gamePageComponent } from '../pages/game-page.component';
 import { cardGeneratorPageComponent } from '../pages/card-generator-page.component';
-import { addActiveStatus } from '../service/setActivePage';
+import { addActiveStatus, addActiveStatusByUrl } from '../service/setActivePage';
 
 
 
@@ -44,10 +44,10 @@ export class AppHeader extends DMComponent {
               
               <nav role="navigation" aria-label="Main navigation">
                 <ul class="menu__list">
-                  <li><a href="#css-generator" class="menu-item link">${lang.cssGenerator}</a></li>
-                  <li><a href="#card-generator" class="menu-item link">${lang.cardGenerator}</a></li>
-                  <li><a href="#game" class="menu-item link">${lang.game}</a></li>
-                  <li><a href="#about" class="menu-item link">${lang.aboutPage}</a></li>
+                  <li><a href="#css-generator" class="menu-item link" id="css-generator">${lang.cssGenerator}</a></li>
+                  <li><a href="#card-generator" class="menu-item link" id="card-generator">${lang.cardGenerator}</a></li>
+                  <li><a href="#game" class="menu-item link" id="game">${lang.game}</a></li>
+                  <li><a href="#about" class="menu-item link" id="about">${lang.aboutPage}</a></li>
                 </ul>
               </nav>    
             
@@ -97,6 +97,7 @@ export class AppHeader extends DMComponent {
     this.createContent();
     this.render();
     if (router.getUrl() === 'css-generator') {
+      addActiveStatusByUrl('css-generator');
       cssComponentMenuComponent.createContent();
       cssComponentMenuComponent.render();
       const savedComponentName = localStorage.getItem('component');
@@ -118,13 +119,19 @@ export class AppHeader extends DMComponent {
       // renderingService.reset();
     }
     if (router.getUrl() === 'game') {
+      addActiveStatusByUrl('game');
+      console.log('game');
       gamePageComponent.createContent();
       gamePageComponent.render();
     }
     if (router.getUrl() === 'card-generator') {
-      checkLang();
+      addActiveStatusByUrl('card-generator');
       cardGeneratorPageComponent.createCardPage();
       cardGeneratorPageComponent.render();
+    }
+    if (router.getUrl() === 'about') {
+      addActiveStatusByUrl('about');
+     
     }
   }
 
