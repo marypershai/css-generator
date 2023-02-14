@@ -7,6 +7,7 @@ import { cssComponentMenuComponent } from '../components/css-components/css-comp
 import { allCssComponents } from '../../framework/tools/components';
 import { gamePageComponent } from '../pages/game-page.component';
 import { cardGeneratorPageComponent } from '../pages/card-generator-page.component';
+import { addActiveStatus } from '../service/setActivePage';
 
 
 
@@ -79,6 +80,7 @@ export class AppHeader extends DMComponent {
       toggleMenu();
     } else if (target.classList.contains('menu-item')) {
       closeMenu();
+      addActiveStatus(event);
     } else if (target.closest('.theme-switcher')) {
       switchThemeOnClick();
     }
