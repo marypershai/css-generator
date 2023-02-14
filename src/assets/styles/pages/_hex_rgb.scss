@@ -1,0 +1,113 @@
+.hex-rgb-page {
+  align-items: flex-start;
+  display: block;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 70vh;
+  overflow-y: auto;
+  gap: 1em;
+  position: relative;
+
+  @media (min-width: 780px) {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.hex-rgb-settings {
+  flex: 330 1;
+  overflow-x: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 2em;
+  padding-bottom: 1em;
+}
+
+.hex-rgb-preview {
+  flex: 665 0;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+  justify-content: flex-start;
+  position: sticky;
+  @media (min-width: 780px) and (max-width: 1300px) {
+    max-width: 460px;
+  }
+}
+
+.hex-rgb-preview{
+  margin: 0 20px;
+}
+
+.code_rgb_hex{
+  position: relative;
+  width: 100%;
+  margin: 40px 0;
+}
+
+.preview-code {
+  padding: 10px;
+  background-color: rgb(114, 136, 133, 0.3);
+  border: 1px solid rgb(184, 184, 184, 0.3);
+}
+
+.label_rgb_hex{
+  position: absolute;
+  text-align: center;
+  left: 0;
+  top: -26px;
+  width: 70px;
+  height: 20px;
+  border-radius: 10px 10px 0 0;
+  background-color: rgb(236, 205, 147, 0.3);
+  padding: 3px;
+}
+
+.copy_color{
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(240, 240, 240, 0.3);
+  border-top: 1px solid rgba(180, 180, 180, 0.6);
+  background-color: rgba(240, 240, 240, 0.3);
+  text-align: center;
+  font-size: smaller;
+  cursor: pointer;
+  border-radius: 0 0 5px 5px;
+  &:hover{
+    box-shadow: 0px 0px 10px 2px rgba(180, 180, 180, 0.2) inset;
+    border: 1px solid rgba(180, 180, 180, 0.6);
+  }
+  &:active{
+    box-shadow: 0px 0px 10px 2px rgba(180, 180, 180, 0.4) inset;
+  }
+}
+
+.preview-color-block{
+  width: 100%;
+  height: 20vh;
+  margin-bottom: 20px;
+  border: 1px solid rgba(180, 180, 180, 0.4);
+  border-radius: 10px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  p{
+    align-content: center;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.error{
+  color: #de425b;
+}
+
+.preview-code-block{
+  display: flex;
+  gap: 2em;
+  @media (max-width: 1300px){
+    display: block;
+    margin-left: 0px;
+  }
+}
