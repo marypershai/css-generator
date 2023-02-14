@@ -44,6 +44,7 @@ class GamePageComponent extends DMComponent {
 
   createContent() {
     const { savedLang } = checkLang();
+    const gameLevels = this.makeLevels(this.level);
     this.template = `
               <div class="game_body">
                 <div class="game_menu">
@@ -52,6 +53,7 @@ class GamePageComponent extends DMComponent {
                   <div class="game_level"> 
                     <button class="game_btn prev_lvl" ${(this.level === 1) ? 'disabled' : ''}> ᐊ </button>
                     ${(savedLang === 'ru') ? 'Уровень' : 'Level'} ${this.level} 
+                    ${gameLevels}
                     <button class="game_btn next_lvl" ${(this.level === levels.length) ? 'disabled' : ''}> ᐅ </button>
                   </div>
                 </div>
@@ -115,6 +117,22 @@ class GamePageComponent extends DMComponent {
     this.createContent();
     this.render();
     localStorage.setItem('gameLevel', this.level.toString());
+  }
+
+  makeLevels(current: number) {
+    const solved = localStorage.getItem('gameSolved')?.split(', ');
+    const container = document.createElement('div');
+    container.classList.add('lvls_container');
+    for (let i = 1; i < levels.length + 1; i++) {
+      const level = document.createElement('div');
+      level.classList.add('lvl_info');
+      if (solved?.includes(i.toString())) level.classList.add('lvl_solved');
+      if (i === current) level.classList.add('lvl_current');
+      level.innerText = i.toString();
+      container.append(level);
+    }
+    console.log(container);
+    return container.outerHTML;
   }
 }
 
