@@ -48,7 +48,7 @@
   grid-template-columns: 1fr;
   position: relative;
   z-index: 20;
-  row-gap: 2em;  
+  row-gap: 2em;
   opacity: 0;
   transition: .2s ease-in-out;
   display: none;
@@ -66,7 +66,12 @@
     &--open {
       display: grid;
       opacity: 1;
-      box-shadow: 0 82vh 0 50vh $text-secondary-colour;
+      box-shadow: 0 50vh 0 50vh $text-secondary-colour;
+      margin-left: -10%;
+      padding-left: 10%;
+      margin-right: -10%;
+      padding-right: 10%;
+      padding-bottom: 5%;
     }
   }
 
@@ -159,9 +164,9 @@
 
 .active {
   outline: 3px solid transparent;
-    color: $link;
-    background-color: $link-bg;
-    -webkit-box-shadow: 0 -2px $link-bg, 0 4px $link-active;
-    box-shadow: 0 -2px $link-bg, 0 4px $link-active;
-    text-decoration: none;
+  color: $link;
+  background-color: $link-bg;
+  -webkit-box-shadow: 0 -2px $link-bg, 0 4px $link-active;
+  box-shadow: 0 -2px $link-bg, 0 4px $link-active;
+  text-decoration: none;
 }
