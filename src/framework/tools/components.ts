@@ -5,6 +5,7 @@ import { borderRadiusComponent } from '../../app/components/css-components/borde
 import { textShadowComponent } from '../../app/components/css-components/text-shadow.component';
 import { textComponent } from '../../app/components/css-components/text.component';
 import { textColumnComponent } from '../../app/components/css-components/text-column.component';
+import { backgroundGradientComponent } from '../../app/components/css-components/background-gradient.component';
 
 export const allCssComponents  = [
   {
@@ -34,5 +35,9 @@ export const allCssComponents  = [
   {
     name: 'text-column',
     component: textColumnComponent,
+  },
+  {
+    name: 'background-gradient',
+    component: backgroundGradientComponent,
   },
 ];
