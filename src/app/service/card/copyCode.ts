@@ -1,3 +1,7 @@
+import { checkLang } from '../lang.service';
+
+
+const { lang } = checkLang();
 
 export function copyHTMLCode(): void {
   const copyHTMLButton = document.querySelector('#copyHTMLButton') as HTMLButtonElement;
@@ -11,7 +15,7 @@ export function copyHTMLCode(): void {
   temporaryTextArea.select();
   document.execCommand('copy');
   document.body.removeChild(temporaryTextArea);
-  copyHTMLButton.textContent = 'Copied'; 
+  copyHTMLButton.textContent = `${lang.copied}`; 
 
 }
 
@@ -28,7 +32,7 @@ export function copyCSSCode(): void {
   temporaryTextArea.select();
   document.execCommand('copy');
   document.body.removeChild(temporaryTextArea);
-  copyCSSButton.textContent = 'Copied'; 
+  copyCSSButton.textContent = `${lang.copy}`; 
 
 }
 
@@ -36,6 +40,6 @@ export function copyCSSCode(): void {
 export function resetCopy(): void {
   const copyCSSButton = document.querySelector('#copyCSSButton') as HTMLButtonElement;
   const copyHTMLButton = document.querySelector('#copyHTMLButton') as HTMLButtonElement;
-  copyCSSButton.textContent = 'Copy';
-  copyHTMLButton.textContent = 'Copy';
+  copyCSSButton.textContent = `${lang.copy}`;
+  copyHTMLButton.textContent = `${lang.copy}`;
 }

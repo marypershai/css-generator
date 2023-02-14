@@ -12,6 +12,8 @@ import { setBorderRadius, setPadding } from '../service/card/overlay/controlInpu
 import { controlStackedContent } from '../service/card/stacked/controlCardContent';
 import { copyCSSCode, copyHTMLCode } from '../service/card/copyCode';
 import { changeImage } from '../service/card/changeImage';
+import { checkLang } from '../service/lang.service';
+
 
 
 class CardGeneratorPageComponent extends DMComponent {
@@ -24,6 +26,7 @@ class CardGeneratorPageComponent extends DMComponent {
   public isOverlay = true;
 
   public createCardPage(): string {
+    checkLang();
     this.template = cardOverlay;
     return this.template;
   }

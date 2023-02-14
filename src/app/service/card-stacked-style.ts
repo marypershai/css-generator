@@ -1,5 +1,9 @@
 import { getCardRootStackedStyles } from './card-root-styles';
 import { getImageUrl } from './card/changeImage';
+import { checkLang } from './lang.service';
+
+
+const { lang } = checkLang();
 
 export const cardStacked = `
 <div class="page__container card-generator-page">
@@ -8,19 +12,19 @@ export const cardStacked = `
   <h2 class="visibility-hidden">Card generator</h2>
     
     <section>
-      <h3 class="card-section__title">Styles</h3>
+      <h3 class="card-section__title">${lang.styles}</h3>
       <div class="settings__section" id="cardStyles">
         <figure class="img-container " id="overlayStyle">
           <svg class="img-icon">
             <use xlink:href="./icons.svg#overlay-icon"></use>
           </svg>
-          <figcaption>Overlay</figcaption>
+          <figcaption>${lang.overlay}</figcaption>
         </figure>
         <figure class="img-container focus" id="stackedStyle">
           <svg class="img-icon">
             <use xlink:href="./icons.svg#stacked-icon"></use>
           </svg>   
-          <figcaption>Stacked</figcaption>
+          <figcaption>${lang.stacked}</figcaption>
         </figure>
       </div>
     </section>
@@ -28,7 +32,7 @@ export const cardStacked = `
     <div class="spacer"></div>
 
     <section>
-      <h3 class="card-section__title">Card Content</h3>
+      <h3 class="card-section__title">${lang.cardContent}</h3>
       <div class="settings__section" id="cardsStacked">      
         <button class="button card__image focus" id="simpleCard">
         <img class="image" src="https://res.cloudinary.com/bartoshevich/image/upload/f_auto,q_auto/v1676108124/rs-school/css/cardContentSimple.jpg" alt="simple card layout" width="530" height="108" >
@@ -49,10 +53,10 @@ export const cardStacked = `
     <div class="spacer"></div> 
 
     <section>
-      <h3 class="card-section__title">Card Image</h3>
+      <h3 class="card-section__title">${lang.cardImage}</h3>
       <div class="settings__section">
         <div class="file-upload-section">
-        <input class="file-upload" type="text" id="imageUrl" placeholder="Enter image URL...">
+        <input class="file-upload" type="text" id="imageUrl" placeholder="${lang.enterurl}">
         </div>
         <div class="sub-section">
             <h4 class="sub-section__title">Aspect Ratio</h4>
@@ -126,7 +130,7 @@ export const cardStacked = `
       &lt;/div&gt;
     &lt;/article&gt;             
         </code></pre>
-        <button class="code-copy" id="copyHTMLButton">Copy</button>
+        <button class="code-copy" id="copyHTMLButton">${lang.copy}</button>
         </div>
         
         <div>
@@ -273,7 +277,7 @@ export const cardStacked = `
     
         </code>
         </pre>
-        <button class="code-copy" id="copyCSSButton">Copy</button>
+        <button class="code-copy" id="copyCSSButton">${lang.copy}</button>
         </div>
 
     </section>      

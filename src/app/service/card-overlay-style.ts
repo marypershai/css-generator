@@ -1,5 +1,9 @@
 import { getCardRootOverlayStyles } from './card-root-styles';
 import { getImageUrl } from './card/changeImage';
+import { checkLang } from './lang.service';
+
+
+const { lang } = checkLang();
 
 export const cardOverlay = `
 <div class="page__container card-generator-page">
@@ -8,19 +12,19 @@ export const cardOverlay = `
   <h2 class="visibility-hidden">Card generator</h2>
     
     <section>
-      <h3 class="card-section__title">Styles</h3>
+      <h3 class="card-section__title">${lang.styles}</h3>
       <div class="settings__section" id="cardStyles">
         <figure class="img-container focus" id="overlayStyle">
           <svg class="img-icon">
             <use xlink:href="./icons.svg#overlay-icon"></use>
           </svg>
-          <figcaption>Overlay</figcaption>
+          <figcaption>${lang.overlay}</figcaption>
         </figure>
         <figure class="img-container" id="stackedStyle">
           <svg class="img-icon">
             <use xlink:href="./icons.svg#stacked-icon"></use>
           </svg>   
-          <figcaption>Stacked</figcaption>
+          <figcaption>${lang.stacked}</figcaption>
         </figure>
       </div>
     </section>
@@ -28,23 +32,23 @@ export const cardOverlay = `
     <div class="spacer"></div>
 
     <section id="cardContent">
-      <h3 class="card-section__title">Card Content</h3>
+      <h3 class="card-section__title">${lang.cardContent}</h3>
       <div class="settings__section">      
         <div class="sub-section">
-          <h4 class="sub-section__title">Horizontal</h4>
+          <h4 class="sub-section__title">${lang.horizontal}</h4>
           <div class="buttons-group" id="horizontal-card-content">
-            <button class="setting__button focus" id="horizontal-left-button">Left</button>
-            <button class="setting__button" id="horizontal-center-button">Center</button>
-            <button class="setting__button" id="horizontal-right-button">Right</button>
+            <button class="setting__button focus" id="horizontal-left-button">${lang.left}</button>
+            <button class="setting__button" id="horizontal-center-button">${lang.center}</button>
+            <button class="setting__button" id="horizontal-right-button">${lang.right}</button>
           </div>
         </div>
         
         <div class="sub-section">
-          <h4 class="sub-section__title">Vertical</h4>
+          <h4 class="sub-section__title">${lang.vertical}</h4>
           <div class="buttons-group" id="vertical-card-content">
-          <button class="setting__button" id="vertical-top-button">Top</button>
-          <button class="setting__button" id="vertical-center-button">Center</button>
-          <button class="setting__button focus" id="vertical-bottom-button">Bottom</button>
+          <button class="setting__button" id="vertical-top-button">${lang.top}</button>
+          <button class="setting__button" id="vertical-center-button">${lang.center}</button>
+          <button class="setting__button focus" id="vertical-bottom-button">${lang.bottom}</button>
           </div>
         </div>
       </div>
@@ -53,10 +57,10 @@ export const cardOverlay = `
     <div class="spacer"></div> 
 
     <section>
-      <h3 class="card-section__title">Card Image</h3>
+      <h3 class="card-section__title">${lang.cardImage}</h3>
       <div class="settings__section">
         <div class="file-upload-section">
-          <input class="file-upload" type="text" id="imageUrl" placeholder="Enter image URL...">
+          <input class="file-upload" type="text" id="imageUrl" placeholder="${lang.enterurl}">
         </div>
         <div class="sub-section">
             <h4 class="sub-section__title">Aspect Ratio</h4>
@@ -72,13 +76,13 @@ export const cardOverlay = `
    <div class="spacer"></div>
 
     <section>
-      <h3 class="card-section__title">Card Overlay</h3>
+      <h3 class="card-section__title">${lang.cardOverlay}</h3>
       <div class="settings__section">      
         <div class="sub-section">
-          <h4 class="sub-section__title">Style/Direction</h4>
+          <h4 class="sub-section__title">${lang.direction}</h4>
           <div class="buttons-group" id="cardOverlay">
-            <button class="setting__button" id="top-button">Top</button>
-            <button class="setting__button focus" id="bottom-button">Bottom</button>
+            <button class="setting__button" id="top-button">${lang.top}</button>
+            <button class="setting__button focus" id="bottom-button">${lang.bottom}</button>
             <button class="setting__button" id="bottom-right-button">
               <svg class="button-icon">
                 <use xlink:href="./icons.svg#bottom-right"></use>
@@ -97,12 +101,12 @@ export const cardOverlay = `
     <div class="spacer"></div>
 
     <section>
-      <h3 class="card-section__title">Text Shadow</h3>
+      <h3 class="card-section__title">${lang.textShadow}</h3>
       <div class="settings__section">
         <div class="buttons-group" id="textShadow">
-          <button class="setting__button focus" id="basicButton">Basic</button>
-          <button class="setting__button" id="heavyButton">Heavy</button>
-          <button class="setting__button" id="noneButton">None</button>
+          <button class="setting__button focus" id="basicButton">${lang.basic}</button>
+          <button class="setting__button" id="heavyButton">${lang.heavy}</button>
+          <button class="setting__button" id="noneButton">${lang.none}</button>
         </div>
       </div>
     </section>
@@ -168,7 +172,7 @@ export const cardOverlay = `
       &lt;/div&gt;
     &lt;/article&gt;        
         </code></pre>
-        <button class="code-copy" id="copyHTMLButton">Copy</button>
+        <button class="code-copy" id="copyHTMLButton">${lang.copy}</button>
         </div>
         
         <div>
@@ -262,7 +266,7 @@ export const cardOverlay = `
       
         </code>
         </pre>
-        <button class="code-copy" id="copyCSSButton">Copy</button>
+        <button class="code-copy" id="copyCSSButton">${lang.copy}</button>
         </div>
 
     </section>      

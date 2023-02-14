@@ -6,6 +6,8 @@ import { checkLang } from '../service/lang.service';
 import { cssComponentMenuComponent } from '../components/css-components/css-component-menu.component';
 import { allCssComponents } from '../../framework/tools/components';
 import { gamePageComponent } from '../pages/game-page.component';
+import { cardGeneratorPageComponent } from '../pages/card-generator-page.component';
+
 
 
 export class AppHeader extends DMComponent {
@@ -116,6 +118,11 @@ export class AppHeader extends DMComponent {
     if (router.getUrl() === 'game') {
       gamePageComponent.createContent();
       gamePageComponent.render();
+    }
+    if (router.getUrl() === 'card-generator') {
+      checkLang();
+      cardGeneratorPageComponent.createCardPage();
+      cardGeneratorPageComponent.render();
     }
   }
 
