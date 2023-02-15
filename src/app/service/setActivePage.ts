@@ -16,6 +16,5 @@ export function addActiveStatus(event: Event): void {
 export function addActiveStatusByUrl(url: string): void {
   removeActiveStatus();
   const item = document.querySelector(`#${url}`) as HTMLElement;
-  console.log(item);
   item.classList.add('active');
 }

@@ -126,16 +126,16 @@
   box-sizing: border-box;
   cursor: pointer;
   transition: .4s linear;
-  opacity: .5;
+  
 
   &:hover {
     background-color: $text-colour;
     color: $lang-button-bg;
-    opacity: 1;
+    
   }
 
   &--active {
-    opacity: 1;
+    box-shadow: 1px 1px 10px 3px $link-bg;
   }
 
 }

@@ -133,7 +133,7 @@ export const cardOverlay = (lang: Record<string, string>) =>`
 
   </section>
 
-
+  <div class="sticky">
   <div class="preview">
     <section class="preview__image">
       <h2 class="visibility-hidden">Image Preview</h2>
@@ -267,7 +267,8 @@ export const cardOverlay = (lang: Record<string, string>) =>`
         <button class="code-copy" id="copyCSSButton">${lang.copy}</button>
         </div>
 
-    </section>      
+    </section>
+  </div>      
   </div>
 </div>
 `;
