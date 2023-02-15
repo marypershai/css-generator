@@ -24,8 +24,8 @@ class CardGeneratorPageComponent extends DMComponent {
   public isOverlay = true;
 
   public createCardPage(): string {
-    checkLang();
-    this.template = cardOverlay;
+    const { lang } = checkLang();
+    this.template = cardOverlay(lang);
     return this.template;
   }
 
@@ -74,7 +74,7 @@ class CardGeneratorPageComponent extends DMComponent {
   private changeImage(event: KeyboardEvent): void {
     changeImage(event);
   }
-   
+
 }
 
 export const cardGeneratorPageComponent = new CardGeneratorPageComponent({

@@ -34,5 +34,8 @@
   "heavy": "Heavy",
   "none": "None",
   "cardOverlay": "Card Overlay",
-  "direction": "Direction"
+  "direction": "Direction",
+  "borderRadius": "Border Radius",
+  "padding": "Padding", 
+  "aspectRatio": "Aspect Ratio"
 }

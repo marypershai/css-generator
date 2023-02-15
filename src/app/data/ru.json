@@ -34,5 +34,8 @@
   "heavy": "сильная",
   "none": "отсутствует",
   "cardOverlay": "Градиент",
-  "direction": "Стиль"
+  "direction": "Стиль",
+  "borderRadius": "Скругление углов",
+  "padding": "Поля", 
+  "aspectRatio": "Пропорции"
 }

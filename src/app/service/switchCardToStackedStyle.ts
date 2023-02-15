@@ -1,6 +1,7 @@
 
 import { cardGeneratorPageComponent } from '../pages/card-generator-page.component';
 import { cardStacked, setCssStackedCodeBlock } from './card-stacked-style';
+import { checkLang } from './lang.service';
 
 
 function setDefaultProperties(): void {
@@ -17,7 +18,8 @@ export function switchCardToStackedStyle(): void {
   html.setAttribute('card-style', 'stacked');
   cardGeneratorPageComponent.isOverlay = false;
   setDefaultProperties();
-  cardGeneratorPageComponent.template = cardStacked;
+  const { lang } = checkLang();
+  cardGeneratorPageComponent.template = cardStacked(lang);
   cardGeneratorPageComponent.render();
   setCssStackedCodeBlock();
 }

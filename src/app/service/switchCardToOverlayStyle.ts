@@ -1,5 +1,6 @@
 import { cardGeneratorPageComponent } from '../pages/card-generator-page.component';
 import { cardOverlay, setCssOverlayCodeBlock } from './card-overlay-style';
+import { checkLang } from './lang.service';
 
 
 function setDefaultProperties(): void {
@@ -16,7 +17,8 @@ export function switchCardToOverlayStyle(): void {
   html.removeAttribute('card-style');
   cardGeneratorPageComponent.isOverlay = true;
   setDefaultProperties();
-  cardGeneratorPageComponent.template = cardOverlay;
+  const { lang } = checkLang();
+  cardGeneratorPageComponent.template = cardOverlay(lang);
   cardGeneratorPageComponent.render();
   setCssOverlayCodeBlock();
 }

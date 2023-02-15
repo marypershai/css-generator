@@ -23,6 +23,7 @@ html {
   --theme-button: #fafafa;
   --card-active: #6d7bf8;
   --error: #f2d01d;
+  --button: transparent;
 }
 
 html[data-theme=dark] {
@@ -50,6 +51,7 @@ html[data-theme=dark] {
   --theme-button: #aeaeab;
   --card-active: #de425b;
   --error: #de425b;
+  --button:#776677;
 }
 
 [data-theme=dark] img {

@@ -1,11 +1,9 @@
 import { getCardRootOverlayStyles } from './card-root-styles';
 import { getImageUrl } from './card/changeImage';
-import { checkLang } from './lang.service';
 
 
-const { lang } = checkLang();
 
-export const cardOverlay = `
+export const cardOverlay = (lang: Record<string, string>) =>`
 <div class="page__container card-generator-page">
   
   <section class="card-settings">
@@ -63,7 +61,7 @@ export const cardOverlay = `
           <input class="file-upload" type="text" id="imageUrl" placeholder="${lang.enterurl}">
         </div>
         <div class="sub-section">
-            <h4 class="sub-section__title">Aspect Ratio</h4>
+            <h4 class="sub-section__title">${lang.aspectRatio}</h4>
             <div class="buttons-group" id="aspectRatio">
               <button class="setting__button" id="aspectRatio_4_3">4/3</button>
               <button class="setting__button focus" id="aspectRatio_1_1">1/1</button>
@@ -117,7 +115,7 @@ export const cardOverlay = `
       <h3 class="visibility-hidden">Border & Padding</h3>
       <div class="settings__section" id="inputRange">
         <div class="slider-section">
-          <h4 class="sub-section__title">Border Radius</h4>        
+          <h4 class="sub-section__title">${lang.borderRadius}</h4>        
               
           <div >
           <input class="card__slider" name="border" type="range" min="1" max="100" value="8" id="borderRadius">
@@ -125,7 +123,7 @@ export const cardOverlay = `
         </div>
 
         <div class="slider-section">
-          <h4 class="sub-section__title">Padding</h4>
+          <h4 class="sub-section__title">${lang.padding}</h4>
           <div>
               <input class="card__slider" name="padding" type="range" min="1" max="63" value="10" id="padding">
           </div>
