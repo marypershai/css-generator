@@ -6,6 +6,7 @@ import { textShadowComponent } from '../../app/components/css-components/text-sh
 import { textComponent } from '../../app/components/css-components/text.component';
 import { textColumnComponent } from '../../app/components/css-components/text-column.component';
 import { backgroundGradientComponent } from '../../app/components/css-components/background-gradient.component';
+import { flexboxItemsComponent } from '../../app//components/css-components/flexbox-items.component';
 
 export const allCssComponents  = [
   {
@@ -39,5 +40,9 @@ export const allCssComponents  = [
   {
     name: 'background-gradient',
     component: backgroundGradientComponent,
+  },
+  {
+    name: 'flexbox-items',
+    component: flexboxItemsComponent,
   },
 ];

@@ -17,8 +17,8 @@ export class CssComponentMenuComponent extends DMComponent {
     this.template = `
     <h2 class="css_subheader">${lang.properties}</h2>
         <ul class="css_components_list">
-<!--          <ul class="list_subheading">Layout</ul>-->
-<!--            <li class="css_component" data-component="">Flexbox Items</li>-->
+          <ul class="list_subheading">Layout</ul>
+            <li class="css_component" data-component="flexbox-items">Flexbox Items</li>
 <!--            <li class="css_component" data-component="">Flexbox Menu Bar</li>-->
 <!--            <li class="css_component" data-component="">Flexbox Gallery</li>-->
 <!--            <li class="css_component" data-component="">Grid Items</li>-->
