@@ -1,45 +1,33 @@
 
 import { customOverlayProperties } from '../../card-root-styles';
 import { addFocus } from '../addFocus';
-// import { highlightCode } from '../../highlight';
 import { setCssOverlayCodeBlock } from '../../card-overlay-style';
 import { resetCopy } from '../copyCode';
+import { ButtonProperties } from 'framework/tools/interfaces';
 
 
 
+
+const buttons: ButtonProperties[] = [
+  { id: 'top-button', direction: '180deg' },
+  { id: 'bottom-button', direction: '0deg' },
+  { id: 'bottom-right-button', direction: '315deg' },
+  { id: 'top-right-button', direction: '225deg' },
+];
+
+function setOverlayDirection(direction: string) {
+  const html = document.firstElementChild as HTMLElement;
+  html.style.setProperty('--overlay-direction', direction);
+  customOverlayProperties.aspectRatioImage = direction;
+  setCssOverlayCodeBlock();
+  resetCopy();
+}
 
 export function controlCardOverlay(event: Event): void {
   const target = event.target as HTMLElement;
-  const html = document.firstElementChild as HTMLElement;
-  if (target.closest('#top-button')) {
-    html.style.setProperty('--overlay-direction', '180deg');
-    customOverlayProperties.aspectRatioImage = '180deg';
-    setCssOverlayCodeBlock();
-    resetCopy();
-    // highlightCode();
-    addFocus('#cardOverlay', '#top-button');
-  } else if (target.closest('#bottom-button')) {
-    html.style.setProperty('--overlay-direction', '0deg');
-    customOverlayProperties.aspectRatioImage = '0deg';
-    setCssOverlayCodeBlock();
-    resetCopy();
-    // highlightCode();
-    addFocus('#cardOverlay', '#bottom-button');
-  } else if (target.closest('#bottom-right-button')) {
-    html.style.setProperty('--overlay-direction', '315deg');
-    customOverlayProperties.aspectRatioImage = '315deg';
-    setCssOverlayCodeBlock();
-    resetCopy();
-    // highlightCode();
-    addFocus('#cardOverlay', '#bottom-right-button');
-  } else if (target.closest('#top-right-button')) {
-    html.style.setProperty('--overlay-direction', '225deg');
-    customOverlayProperties.aspectRatioImage = '225deg';
-    setCssOverlayCodeBlock();
-    resetCopy();
-    // highlightCode();
-    addFocus('#cardOverlay', '#top-right-button');
+  const clickedButton = buttons.find(button => target.closest(`#${button.id}`));
+  if (clickedButton) {
+    setOverlayDirection(clickedButton.direction);
+    addFocus('#cardOverlay', `#${clickedButton.id}`);
   }
-
 }
-

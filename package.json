@@ -55,6 +55,6 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
-    "highlight.js": "^11.7.0"
+    "notyf": "^3.10.0"
   }
 }

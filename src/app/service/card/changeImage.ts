@@ -1,4 +1,5 @@
 
+
 function validateUrl(url: string) {
   try {
     new URL(url);
@@ -20,12 +21,12 @@ export function changeImage(event: KeyboardEvent): void {
       const htmlCodeContent = htmlCode.innerHTML;
       const updatedHtmlCodeContent = htmlCodeContent.replace(/src=".*?"/g, `src="${imageUrl}"`);
       htmlCode.innerHTML = updatedHtmlCodeContent;
-      localStorage.setItem('imageUrl', `${imageUrl}`);
-      
-      image.src = imageUrl;
-      
+      localStorage.setItem('imageUrl', `${imageUrl}`);      
+      image.src = imageUrl;      
     } else {
-      alert('Please enter a valid URL');
+      const uploadSenction = document.querySelector('.file-upload-section') as HTMLElement;
+      uploadSenction.classList.add('error-message');
+      setTimeout(() => uploadSenction.classList.remove('error-message'), 2000);
     }
   }
 }

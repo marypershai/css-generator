@@ -1,7 +1,6 @@
 
 import { cardGeneratorPageComponent } from '../pages/card-generator-page.component';
 import { cardStacked, setCssStackedCodeBlock } from './card-stacked-style';
-// import { highlightCode } from './highlight';
 
 
 function setDefaultProperties(): void {
@@ -21,7 +20,6 @@ export function switchCardToStackedStyle(): void {
   cardGeneratorPageComponent.template = cardStacked;
   cardGeneratorPageComponent.render();
   setCssStackedCodeBlock();
-  // highlightCode();
 }
 
 

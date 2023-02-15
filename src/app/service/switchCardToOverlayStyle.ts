@@ -1,6 +1,5 @@
 import { cardGeneratorPageComponent } from '../pages/card-generator-page.component';
 import { cardOverlay, setCssOverlayCodeBlock } from './card-overlay-style';
-// import { highlightCode } from './highlight';
 
 
 function setDefaultProperties(): void {
@@ -20,5 +19,4 @@ export function switchCardToOverlayStyle(): void {
   cardGeneratorPageComponent.template = cardOverlay;
   cardGeneratorPageComponent.render();
   setCssOverlayCodeBlock();
-  // highlightCode();
 }

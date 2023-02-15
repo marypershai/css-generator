@@ -1,7 +1,6 @@
 import { cardOverlay } from '../service/card-overlay-style';
 import { DMComponent } from '../../framework/index';
 import { ComponentConfig } from '../../framework/tools/interfaces';
-// import { highlightCode } from '../service/highlight';
 import { switchCardToOverlayStyle } from '../service/switchCardToOverlayStyle';
 import { switchCardToStackedStyle } from '../service/switchCardToStackedStyle';
 import { controlContent } from '../service/card/overlay/controlCardContent';
@@ -20,7 +19,6 @@ class CardGeneratorPageComponent extends DMComponent {
   constructor(config: ComponentConfig) {
     super(config);
     this.createCardPage();
-    // highlightCode();
   }
 
   public isOverlay = true;

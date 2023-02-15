@@ -114,8 +114,27 @@
   justify-content: flex-end;
 }
 
+
+
+.error-message {
+  position: relative;
+
+  &::after {
+    content: "ошибка в url -- wrong url";
+    position: absolute;
+    background-color: var(--error);
+    top: -24px;
+    left: 4px;
+    line-height: 1.1;
+    padding: 6px;
+    border-radius: 2px;
+    font-size: 14px;
+    color: $text-colour;
+  }
+}
+
 .file-upload {
-  cursor: pointer;
+  cursor: text;
   display: inline-block;
   max-height: 31px;
   border: 1px solid $text-secondary-colour;
@@ -123,9 +142,12 @@
   padding: 8px 28px;
   transition: box-shadow .4s;
 
+
   &:hover {
     box-shadow: 1px 1px 10px 3px var(--gray);
   }
+
+
 }
 
 .spacer {
@@ -204,18 +226,18 @@
 
 
 
-.focus { 
+.focus {
   transition: box-shadow .1s;
 
-  & > img {
+  &>img {
     border: 2px solid var(--card-active);
   }
 
-  & > .img-icon {
+  &>.img-icon {
     border: 2px solid var(--card-active);
   }
 
-  & > figcaption {
+  &>figcaption {
     color: var(--card-active);
   }
 
@@ -231,7 +253,7 @@
   height: auto;
   width: 80%;
   border: 2px solid transparent;
-  
+
 
   &:focus {
     background-color: initial;
