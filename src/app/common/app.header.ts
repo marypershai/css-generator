@@ -122,7 +122,6 @@ export class AppHeader extends DMComponent {
           });
         }
       }
-      // renderingService.reset();
     }
     if (router.getUrl() === 'game') {
       addActiveStatusByUrl('game');
@@ -145,7 +144,6 @@ export class AppHeader extends DMComponent {
       addActiveStatusByUrl('about');
       aboutPageComponent.createContent();
       aboutPageComponent.render();
-
     }
   }
 
