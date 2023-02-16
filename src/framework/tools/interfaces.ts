@@ -20,3 +20,8 @@ export interface ModuleConfig {
   bootstrap: AppComponent;
   routes: RoutesObj[];
 }
+
+export interface ButtonProperties {
+  id: string;
+  direction: string;
+}
