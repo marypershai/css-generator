@@ -28,13 +28,13 @@ export class FlexboxItemsComponent extends DMComponent {
             <div class="setting-container amount-container">
                 <div class="flex-properties-container">
                     <p class="setting-title">Items amount: </p>
-                    <input class="amount-input" type="radio" id="four_items" name="flex_justify" value="4" checked>
+                    <input class="amount-input" type="radio" id="four_items" name="flex_amount" value="4" checked>
                     <label class="amount_label amount-label_checked" for="four_items">4</label>
-                    <input class="amount-input" type="radio" id="six_items" name="flex_justify" value="6">
+                    <input class="amount-input" type="radio" id="six_items" name="flex_amount" value="6">
                     <label class="amount_label" for="six_items">6</label>
-                    <input class="amount-input" type="radio" id="eight_items" name="flex_justify" value="8">
+                    <input class="amount-input" type="radio" id="eight_items" name="flex_amount" value="8">
                     <label class="amount_label" for="eight_items">8</label>
-                    <input class="amount-input" type="radio" id="ten_items" name="flex_justify" value="10">
+                    <input class="amount-input" type="radio" id="ten_items" name="flex_amount" value="10">
                     <label class="amount_label" for="ten_items">10</label>
                     <label class="unequal_label" for="unequal_height">
                         Unequal height 
@@ -136,7 +136,6 @@ export class FlexboxItemsComponent extends DMComponent {
   }
 
   amountHandle(event: Event): void {
-    if (event.target instanceof HTMLInputElement) renderingService.preview = `<div class="flexbox_demo" style="${flexboxItemsService.style}">${this.createPreview()}</div>`;
     if (event.target instanceof HTMLLabelElement) this.changeChecked(event.target, '.amount_label', 'amount-label_checked');
     this.renderLayout();
   }
@@ -172,6 +171,7 @@ export class FlexboxItemsComponent extends DMComponent {
   }
 
   private changeChecked(target: HTMLElement, selector: string, className: string) {
+    renderingService.preview = `<div class="flexbox_demo" style="${flexboxItemsService.style}">${this.createPreview()}</div>`;
     const label = document.querySelectorAll(selector);
     label.forEach(el => el.classList.remove(className));
     setTimeout(() => {
