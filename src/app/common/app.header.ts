@@ -8,6 +8,9 @@ import { allCssComponents } from '../../framework/tools/components';
 import { gamePageComponent } from '../pages/game-page.component';
 import { cardGeneratorPageComponent } from '../pages/card-generator-page.component';
 import { addActiveStatus, addActiveStatusByUrl } from '../service/setActivePage';
+import { hexRGBLayoutComponent } from '../components/hex-rgb-component/hex-rgb-layout.component';
+import { hexRGBPreviewComponent } from '../components/hex-rgb-component/hex-rgb-preview.component';
+import { aboutPageComponent } from '../pages/about-page.component';
 
 
 
@@ -44,10 +47,13 @@ export class AppHeader extends DMComponent {
               
               <nav role="navigation" aria-label="Main navigation">
                 <ul class="menu__list">
+
                   <li><a href="#css-generator" class="menu-item link" id="css-generator">${lang.cssGenerator}</a></li>
                   <li><a href="#card-generator" class="menu-item link" id="card-generator">${lang.cardGenerator}</a></li>
+                  <li><a href="#hex-rgb" class="menu-item link" id="hex-rgb">${lang.hexRGB}</a></li>
                   <li><a href="#game" class="menu-item link" id="game">${lang.game}</a></li>
                   <li><a href="#about" class="menu-item link" id="about">${lang.aboutPage}</a></li>
+
                 </ul>
               </nav>    
             
@@ -120,7 +126,6 @@ export class AppHeader extends DMComponent {
     }
     if (router.getUrl() === 'game') {
       addActiveStatusByUrl('game');
-      console.log('game');
       gamePageComponent.createContent();
       gamePageComponent.render();
     }
@@ -128,10 +133,19 @@ export class AppHeader extends DMComponent {
       addActiveStatusByUrl('card-generator');
       cardGeneratorPageComponent.createCardPage();
       cardGeneratorPageComponent.render();
+    }   
+    if (router.getUrl() === 'hex-rgb') {
+      addActiveStatusByUrl('hex-rgb');
+      hexRGBLayoutComponent.createContent();
+      hexRGBLayoutComponent.render();
+      hexRGBPreviewComponent.createContent();
+      hexRGBPreviewComponent.render();
     }
     if (router.getUrl() === 'about') {
       addActiveStatusByUrl('about');
-     
+      aboutPageComponent.createContent();
+      aboutPageComponent.render();
+
     }
   }
 

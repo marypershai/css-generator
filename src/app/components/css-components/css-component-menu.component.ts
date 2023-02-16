@@ -24,9 +24,9 @@ export class CssComponentMenuComponent extends DMComponent {
 <!--            <li class="css_component" data-component="">Grid Items</li>-->
 <!--            <li class="css_component" data-component="">Grid Page</li>-->
 <!--            <li class="css_component" data-component="">Float</li>-->
-<!--          <ul class="list_subheading">Background</ul>-->
+          <ul class="list_subheading">Background</ul>
 <!--            <li class="css_component" data-component="">Background Color</li>-->
-<!--            <li class="css_component" data-component="">Background Gradient</li>-->
+            <li class="css_component" data-component="background-gradient">Background Gradient</li>
 <!--            <li class="css_component" data-component="">Background Image</li>-->
           <ul class="list_subheading">Border</ul>
             <li class="css_component" data-component="border">Border</li>
@@ -40,8 +40,9 @@ export class CssComponentMenuComponent extends DMComponent {
           <ul class="list_subheading">Filter</ul>
             <li class="css_component" data-component="filter">Image filter</li>
           <ul class="list_subheading">Text</ul>
-<!--            <li class="css_component" data-component="">Text</li>-->
+            <li class="css_component" data-component="text">Text</li>
             <li class="css_component" data-component="text-shadow">Text Shadow</li>
+            <li class="css_component" data-component="text-column">Multiple Columns</li>
         </ul>`;
   }
 
