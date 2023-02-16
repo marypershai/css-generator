@@ -18,6 +18,7 @@
   "blurRadius": "Blur Radius",
   "shadowColor": "Shadow Color",
   "shadowOpacity": "Shadow Color Opacity",
+  "style": "Style",
   "styles": "Styles",
   "overlay": "Overlay",
   "stacked": "Stacked",
@@ -79,5 +80,11 @@
   "addStopColor": "Add Stop Color",
   "size": "Size",
   "position": "Position",
-  "spread": "Color spread"
+  "spread": "Color spread",
+  "width": "Width",
+  "allBorders": "All border",
+  "tlRadius": "Top Left Radius",
+  "trRadius": "Top Right Radius",
+  "blRadius": "Bottom Left Radius",
+  "brRadius": "Bottom Right Radius"
 }

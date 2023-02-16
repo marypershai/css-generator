@@ -20,7 +20,7 @@ export class BorderComponent extends DMComponent {
         <div class="css_generator_settings">
             <h2 class="css_subheader">${lang.configuration}</h2>
             <div class="setting-container">
-                <p class="setting-title">Color</p>
+                <p class="setting-title">${lang.color}</p>
                 <div class="input--color-block">
                   <div class="input--color-block-left">
                       <input id="border-color" class="input-color" type="color" value="${borderService.color}">
@@ -32,7 +32,7 @@ export class BorderComponent extends DMComponent {
             </div>
             
             <div class="setting-container">
-                <p class="setting-title">Style</p>
+                <p class="setting-title">${lang.style}</p>
                 <select class="select--border-style custom-select">
                   <option value="solid">Solid</option>
                   <option value="dotted">Dotted</option>
@@ -45,7 +45,7 @@ export class BorderComponent extends DMComponent {
                 </select>
             </div>
             <div class="setting-container">
-                <p class="setting-title">Width</p>
+                <p class="setting-title">${lang.width}</p>
                 <input id="border-width" type="range" min="0" max="20" step="1" value="${borderService.borderWidth}">
                 <div class="range__info">
                     <div class="range__info-min">0px</div>
