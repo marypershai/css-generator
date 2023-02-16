@@ -39,7 +39,7 @@
   "direction": "Стиль",
   "borderRadius": "Скругление углов",
   "padding": "Поля", 
-  "aspectRatio": "Пропорции"
+  "aspectRatio": "Пропорции",
   "color" : "Цвет",
   "letterSpacing": "Расстояние между буквами",
   "wordSpacing": "Расстояние между словами",

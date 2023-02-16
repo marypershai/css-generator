@@ -39,7 +39,7 @@
   "direction": "Direction",
   "borderRadius": "Border Radius",
   "padding": "Padding", 
-  "aspectRatio": "Aspect Ratio"
+  "aspectRatio": "Aspect Ratio",
   "color" : "Color",
   "letterSpacing": "Letter spacing",
   "wordSpacing": "Word spacing",
