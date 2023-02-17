@@ -1,0 +1,62 @@
+[
+  {
+    "blockTitle": "Background",
+    "menuItems": [
+      {
+        "menu": "Background Color",
+        "componentName": "background-color"
+      },
+      {
+        "menu": "Background Gradient",
+        "componentName": "background-gradient"
+      },
+      {
+        "menu": "Background Image",
+        "componentName": "background-image"
+      }
+    ]
+  },
+  {
+    "blockTitle": "Border",
+    "menuItems": [
+      {
+        "menu": "Border",
+        "componentName": "border"
+      },
+      {
+        "menu": "Border Radius",
+        "componentName": "border-radius"
+      },
+      {
+        "menu": "Box Shadow",
+        "componentName": "box-shadow"
+      }
+    ]
+  },
+  {
+    "blockTitle": "Text",
+    "menuItems": [
+      {
+        "menu": "Text",
+        "componentName": "text"
+      },
+      {
+        "menu": "Text Shadow",
+        "componentName": "text-shadow"
+      },
+      {
+        "menu": "Multiple Columns",
+        "componentName": "text-column"
+      }
+    ]
+  },
+  {
+    "blockTitle": "Filter",
+    "menuItems": [
+      {
+        "menu": "Image filter",
+        "componentName": "filter"
+      }
+    ]
+  }
+]
