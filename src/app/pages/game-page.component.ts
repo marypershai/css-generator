@@ -131,7 +131,6 @@ class GamePageComponent extends DMComponent {
       level.innerText = i.toString();
       container.append(level);
     }
-    console.log(container);
     return container.outerHTML;
   }
 }
