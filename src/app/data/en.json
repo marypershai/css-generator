@@ -86,7 +86,5 @@
   "tlRadius": "Top Left Radius",
   "trRadius": "Top Right Radius",
   "blRadius": "Bottom Left Radius",
-  "brRadius": "Bottom Right Radius",
-  "imgUrl": "Image URL",
-  "repeat": "Repeat"
+  "brRadius": "Bottom Right Radius"
 }

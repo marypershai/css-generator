@@ -27,7 +27,7 @@ export class CssComponentMenuComponent extends DMComponent {
           <ul class="list_subheading">Background</ul>
             <li class="css_component" data-component="background-color">Background Color</li>
             <li class="css_component" data-component="background-gradient">Background Gradient</li>
-            <li class="css_component" data-component="background-image">Background Image</li>
+<!--            <li class="css_component" data-component="">Background Image</li>-->
           <ul class="list_subheading">Border</ul>
             <li class="css_component" data-component="border">Border</li>
             <li class="css_component" data-component="border-radius">Border Radius</li>
