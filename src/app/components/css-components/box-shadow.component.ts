@@ -20,7 +20,7 @@ export class BoxShadowComponent extends DMComponent {
         <div class="css_generator_settings">
             <h2 class="css_subheader">${lang.configuration}</h2>
             <div class="setting-container">
-                <p class="setting-title">X (pixels)</p>
+                <p class="setting-title">${lang.horizontalShadow}</p>
                 <input id="x-pixels" type="range" value="${boxShadowService.xpixels}" step="1" min="-10" max="10">
                 <div class="range__info">
                     <div class="range__info-min">-10px</div>
@@ -29,7 +29,7 @@ export class BoxShadowComponent extends DMComponent {
             </div>
             
             <div class="setting-container">
-                <p class="setting-title">Y (pixels)</p>
+                <p class="setting-title">${lang.verticalShadow}</p>
                 <input id="y-pixels" type="range" value="${boxShadowService.ypixels}" step="1" min="-10" max="10">
                 <div class="range__info">
                     <div class="range__info-min">-10px</div>
@@ -38,7 +38,7 @@ export class BoxShadowComponent extends DMComponent {
             </div>
             
             <div class="setting-container">
-                <p class="setting-title">Blur (pixels)</p>
+                <p class="setting-title">${lang.blurRadius}</p>
                 <input id="blur-pixels" type="range" value="${boxShadowService.blurPixels}" step="1" min="0" max="20">
                 <div class="range__info">
                     <div class="range__info-min">0px</div>
@@ -47,7 +47,7 @@ export class BoxShadowComponent extends DMComponent {
             </div>
             
             <div class="setting-container">
-                <p class="setting-title">Spread (pixels)</p>
+                <p class="setting-title">${lang.spread}</p>
                 <input id="spread-pixels" type="range" value="${boxShadowService.spreadPixels}" step="1" min="0" max="20">
                 <div class="range__info">
                     <div class="range__info-min">0px</div>
@@ -56,7 +56,7 @@ export class BoxShadowComponent extends DMComponent {
             </div>
             
             <div class="setting-container">
-                <p class="setting-title">Color</p>
+                <p class="setting-title">${lang.shadowColor}</p>
                 <div class="input--color-block">
                   <div class="input--color-block-left">
                       <input id="shadow-color" class="input-color" type="color" value="${boxShadowService.color}">
@@ -70,7 +70,7 @@ export class BoxShadowComponent extends DMComponent {
             </div>
             
             <div class="setting-container">
-                <p class="setting-title">Color opacity</p>
+                <p class="setting-title">${lang.shadowOpacity}</p>
                 <input id="color-opacity" type="range" value="${boxShadowService.colorOpacity}" step="0.01" min="0" max="1">
                 <div class="range__info">
                     <div class="range__info-min">0</div>
