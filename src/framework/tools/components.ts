@@ -7,6 +7,8 @@ import { textComponent } from '../../app/components/css-components/text.componen
 import { textColumnComponent } from '../../app/components/css-components/text-column.component';
 import { backgroundGradientComponent } from '../../app/components/css-components/background-gradient.component';
 import { flexboxItemsComponent } from '../../app//components/css-components/flexbox-items.component';
+import { backgroundColorComponent } from '../../app/components/css-components/background-color.component';
+import { backgroundImageComponent } from '../../app/components/css-components/background-image.component';
 
 export const allCssComponents  = [
   {
@@ -44,5 +46,13 @@ export const allCssComponents  = [
   {
     name: 'flexbox-items',
     component: flexboxItemsComponent,
+  },
+  {
+    name: 'background-color',
+    component: backgroundColorComponent,
+  },
+  {
+    name: 'background-image',
+    component: backgroundImageComponent,
   },
 ];

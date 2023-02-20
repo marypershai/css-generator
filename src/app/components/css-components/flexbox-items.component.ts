@@ -27,7 +27,7 @@ export class FlexboxItemsComponent extends DMComponent {
             <h2 class="css_subheader">${lang.configuration}</h2>
             <div class="setting-container amount-container">
                 <div class="flex-properties-container">
-                    <p class="setting-title">Items amount: </p>
+                    <p class="setting-title">${lang.flex_itemsAmount}: </p>
                     <input class="amount-input" type="radio" id="four_items" name="flex_amount" value="4" checked>
                     <label class="amount_label amount-label_checked" for="four_items">4</label>
                     <input class="amount-input" type="radio" id="six_items" name="flex_amount" value="6">
@@ -37,13 +37,13 @@ export class FlexboxItemsComponent extends DMComponent {
                     <input class="amount-input" type="radio" id="ten_items" name="flex_amount" value="10">
                     <label class="amount_label" for="ten_items">10</label>
                     <label class="unequal_label" for="unequal_height">
-                        Unequal height 
+                        ${lang.flex_unequalHeight}
                         <input class="unequal_input unequal_height" type="checkbox" id="unequal_height"> 
                     </label>
                 </div>
             </div>
             <div class="setting-container justify-container">
-                <p class="setting-title">Justify content (Main direction)</p>
+                <p class="setting-title">Justify content (${lang.flex_mainDirection})</p>
                 <div class="flex-properties-container">
                     <input class="setting-input justify-content_input" type="radio" id="justify-center" name="flex_justify" value="center">
                     <label class="setting-label justify-content_label" for="justify-center">center</label>
@@ -60,7 +60,7 @@ export class FlexboxItemsComponent extends DMComponent {
                 </div>
             </div>
             <div class="setting-container align_items-container">
-                <p class="setting-title">Align items (Cross direction)</p>
+                <p class="setting-title">Align items (${lang.flex_crossDirection})</p>
                 <div class="flex-properties-container">
                     <input class="setting-input align_items_input" type="radio" id="align_items-center" name="align_items" value="center">
                     <label class="setting-label align_items_label" for="align_items-center">center</label>
@@ -92,7 +92,7 @@ export class FlexboxItemsComponent extends DMComponent {
                 </div>
             </div>
             <div class="setting-container direction-container">
-                <p class="setting-title">Direction</p>
+                <p class="setting-title">Direction ${lang.flex_direction}</p>
                 <div class="flex-properties-container">
                     <input class="setting-input direction_input" type="radio" id="direction-row" name="direction" value="row" checked>
                     <label class="setting-label direction_label setting-label_checked" for="direction-row">row</label>
@@ -105,7 +105,7 @@ export class FlexboxItemsComponent extends DMComponent {
                 </div>
             </div>
             <div class="setting-container wrap-container">
-                <p class="setting-title">Wrap (Multilines)</p>
+                <p class="setting-title">Wrap (${lang.flex_multilines})</p>
                 <div class="flex-properties-container">
                     <input class="setting-input wrap_input" type="radio" id="wrap-wrap" name="wrap" value="wrap">
                     <label class="setting-label wrap_label" for="wrap-wrap">wrap</label>
@@ -181,14 +181,14 @@ export class FlexboxItemsComponent extends DMComponent {
 
   private createPreview() {
     const height = document.querySelector('.unequal_height') as HTMLInputElement;
-    const isUnequal = (height?.checked) ? true : false; 
-    let value = 4;
+    const isUnequal = !!height?.checked;
+    let itemsAmount = 4;
     const inputs = document.querySelectorAll('.amount-input');
     inputs.forEach(el => {
-      if ((el instanceof HTMLInputElement) && (el.checked === true)) value = +el.value;
+      if ((el instanceof HTMLInputElement) && (el.checked)) itemsAmount = +el.value;
     });
     const container = document.createElement('div');
-    for (let i = 0; i < value; i++) {
+    for (let i = 0; i < itemsAmount; i++) {
       const text = document.createElement('p');
       text.innerText = i.toString().repeat(5);
       if (isUnequal) {

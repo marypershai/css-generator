@@ -21,7 +21,7 @@ export class BorderRadiusComponent extends DMComponent {
             <h2 class="css_subheader">${lang.configuration}</h2>
             
             <div class="setting-container">
-                <p class="setting-title">All border</p>
+                <p class="setting-title">${lang.allBorders}</p>
                 <input id="border-radius-all" type="range" value="${borderRadiusService.borderRadiusAll}" step="1" min="0" max="20">
                 <div class="range__info">
                     <div class="range__info-min">0px</div>
@@ -30,7 +30,7 @@ export class BorderRadiusComponent extends DMComponent {
             </div>
             
             <div class="setting-container">
-                <p class="setting-title">Top Left Radius</p>
+                <p class="setting-title">${lang.tlRadius}</p>
                 <input id="border-top-left" type="range" value="${borderRadiusService.borderTopLeft}" step="1" min="0" max="20">
                 <div class="range__info">
                     <div class="range__info-min">0px</div>
@@ -39,7 +39,7 @@ export class BorderRadiusComponent extends DMComponent {
             </div>
             
             <div class="setting-container">
-                <p class="setting-title">Top Right Radius</p>
+                <p class="setting-title">${lang.trRadius}</p>
                 <input id="border-top-right" type="range" value="${borderRadiusService.borderTopRight}" step="1" min="0" max="20">
                 <div class="range__info">
                     <div class="range__info-min">0px</div>
@@ -48,7 +48,7 @@ export class BorderRadiusComponent extends DMComponent {
             </div>
             
             <div class="setting-container">
-                <p class="setting-title">Bottom Right Radius</p>
+                <p class="setting-title">${lang.brRadius}</p>
                 <input id="border-bottom-right" type="range" value="${borderRadiusService.borderBottomRight}" step="1" min="0" max="20">
                 <div class="range__info">
                     <div class="range__info-min">0px</div>
@@ -57,7 +57,7 @@ export class BorderRadiusComponent extends DMComponent {
             </div>
             
             <div class="setting-container">
-                <p class="setting-title">Bottom Left Radius</p>
+                <p class="setting-title">${lang.blRadius}</p>
                 <input id="border-bottom-left" type="range" value="${borderRadiusService.borderBottomRight}" step="1" min="0" max="20">
                 <div class="range__info">
                     <div class="range__info-min">0px</div>

@@ -3,8 +3,6 @@
   display: block;
   flex-direction: column;
   flex-wrap: wrap;
-  height: 70vh;
-  overflow-y: auto;
   gap: 1em;
   position: relative;
 
@@ -21,8 +19,14 @@
   grid-template-columns: 1fr;
   row-gap: 2em;
   padding-bottom: 1em;
+  padding-left: 2px;
+  position: relative;
+}
 
-
+.sticky {
+  position: sticky;
+  top: 20px;
+  right: 0;
 }
 
 .card-section__title {
@@ -90,6 +94,7 @@
   position: relative;
   text-align: center;
   transition: box-shadow .4s;
+  background-color: var(--button);
 
   &:hover {
     box-shadow: 1px 1px 10px 3px #e6e6e6;
@@ -114,8 +119,27 @@
   justify-content: flex-end;
 }
 
+
+
+.error-message {
+  position: relative;
+
+  &::after {
+    content: "ошибка в url -- wrong url";
+    position: absolute;
+    background-color: var(--error);
+    top: -24px;
+    left: 4px;
+    line-height: 1.1;
+    padding: 6px;
+    border-radius: 2px;
+    font-size: 14px;
+    color: $text-colour;
+  }
+}
+
 .file-upload {
-  cursor: pointer;
+  cursor: text;
   display: inline-block;
   max-height: 31px;
   border: 1px solid $text-secondary-colour;
@@ -123,9 +147,12 @@
   padding: 8px 28px;
   transition: box-shadow .4s;
 
+
   &:hover {
     box-shadow: 1px 1px 10px 3px var(--gray);
   }
+
+
 }
 
 .spacer {
@@ -164,7 +191,7 @@
   flex-direction: column;
   gap: 3em;
   justify-content: flex-start;
-  position: sticky;
+  
 
 
   @media (min-width: 780px) and (max-width: 1300px) {
@@ -173,11 +200,13 @@
 }
 
 .preview__image {
+  position: sticky;
   display: flex;
   align-items: center;
   align-content: center;
   justify-content: center;
   padding: 2em;
+  
 }
 
 .code__block {
@@ -185,6 +214,8 @@
   display: flex;
   flex-direction: column;
   gap: 2em;
+  height: 50vh;
+  overflow-y: auto;
 }
 
 .code-copy {
@@ -204,23 +235,22 @@
 
 
 
-.focus { 
+.focus {
   transition: box-shadow .1s;
 
-  & > img {
+  &>img {
     border: 2px solid var(--card-active);
   }
 
-  & > svg {
+  &>.img-icon {
     border: 2px solid var(--card-active);
   }
 
-  & > figcaption {
+  &>figcaption {
     color: var(--card-active);
   }
 
   &:focus {
-    background-color: initial;
     box-shadow: none;
   }
 }
@@ -233,8 +263,22 @@
   width: 80%;
   border: 2px solid transparent;
 
+
   &:focus {
     background-color: initial;
     box-shadow: none;
   }
+}
+
+.code__section {
+  border: 1px solid $text-colour;
+  overflow-x: scroll;
+  background-color: var(--background-color);
+  max-width: 700px;
+  padding: 1em;
+}
+
+.button-icon {
+  width: 17px;
+  height: 17px;
 }

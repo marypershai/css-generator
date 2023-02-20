@@ -53,16 +53,20 @@ export class CodeLayoutComponent extends DMComponent {
       'click .copy_css': 'copyCssCode',
       'mouseout .tooltip': 'changeTooltip',
       'click .code_HTML': 'copyHTMLCode',
+      'contextmenu .copy_css': 'copyCssCode',
+      'contextmenu .code_HTML': 'copyCssCode',
     };
   }
 
   private copyCssCode(event: Event): void {
+    event.preventDefault();
     if (renderingService.codeCSS) {
       copyTextToClipboard(renderingService.codeCSS, event);
     }
   }
 
   private copyHTMLCode(event: Event): void {
+    event.preventDefault();
     const target = event.target as HTMLElement;
     if (target.classList.contains('copy_html') && renderingService.codeHTML) {
       copyTextToClipboard(renderingService.codeHTML, event);

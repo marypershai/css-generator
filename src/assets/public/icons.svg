@@ -63,4 +63,11 @@
     <line x1="8.5" y1="29.5" x2="35.5" y2="29.5" stroke="#838383" stroke-width="5" stroke-linecap="round"></line>
     <line x1="8" y1="37" x2="26" y2="37" stroke="#838383" stroke-width="4" stroke-linecap="round"></line>
   </symbol>
+
+   <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17" id="bottom-right">
+    <path d="M17 17L14.7586 8.63484L8.63484 14.7586L17 17ZM0.46967 1.53033L11.6967 12.7574L12.7574 11.6967L1.53033 0.46967L0.46967 1.53033Z" fill="black"></path>
+  </symbol>
+  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 17" id="top-right">
+    <path d="M18.5 2.18144e-07L10.0708 1.98704L16.0062 8.29343L18.5 2.18144e-07ZM2.01402 16.5461L14.0987 5.17236L13.0706 4.08006L0.985976 15.4539L2.01402 16.5461Z" fill="black"></path>
+  </symbol>
 </svg>

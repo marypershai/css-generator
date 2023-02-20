@@ -111,7 +111,7 @@ export class FilterComponent extends DMComponent {
                 </div>
                 <div class="filter-shadow-settings ${boxShadowVisibility}">
                   <div class="setting-subcontainer">
-                      <p class="setting-title">Color</p>
+                      <p class="setting-title">${lang.color}</p>
                       <div class="input--color-block">
                           <div class="input--color-block-left">
                               <input id="shadow-color" class="input-color" type="color" value="${filterService.color}">
@@ -123,7 +123,7 @@ export class FilterComponent extends DMComponent {
                   </div>
                   
                   <div class="setting-subcontainer">
-                    <p class="setting-title">Horizontal Shadow Length</p>
+                    <p class="setting-title">${lang.horizontalShadow}</p>
                     <input id="filter-horizontalShadow" type="range" min="-50" max="50" step="1" value="${filterService.horizontalShadow}">
                     <div class="range__info">
                         <div class="range__info-min">-50px</div>
@@ -132,7 +132,7 @@ export class FilterComponent extends DMComponent {
                   </div>
                   
                   <div class="setting-subcontainer">
-                    <p class="setting-title">Vertical Shadow Length</p>
+                    <p class="setting-title">${lang.verticalShadow}</p>
                     <input id="filter-verticalShadow" type="range" min="-50" max="50" step="1" value="${filterService.verticalShadow}">
                     <div class="range__info">
                         <div class="range__info-min">-50px</div>
@@ -141,7 +141,7 @@ export class FilterComponent extends DMComponent {
                   </div>
                   
                   <div class="setting-subcontainer">
-                    <p class="setting-title">Blur Radius</p>
+                    <p class="setting-title">${lang.blurRadius}</p>
                     <input id="filter-blurRadius" type="range" min="0" max="400" step="1" value="${filterService.blurRadius}">
                     <div class="range__info">
                         <div class="range__info-min">0px</div>
@@ -150,7 +150,7 @@ export class FilterComponent extends DMComponent {
                   </div>
                 </div>
             </div>
-            
+           
         </div>
     `;
 

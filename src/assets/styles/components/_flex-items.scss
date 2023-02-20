@@ -64,8 +64,14 @@
     padding: 10px;
     margin: 10px;
     text-align: center;
+    font-size: 15px;
+}
+
+.preview-block {
+    height: calc(100% - 43px);
 }
 
 .flexbox_demo {
     overflow: scroll;
+    height: 100%;
 }

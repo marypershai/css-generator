@@ -1,30 +1,10 @@
-// export const flexboxItemsService = {
-//   display: 'flex',
-//   flex-direction: 'center',
-//   flex-wrap: 'center',
-//   justify-content: 'center',
-//   align-content: 'center',
-//   style: 'color: #000000;',
-//   createStyle() {
-//     this.style = '';
-//     return this.style = `
-//       display: ${this.display};
-//       flex-direction: ${this.flex-direction};
-//       flex-wrap: ${this.flex-wrap};
-//       justify-content: ${this.justify-content};
-//       align-items: ${this.align-item};
-//       align-content: ${this.align-content};
-//     `;
-//   },
-// };
-
 export const flexboxItemsService = {
   display: 'flex',
   direction: 'row',
   wrap: 'nowrap',
-  justifyContent: 'flex-end',
-  alignItems: 'center',
-  alignContent: 'center',
+  justifyContent: 'flex-start',
+  alignItems: 'flex-start',
+  alignContent: 'flex-start',
   style: `display: flex;
           flex-direction: row;
           flex-wrap: nowrap;
