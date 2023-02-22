@@ -48,31 +48,31 @@ class GamePageComponent extends DMComponent {
     this.template = `
               <div class="game_body">
                 <div class="game_menu">
-                <div class="game_header">
-                  <h2 class="game_subheader"> FLEXBOX SLOTHS </h2>
-                  <div class="game_level"> 
-                    <button class="game_btn prev_lvl" ${(this.level === 1) ? 'disabled' : ''}> ᐊ </button>
-                    ${(savedLang === 'ru') ? 'Уровень' : 'Level'} ${this.level} 
-                    ${gameLevels}
-                    <button class="game_btn next_lvl" ${(this.level === levels.length) ? 'disabled' : ''}> ᐅ </button>
+                  <div class="game_header">
+                    <h2 class="game_subheader"> FLEXBOX SLOTHS </h2>
+                    <div class="game_level"> 
+                      <button class="game_btn prev_lvl" ${(this.level === 1) ? 'disabled' : ''}> ᐊ </button>
+                      ${(savedLang === 'ru') ? 'Уровень' : 'Level'} ${this.level} 
+                      ${gameLevels}
+                      <button class="game_btn next_lvl" ${(this.level === levels.length) ? 'disabled' : ''}> ᐅ </button>
+                    </div>
                   </div>
-                </div>
-                ${(savedLang === 'ru') ? levels[this.level - 1].description.ru : levels[this.level - 1].description.en}
-                <div class="game_code-field">
-                  <div class="line-numbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10</div>
-                  <div class="code-field"> 
-                    <span>#RSSchool {</span>
-                    <br>
-                    <span class="code_indent">display: flex;</span>
-                    <br>
-                    <span class="code_indent"><input type="text" class="game_code_input" autofocus></textarea></span>
-                    <br>
-                    <span>}</span>
-                    <br>
-                    <button class="game_next_btn" id="gameNext" disabled> ${(savedLang === 'ru') ? 'Следующий' : 'Next'} </button>
+                  ${(savedLang === 'ru') ? levels[this.level - 1].description.ru : levels[this.level - 1].description.en}
+                  <div class="game_code-field">
+                    <div class="line-numbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10</div>
+                    <div class="code-field"> 
+                      <span>#RSSchool {</span>
+                      <br>
+                      <span class="code_indent">display: flex;</span>
+                      <br>
+                      <span class="code_indent"><input type="text" class="game_code_input" autofocus></textarea></span>
+                      <br>
+                      <span>}</span>
+                      <br>
+                      <button class="game_next_btn" id="gameNext" disabled> ${(savedLang === 'ru') ? 'Следующий' : 'Next'} </button>
+                    </div>
                   </div>
-                </div>
-                <div class="game_disclaimer">${(savedLang === 'ru') ? disclaimer.ru : disclaimer.en}</div>
+                  <div class="game_disclaimer">${(savedLang === 'ru') ? disclaimer.ru : disclaimer.en}</div>
                 </div>
                 <div class="game_field">${levels[this.level - 1].field}</div>
               </div>`;

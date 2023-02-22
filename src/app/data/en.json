@@ -100,5 +100,11 @@
   "home_div_card_generator": "Create your own CSS card emplate with Card Generator! You can choose Styles, Card Content, Background and Text Shadow, and also pick any image you want",
   "home_div_hexrgb": "Convert HEX color codes to RGB HTML format for use in web design and CSS. Also converts HEX to RGBA",
   "home_div_game": "Flexbox Sloths - a game for learning CSS flexbox. The goal of the game is to help the sloths get to their deadlines by writing CSS code. See if you can beat all the levels!",
-  "home_div_about": "Learn more about application and our team"
+  "home_div_about": "Learn more about application and our team",
+  "flex_mainDirection": "Main direction",
+  "flex_crossDirection": "Cross direction",
+  "flex_direction": "",
+  "flex_multilines": "Multilines",
+  "flex_itemsAmount": "Items amount",
+  "flex_unequalHeight": "Unequal height"
 }

@@ -58,5 +58,14 @@
         "componentName": "filter"
       }
     ]
+  },
+  {
+    "blockTitle": "Layout",
+    "menuItems": [
+      {
+        "menu": "Flexbox Items",
+        "componentName": "flexbox-items"
+      }
+    ]
   }
 ]

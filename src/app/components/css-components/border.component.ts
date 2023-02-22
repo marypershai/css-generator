@@ -30,18 +30,17 @@ export class BorderComponent extends DMComponent {
                   </div>
                 </div>
             </div>
-            
-            <div class="setting-container">
+             <div class="setting-container">
                 <p class="setting-title">${lang.style}</p>
-                <select class="select--border-style custom-select">
-                  <option value="solid">Solid</option>
-                  <option value="dotted">Dotted</option>
-                  <option value="dashed">Dashed</option>
-                  <option value="double">Double</option>
-                  <option value="groove">Groove</option>
-                  <option value="ridge">Ridge</option>
-                  <option value="inset">Inset</option>
-                  <option value="outset">Outset</option>
+                <select id="border-style" class="custom-select">
+    `;
+
+    borderService.borderTypeOptions.forEach((option) => {
+      const selected = borderService.borderType === option ? 'selected' : '';
+      this.template += `<option value="${option}" ${selected}>${option[0].toUpperCase() + option.slice(1)}</option>`;
+    });
+
+    this.template += `
                 </select>
             </div>
             <div class="setting-container">
@@ -75,7 +74,7 @@ export class BorderComponent extends DMComponent {
     return {
       'change #border-width': 'changeBorderWidth',
       'change #border-color': 'changeBorderColor',
-      'change .select--border-style': 'changeBorderStyle',
+      'change #border-style': 'changeBorderStyle',
     };
   }
 

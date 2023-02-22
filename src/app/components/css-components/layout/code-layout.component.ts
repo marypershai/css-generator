@@ -35,8 +35,8 @@ export class CodeLayoutComponent extends DMComponent {
     if (renderingService.codeHTML) {
       this.template += `
         <div class="label_html">HTML</div>
-        <div class="preview-code preview_html">
-          <code>${renderingService.codeHTML};</code>
+        <div class="preview-code">
+          <code class="preview_html"></code>
         </div>
         <div>
         <button class="copy_html tooltip" data-tooltip="${lang.copyTooltipText}">
