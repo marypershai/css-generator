@@ -87,5 +87,11 @@
   "blRadius": "Нижний левый радиус",
   "brRadius": "Нижний правый радиус",
   "imgUrl": "URL изображения",
-  "repeat": "Повторение"
+  "repeat": "Повторение",
+  "flex_mainDirection": "по главной оси",
+  "flex_crossDirection": "по перекрёстной оси",
+  "flex_direction": "(направление)",
+  "flex_multilines": "перенос на новую строку",
+  "flex_itemsAmount": "Количество элементов",
+  "flex_unequalHeight": "Неравная высота"
 }

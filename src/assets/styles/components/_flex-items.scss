@@ -1,0 +1,77 @@
+.flex-properties-container {
+    display: flex;
+    gap: 10px;
+}
+
+.setting-input, .amount-input {
+    display: none;
+}
+
+.setting-label {
+    background-color: #f59d5654;
+    padding: 10px 1px;
+    letter-spacing: -.5px;
+    flex-grow: 1;
+    text-align: center;
+    cursor: pointer;
+}
+
+.setting-label:hover {
+    background-color: #f59e5696;
+    flex-grow: 3;
+}
+
+.setting-label_checked {
+    background-color: #f59e56de;
+}
+
+.setting-label_checked:hover {
+    background-color: #f59e56de;
+}
+
+.amount_label {
+    background-color: #56a0f554;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    padding: 8px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.amount_label:hover {
+    background-color: #56a0f5af;
+}
+
+.amount-label_checked {
+    background-color: #56a0f5c7;
+}
+
+.unequal_label {
+    background-color: #889fb963;
+    padding: 8px;
+    height: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.unequal_label:hover {
+    background-color: #889fb9c7;
+}
+
+.item_demo {
+    background-color: $subtitle;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.preview-block {
+    height: calc(100% - 43px);
+}
+
+.flexbox_demo {
+    overflow: scroll;
+    height: 100%;
+}

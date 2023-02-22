@@ -87,5 +87,11 @@
   "blRadius": "Bottom Left Radius",
   "brRadius": "Bottom Right Radius",
   "imgUrl": "Image URL",
-  "repeat": "Repeat"
+  "repeat": "Repeat",
+  "flex_mainDirection": "Main direction",
+  "flex_crossDirection": "Cross direction",
+  "flex_direction": "",
+  "flex_multilines": "Multilines",
+  "flex_itemsAmount": "Items amount",
+  "flex_unequalHeight": "Unequal height"
 }
