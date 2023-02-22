@@ -86,7 +86,7 @@ export class TextColumnComponent extends DMComponent {
                       <input id="text-columnRule-color" class="input-color" type="color" value="${textColumnService.columnRuleColor}">
                   </div>
                   <div class="input--color-block-right">
-                      <input class="input-color input-color-value" type="text" value="${textColumnService.columnRuleStyle}" disabled>
+                      <input class="input-color input-color-value" type="text" value="${textColumnService.columnRuleColor}" disabled>
                   </div>
                 </div>
             </div>
