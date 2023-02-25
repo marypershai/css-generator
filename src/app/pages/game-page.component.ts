@@ -19,6 +19,7 @@ class GamePageComponent extends DMComponent {
       'click .prev_lvl': 'prevLevel',
       'click .next_lvl': 'nextLevel',
       'click .game_next_btn': 'nextLevel',
+      'click .levels_all': 'changeLevel',
     };
   }
 
@@ -53,7 +54,7 @@ class GamePageComponent extends DMComponent {
                     <div class="game_level"> 
                       <button class="game_btn prev_lvl" ${(this.level === 1) ? 'disabled' : ''}> ᐊ </button>
                       ${(savedLang === 'ru') ? 'Уровень' : 'Level'} ${this.level} 
-                      ${gameLevels}
+                      <span class="levels_all">${gameLevels}</span>
                       <button class="game_btn next_lvl" ${(this.level === levels.length) ? 'disabled' : ''}> ᐅ </button>
                     </div>
                   </div>
@@ -132,6 +133,16 @@ class GamePageComponent extends DMComponent {
       container.append(level);
     }
     return container.outerHTML;
+  }
+
+  changeLevel(event: Event) {
+    if (event.target instanceof HTMLElement) {
+      if (event.target.classList.contains('lvl_info')) {
+        this.level = +event.target.innerText;
+        this.createContent();
+        this.render();
+      }
+    }
   }
 }
 

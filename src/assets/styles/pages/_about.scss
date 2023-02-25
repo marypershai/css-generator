@@ -80,8 +80,17 @@
   }
 }
 
+.developer_link {
+  width: 30%;
+  @media (max-width: $mobile) {
+    width: 100%;
+  }
+}
+
 .developer {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   cursor: pointer;
 }
 
@@ -128,7 +137,8 @@
 }
 
 .inspiration {
-  width: 160px;
+  white-space: nowrap;
+  width: 174px;
   background-color: rgba(52, 83, 117, 0.2);
   margin: 20px;
   padding: 20px;
@@ -162,4 +172,12 @@
   background-size: 150px 150px;
   width: 150px;
   height: 150px;
+}
+
+.application {
+  a {
+    color: $subtitle;
+    font-weight: 600;
+    white-space: nowrap;
+  }
 }

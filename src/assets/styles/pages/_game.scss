@@ -54,9 +54,9 @@
 /* -- LEVELS -- */
 
 .lvls_container {
-  opacity: 0;
+  display: none;
   position: absolute;
-  top: 40px;
+  top: 34px;
   right: 15px;
   background-color: var(--background-color);
   width: 165px;
@@ -67,7 +67,7 @@
 }
 
 .game_level:hover .lvls_container {
-  opacity: 1;
+  display: block;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -82,16 +82,26 @@
   color:rgb(43, 43, 43);
   font-size: 16px;
   padding: 3px;
+  cursor: pointer;
+}
+
+.lvl_info:hover {
+  background-color: rgb(241, 225, 153);
+  transform: scale(1.1);	
+	transition: transform ease-in-out 0.3s;
 }
 
 .lvl_solved {
   background-color: rgb(124, 209, 124);
 }
 
+.lvl_solved:hover {
+  background-color: rgb(171, 228, 171);
+}
+
 .lvl_current {
-  width: 25px;
-  height: 25px;
-  border: 2px solid rgba(43, 43, 43, 0.479);
+  border: .5px solid rgba(106, 128, 123, 0.479);
+  box-shadow: 0px 0px 6px 1.5px rgba(0, 0, 0, 0.3)
 }
 
 /* -- CODE -- */
