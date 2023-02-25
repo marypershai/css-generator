@@ -43,5 +43,6 @@ export class Component {
         }
       });
     }
+    if (Object.getPrototypeOf(this).afterInit) Object.getPrototypeOf(this).afterInit();
   }
 }
