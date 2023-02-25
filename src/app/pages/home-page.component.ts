@@ -8,12 +8,6 @@ class HomePageComponent extends DMComponent {
     this.createContent();
   }
 
-  public events(): Record<string, string> {
-    return {
-      'mousemove .home_container': 'changeSlide',
-    };
-  }
-
   createContent(): void {
     const { lang } = checkLang();
     this.template = `<div class="home_container">
@@ -103,10 +97,9 @@ class HomePageComponent extends DMComponent {
                     <div>`;
   }
 
-  changeSlide() {
+  public afterInit() {
     let currentSlideNumber = 0;
     const inputs = document.querySelectorAll('.slider-open');
-    inputs.forEach(el => console.log(el));
     const next = function () {
       inputs.forEach(el => {
         if (el instanceof HTMLInputElement) el.checked = false;
@@ -117,7 +110,6 @@ class HomePageComponent extends DMComponent {
     };
     setInterval(next, 3000);
   }
-
 }
 
 export const homePageComponent = new HomePageComponent({
