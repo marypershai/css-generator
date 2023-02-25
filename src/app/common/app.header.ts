@@ -11,6 +11,7 @@ import { addActiveStatus, addActiveStatusByUrl } from '../service/setActivePage'
 import { hexRGBLayoutComponent } from '../components/hex-rgb-component/hex-rgb-layout.component';
 import { hexRGBPreviewComponent } from '../components/hex-rgb-component/hex-rgb-preview.component';
 import { aboutPageComponent } from '../pages/about-page.component';
+import { homePageComponent } from '../pages/home-page.component';
 
 
 
@@ -102,48 +103,58 @@ export class AppHeader extends DMComponent {
     }
     this.createContent();
     this.render();
+    cssComponentMenuComponent.createContent();
+    const savedComponentName = localStorage.getItem('component');
+    const componentName = allCssComponents.find((component) => {
+      if (component.name === savedComponentName) {
+        return component;
+      }
+    });
+    if (componentName) {
+      componentName.component.createContent();
+      if (componentName.component.childComponents.length > 0) {
+        componentName.component.childComponents.forEach((component) => {
+          component.createContent();
+        });
+      }
+    }
     if (router.getUrl() === 'css-generator') {
       addActiveStatusByUrl('css-generator');
-      cssComponentMenuComponent.createContent();
       cssComponentMenuComponent.render();
-      const savedComponentName = localStorage.getItem('component');
-      const componentName = allCssComponents.find((component) => {
-        if (component.name === savedComponentName) {
-          return component;
-        }
-      });
       if (componentName) {
-        componentName.component.createContent();
         componentName.component.render();
         if (componentName.component.childComponents.length > 0) {
           componentName.component.childComponents.forEach((component) => {
-            component.createContent();
             component.render();
           });
         }
       }
     }
+    gamePageComponent.createContent();
     if (router.getUrl() === 'game') {
       addActiveStatusByUrl('game');
-      gamePageComponent.createContent();
       gamePageComponent.render();
     }
+    cardGeneratorPageComponent.createCardPage();
     if (router.getUrl() === 'card-generator') {
       addActiveStatusByUrl('card-generator');
-      cardGeneratorPageComponent.createCardPage();
       cardGeneratorPageComponent.render();
-    }   
+    }
+    hexRGBLayoutComponent.createContent();
+    hexRGBPreviewComponent.createContent();
     if (router.getUrl() === 'hex-rgb') {
       addActiveStatusByUrl('hex-rgb');
-      hexRGBLayoutComponent.createContent();
       hexRGBLayoutComponent.render();
-      hexRGBPreviewComponent.createContent();
       hexRGBPreviewComponent.render();
     }
+    aboutPageComponent.createContent();
     if (router.getUrl() === 'about') {
       addActiveStatusByUrl('about');
-      aboutPageComponent.createContent();
       aboutPageComponent.render();
+    }
+    homePageComponent.createContent();
+    if (router.getUrl() === '#' || router.getUrl() === '') {
+      homePageComponent.render();
     }
   }
 
