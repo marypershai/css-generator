@@ -88,9 +88,11 @@ export class AppHeader extends DMComponent {
     } else if (target.classList.contains('menu-item')) {
       closeMenu();
       addActiveStatus(event);
+    } else if (target.classList.contains('header__link') || target.classList.contains('header__subtitle')) {
+      closeMenu();
     } else if (target.closest('.theme-switcher')) {
       switchThemeOnClick();
-    }
+    } 
   }
 
   private changeLang(event: Event): void {
