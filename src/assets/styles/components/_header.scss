@@ -92,7 +92,11 @@
 }
 
 .menu-item {
-  font-size: 20px;
+  font-size: 17px;
+
+  @media (min-width: 1250px) {
+    font-size: 20px;
+  }
 }
 
 
