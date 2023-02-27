@@ -1,0 +1,22 @@
+[
+  {
+    "menu": "css-generator",
+    "menuText": "cssGenerator"
+  },
+  {
+    "menu": "card-generator",
+    "menuText": "cardGenerator"
+  },
+  {
+    "menu": "hex-rgb",
+    "menuText": "hexRGB"
+  },
+  {
+    "menu": "game",
+    "menuText": "game"
+  },
+  {
+    "menu": "about",
+    "menuText": "aboutPage"
+  }
+]

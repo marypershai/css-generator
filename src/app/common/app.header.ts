@@ -12,6 +12,7 @@ import { hexRGBLayoutComponent } from '../components/hex-rgb-component/hex-rgb-l
 import { hexRGBPreviewComponent } from '../components/hex-rgb-component/hex-rgb-preview.component';
 import { aboutPageComponent } from '../pages/about-page.component';
 import { homePageComponent } from '../pages/home-page.component';
+import { headerMenu } from '../service/header-menu.service';
 
 
 
@@ -47,14 +48,15 @@ export class AppHeader extends DMComponent {
             <div class="header__menu">
               
               <nav role="navigation" aria-label="Main navigation">
-                <ul class="menu__list">
+                <ul class="menu__list">`;
 
-                  <li><a href="#css-generator" class="menu-item link" id="css-generator">${lang.cssGenerator}</a></li>
-                  <li><a href="#card-generator" class="menu-item link" id="card-generator">${lang.cardGenerator}</a></li>
-                  <li><a href="#hex-rgb" class="menu-item link" id="hex-rgb">${lang.hexRGB}</a></li>
-                  <li><a href="#game" class="menu-item link" id="game">${lang.game}</a></li>
-                  <li><a href="#about" class="menu-item link" id="about">${lang.aboutPage}</a></li>
+    headerMenu.forEach((item: { menu: string, menuText: string }) => {
+      const active = router.getUrl() === item.menu ? 'active' : '';
+      const menuTextItem = item.menuText;
+      this.template += `<li><a href="#${item.menu}" class="menu-item link ${active}" id="${item.menu}">${lang[menuTextItem]}</a></li>`;
+    });
 
+    this.template += `
                 </ul>
               </nav>    
             
@@ -78,7 +80,14 @@ export class AppHeader extends DMComponent {
     return {
       'click .header': 'handleControlClicks',
       'click .language-switcher': 'changeLang',
+      'click a': 'renderHeader',
     };
+  }
+
+  private renderHeader(): void {
+    console.log('render');
+    this.createContent();
+    this.render();
   }
 
   private handleControlClicks(event: Event): void {
@@ -134,24 +143,20 @@ export class AppHeader extends DMComponent {
     }
     gamePageComponent.createContent();
     if (router.getUrl() === 'game') {
-      addActiveStatusByUrl('game');
       gamePageComponent.render();
     }
     cardGeneratorPageComponent.createCardPage();
     if (router.getUrl() === 'card-generator') {
-      addActiveStatusByUrl('card-generator');
       cardGeneratorPageComponent.render();
     }
     hexRGBLayoutComponent.createContent();
     hexRGBPreviewComponent.createContent();
     if (router.getUrl() === 'hex-rgb') {
-      addActiveStatusByUrl('hex-rgb');
       hexRGBLayoutComponent.render();
       hexRGBPreviewComponent.render();
     }
     aboutPageComponent.createContent();
     if (router.getUrl() === 'about') {
-      addActiveStatusByUrl('about');
       aboutPageComponent.render();
     }
     homePageComponent.createContent();
