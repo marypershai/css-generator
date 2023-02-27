@@ -1,6 +1,6 @@
 .game_body {
   width: 90%;
-  max-width: 1200px; 
+  max-width: 2100px; 
   margin: 0 auto;
   display: flex;
   justify-content: space-around;
@@ -178,7 +178,7 @@
   margin: 20px;
   width: 45vw;
   max-width: 800px;
-  height: 35vw;
+  min-height: 350px;
   max-height: 800px;
   background-color: rgba(192, 192, 192, 0.377);
   border: 0.5px solid rgba(102, 110, 109, 0.3);
@@ -270,3 +270,52 @@
   font-size: xx-large;
 }
 
+@media (max-width: 415px) {
+  .fire > div:nth-child(4),
+  .fire > div:nth-child(5),
+  .fire > div:nth-child(6),
+  .fire > div:nth-child(7) {
+    display: none;
+  }
+  .sloths > div:nth-child(4),
+  .sloths > div:nth-child(5),
+  .sloths > div:nth-child(6),
+  .sloths > div:nth-child(7) {
+    display: none;
+  }
+}
+
+@media (min-width: 415px) and (max-width: 580px) {
+  .fire > div:nth-child(5),
+  .fire > div:nth-child(6),
+  .fire > div:nth-child(7) {
+    display: none;
+  }
+  .sloths > div:nth-child(5),
+  .sloths > div:nth-child(6),
+  .sloths > div:nth-child(7) {
+    display: none;
+  }
+}
+
+@media (min-width: 580px) and (max-width: 660px) {
+  .fire > div:nth-child(6),
+  .fire > div:nth-child(7) {
+    display: none;
+  }
+  .sloths > div:nth-child(6),
+  .sloths > div:nth-child(7) {
+    display: none;
+  }
+}
+
+@media (min-width: $mobile) and (max-width: 1400px) {
+  .fire > div:nth-child(6),
+  .fire > div:nth-child(7) {
+    display: none;
+  }
+  .sloths > div:nth-child(6),
+  .sloths > div:nth-child(7) {
+    display: none;
+  }
+}
