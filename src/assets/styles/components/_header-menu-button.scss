@@ -1,0 +1,35 @@
+
+.menu__button {
+  cursor: pointer;
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  top: 20px;
+
+  @media (min-width: $mobile) {
+    display: none;
+  }
+}
+
+.menu__button span {
+  height: 2px;
+  width: 26px;
+  color: transparent;
+  background-color: $text-colour;
+  display: block;
+  margin: 6px 0px 6px 0px;
+  transition: .2s ease-in-out;
+  transform: none;
+}
+
+.menu__button--open span:nth-of-type(2) {
+  transform: rotate(90deg);
+}
+
+.menu__button--open span:nth-of-type(3) {
+  transform: translate(25%, -400%) rotate(90deg);
+}
+
+.menu__button--open span:nth-of-type(1) {
+  transform: translate(-25%, 400%) rotate(90deg);
+}

@@ -1,0 +1,284 @@
+.card-generator-page {
+  align-items: flex-start;
+  display: block;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1em;
+  position: relative;
+
+  @media (min-width: 780px) {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.card-settings {
+  flex: 330 1;
+  overflow-x: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 2em;
+  padding-bottom: 1em;
+  padding-left: 2px;
+  position: relative;
+}
+
+.sticky {
+  position: sticky;
+  top: 20px;
+  right: 0;
+}
+
+.card-section__title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: .8em;
+}
+
+.settings__section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.img-icon {
+  width: 67px;
+  height: 46px;
+  border: 2px solid transparent;
+}
+
+.img-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .4em;
+  cursor: pointer;
+
+  &--active {
+    &>figcaption {
+      color: var(--card-active);
+    }
+
+    &>svg {
+      border: 2px solid var(--card-active);
+    }
+  }
+}
+
+
+.sub-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: .5em;
+
+}
+
+.sub-section__title {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.buttons-group {
+  display: flex;
+}
+
+.setting__button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid $text-secondary-colour;
+  line-height: 1;
+  padding: 8px 12px;
+  position: relative;
+  text-align: center;
+  transition: box-shadow .4s;
+  background-color: var(--button);
+
+  &:hover {
+    box-shadow: 1px 1px 10px 3px #e6e6e6;
+  }
+
+  &.focus {
+    background-color: var(--gray);
+  }
+
+  &:not(:last-child) {
+    border-right: none;
+  }
+
+  &--active {
+    background-color: var(--gray);
+  }
+}
+
+.file-upload-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+
+
+.error-message {
+  position: relative;
+
+  &::after {
+    content: "ошибка в url -- wrong url";
+    position: absolute;
+    background-color: var(--error);
+    top: -24px;
+    left: 4px;
+    line-height: 1.1;
+    padding: 6px;
+    border-radius: 2px;
+    font-size: 14px;
+    color: $text-colour;
+  }
+}
+
+.file-upload {
+  cursor: text;
+  display: inline-block;
+  max-height: 31px;
+  border: 1px solid $text-secondary-colour;
+  font-size: 14px;
+  padding: 8px 28px;
+  transition: box-shadow .4s;
+
+
+  &:hover {
+    box-shadow: 1px 1px 10px 3px var(--gray);
+  }
+
+
+}
+
+.spacer {
+  border-bottom: 1px solid #e3e3e3;
+  margin-bottom: .5em;
+  margin-top: .5em;
+}
+
+.card__slider {
+  accent-color: #f55050;
+  -webkit-appearance: none;
+  background: #e8e8e8;
+  border-radius: 5px;
+  height: 6px;
+  opacity: .7;
+  outline: none;
+  transition: opacity .2s;
+  width: 220px;
+  position: relative !important;
+  cursor: pointer;
+}
+
+.slider-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.preview {
+  background: var(--gray);
+  flex: 665 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+  justify-content: flex-start;
+  
+
+
+  @media (min-width: 780px) and (max-width: 1300px) {
+    max-width: 460px;
+  }
+}
+
+.preview__image {
+  position: sticky;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding: 2em;
+  
+}
+
+.code__block {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  height: 50vh;
+  overflow-y: auto;
+}
+
+.code-copy {
+  margin: 1em 0;
+  cursor: pointer;
+  display: inline-block;
+  max-height: 31px;
+  border: 1px solid $text-secondary-colour;
+  font-size: 14px;
+  padding: 8px 28px;
+  transition: box-shadow .4s;
+
+  &:hover {
+    box-shadow: 1px 1px 10px 3px var(--gray);
+  }
+}
+
+
+
+.focus {
+  transition: box-shadow .1s;
+
+  &>img {
+    border: 2px solid var(--card-active);
+  }
+
+  &>.img-icon {
+    border: 2px solid var(--card-active);
+  }
+
+  &>figcaption {
+    color: var(--card-active);
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+
+.card__image {
+  display: block;
+  position: relative;
+  height: auto;
+  width: 80%;
+  border: 2px solid transparent;
+
+
+  &:focus {
+    background-color: initial;
+    box-shadow: none;
+  }
+}
+
+.code__section {
+  border: 1px solid $text-colour;
+  overflow-x: scroll;
+  background-color: var(--background-color);
+  max-width: 700px;
+  padding: 1em;
+}
+
+.button-icon {
+  width: 17px;
+  height: 17px;
+}
